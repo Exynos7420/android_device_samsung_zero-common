@@ -68,6 +68,12 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 
+
+# Use these flags if the board has a ext4 partition larger than 2gb
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+
 #
 # DEX pre-optimizations
 #
