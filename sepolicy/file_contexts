@@ -122,12 +122,12 @@
 # deamons
 /system/bin/mcDriverDaemon   u:object_r:tee_exec:s0
 /system/bin/macloader        u:object_r:macloader_exec:s0
-/system/bin/modemloader      -- u:object_r:modemloader_exec:s0
-/system/bin/sensorhubservice -- u:object_r:sensorhubservice_exec:s0
-/system/bin/wifiloader       -- u:object_r:wifiloader_exec:s0
-/sbin/cbd                    -- u:object_r:cpboot-daemon_exec:s0
-/system/bin/gpsd             -- u:object_r:gpsd_exec:s0
-/system/bin/lhd              -- u:object_r:lhd_exec:s0
+/sbin/cbd                    u:object_r:cpboot-daemon_exec:s0
+/system/bin/modemloader      u:object_r:modemloader_exec:s0
+/system/bin/sensorhubservice u:object_r:sensorhubservice_exec:s0
+/system/bin/wifiloader       u:object_r:wifiloader_exec:s0
+/system/bin/gpsd             u:object_r:gpsd_exec:s0
+/system/bin/lhd              u:object_r:lhd_exec:s0
 
 ####################################
 # debugging
@@ -146,3 +146,8 @@
 /sys/devices/system/cpu/cpu[0-9]*/cpufreq/interactive(/.*)?      u:object_r:power_hal_sysfs:s0
 /sys/power/enable_dm_hotplug                                     u:object_r:power_hal_sysfs:s0
 /data/power(/.*)                                                 u:object_r:power_hal_data_files:s0
+
+# audioserver libraries
+/system/lib/libaudio-ril.so                         -- u:object_r:audioserver_libraries:s0
+/system/lib/lib_soundaliveresampler.so              -- u:object_r:audioserver_libraries:s0
+/system/lib/lib_SamsungRec_V04013_WNR004.so         -- u:object_r:audioserver_libraries:s0
