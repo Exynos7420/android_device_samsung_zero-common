@@ -1,6 +1,9 @@
 # power-HAL
 allow priv_app power_hal_data_files:file rw_file_perms;
 
-# su-daemon
-allow priv_app superuser_device:sock_file write;
-allow priv_app sudaemon:unix_stream_socket connectto;
+# /dev
+allow priv_app device:dir r_dir_perms;
+
+# /proc
+allow priv_app proc_interrupts:file r_file_perms;
+allow priv_app proc_modules:file r_file_perms;
