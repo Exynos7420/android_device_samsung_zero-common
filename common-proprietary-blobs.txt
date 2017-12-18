@@ -345,6 +345,7 @@ lib/omx/libOMX.Exynos.VP9.Decoder.so
 lib/omx/libOMX.Exynos.WMV.Decoder.so
 
 # RIL
+bin/cbd
 bin/rild
 lib64/libreference-ril.so
 lib64/libril.so
