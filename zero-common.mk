@@ -81,6 +81,7 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/etc/mixer_paths_0.xml
 
 PRODUCT_PACKAGES += \
@@ -145,6 +146,8 @@ PRODUCT_PACKAGES += \
 # Media profile
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_sec_primary.xml:system/etc/media_codecs_sec_primary.xml \
+    $(LOCAL_PATH)/configs/media_codecs_sec_secondary.xml:system/etc/media_codecs_sec_secondary.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -240,4 +243,4 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.mk)
+$(call inherit-product, vendor/samsung/zero-common/zero-common-vendor.mk)
