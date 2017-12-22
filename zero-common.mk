@@ -179,6 +179,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     debug.hwc.force_gpu=1 \
     ro.bq.gpu_to_cpu_unsupported=1
+    
+# media build properties
+PRODUCT_PROPERTY_OVERRIDES += \
+	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so 
+
 
 # Radio
 PRODUCT_PACKAGES += \
