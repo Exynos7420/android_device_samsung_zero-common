@@ -1217,10 +1217,10 @@ on property:ro.bootmode=charger
 # EHCI runtime enable for LPA
     write /sys/devices/platform/s5p-ehci/power/control auto
 
-service battery_charger /sbin/healthd -c
+service charger /charger
     class charger
     critical
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 # DRK/CS service
 service cs_service /system/bin/cs
