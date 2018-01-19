@@ -303,8 +303,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hostapd \
     libnetcmdiface \
+    libwpa_client \
     macloader \
+    wificond \
     wifiloader \
+    wifilogd \
+    wlutil \
     wpa_supplicant \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0-impl \
