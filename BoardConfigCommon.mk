@@ -112,6 +112,9 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
+# Manifest
+DEVICE_MANIFEST_FILE += device/samsung/zero-common/manifest.xml
+
 # NFC
 BOARD_NFC_HAL_SUFFIX := universal7420
 
