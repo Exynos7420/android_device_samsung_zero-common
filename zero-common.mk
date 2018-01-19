@@ -89,7 +89,15 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     tinymix \
-    libtinycompress
+    libtinycompress \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio.effect@2.0-impl
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
 
 # Browser
 PRODUCT_PACKAGES += \
@@ -98,9 +106,22 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.exynos5 \
-    Snap
+    Snap \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
-# DTB    
+# Configstore
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.0-impl \
+    android.hardware.configstore@1.0-service
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl
+
+# DTB
 PRODUCT_PACKAGES += \
 	dtbhtoolExynos
 
@@ -113,15 +134,31 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
     $(LOCAL_PATH)/configs/lhd.conf:system/etc/lhd.conf
-    
+
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd \
-    libbauthtzcommon_shim
+    libbauthtzcommon_shim \
+    android.hardware.biometrics.fingerprint@2.1-impl \
+    android.hardware.biometrics.fingerprint@2.1-service
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
 
 # Graphics
 PRODUCT_PACKAGES += \
-    gralloc.exynos5
+    gralloc.exynos5 \
+    libhwc2on1adapter \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl
+
+# IR
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl \
+    android.hardware.ir@1.0-service
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -131,9 +168,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/ft5x06_ts.idc:system/usr/idc/ft5x06_ts.idc \
     $(LOCAL_PATH)/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
 # Lights
 PRODUCT_PACKAGES += \
-    lights.universal7420
+    lights.universal7420 \
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service
 
 # Libstlport
 PRODUCT_PACKAGES += \
@@ -142,6 +186,10 @@ PRODUCT_PACKAGES += \
 # MDNIE
 PRODUCT_PACKAGES += \
     AdvancedDisplay
+
+# Memory
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-impl
 
 # Media profile
 PRODUCT_COPY_FILES += \
@@ -158,16 +206,23 @@ PRODUCT_PACKAGES += \
     libnfc_nci_jni \
     NfcNci \
     Tag \
-    com.android.nfc_extras
+    com.android.nfc_extras \
+    android.hardware.nfc@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml \
     $(LOCAL_PATH)/configs/libnfc-sec-hal.conf:system/etc/libnfc-sec-hal.conf \
     $(LOCAL_PATH)/configs/libnfc-sec.conf:system/etc/libnfc-brcm.conf
 
+# Network
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
+
 # Power
 PRODUCT_PACKAGES += \
-    power.universal7420
+    power.universal7420 \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
 
 # common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -191,7 +246,9 @@ PRODUCT_PACKAGES += \
 	libxml2 \
 	libprotobuf-cpp-full \
 	libsecril-client \
-	libsecril-client-sap
+	libsecril-client-sap \
+	android.hardware.radio@1.0 \
+	android.hardware.radio.deprecated@1.0
 
 # Radio Properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -220,9 +277,27 @@ PRODUCT_PACKAGES += \
     init.wifi.rc \
     ueventd.samsungexynos7420.rc
 
+# RenderScript
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
 # Samsung
 PRODUCT_PACKAGES += \
     SamsungServiceMode
+
+# Sensorhub
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-impl \
+    android.hardware.usb@1.0-service
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -231,7 +306,9 @@ PRODUCT_PACKAGES += \
     macloader \
     wifiloader \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    android.hardware.wifi@1.0-impl \
+    android.hardware.wifi@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
