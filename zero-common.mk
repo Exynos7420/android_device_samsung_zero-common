@@ -285,6 +285,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungServiceMode
 
+# SDCardFS
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sys.sdcardfs=0
+
 # Sensorhub
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
