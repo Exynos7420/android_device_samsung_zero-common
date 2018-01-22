@@ -35,6 +35,11 @@ TARGET_SCREEN_WIDTH := 1440
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
+# Camera-shims
+TARGET_LD_SHIM_LIBS += \
+	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
+	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/zerofltexx/include
 
