@@ -147,6 +147,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
     android.hardware.gnss@1.0-service
 
+# GPS
+PRODUCT_PACKAGES += \
+    gpsd_shim
+
 # Graphics
 PRODUCT_PACKAGES += \
     gralloc.exynos5 \
