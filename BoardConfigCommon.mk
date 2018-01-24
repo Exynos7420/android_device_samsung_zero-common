@@ -83,8 +83,8 @@ BOARD_USES_SCALER := true
 BOARD_USES_DT := true
 
 # Hardware
-BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
-BOARD_HARDWARE_CLASS += device/samsung/zero-common/cmhw
+BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
+BOARD_HARDWARE_CLASS += device/samsung/zero-common/lineagehw
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := true
