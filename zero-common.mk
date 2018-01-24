@@ -189,8 +189,8 @@ PRODUCT_PACKAGES += \
     libstlport
 
 # MDNIE
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
+# PRODUCT_PACKAGES += \
+#     AdvancedDisplay
 
 # Memory
 PRODUCT_PACKAGES += \
