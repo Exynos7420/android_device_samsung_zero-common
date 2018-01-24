@@ -327,13 +327,13 @@
            1. Lenient threshold
            2. Custom threshold
     -->
-    <integer name="config_LTE_RSRP_threshold_type">2</integer>
+    <!-- <integer name="config_LTE_RSRP_threshold_type">2</integer> -->
 
     <!-- For performance and storage reasons, limit the number of fingerprints per user -->
     <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
 
     <!-- If enabled, capacitive keys will only light up when pressed.
          Otherwise, the buttons will light up whenever the user interacts with the device -->
-    <bool name="config_buttonLightOnKeypressOnly">true</bool>
+    <!-- <bool name="config_buttonLightOnKeypressOnly">true</bool> -->
 
 </resources>
