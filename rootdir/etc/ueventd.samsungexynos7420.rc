@@ -156,3 +156,6 @@
 
 # FM Radio
 /dev/radio0               0660   system     audio
+
+# Bluetooth
+/dev/ttySAC4              0660   bluetooth  bluetooth

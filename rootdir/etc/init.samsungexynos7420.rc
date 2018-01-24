@@ -541,7 +541,7 @@ on boot
     # ASV
     chown system system /d/asv_summary
 
-    chown bluetooth net_bt_stack /dev/ttySAC4
+    chown bluetooth bluetooth /dev/ttySAC4
     chmod 0660 /dev/ttySAC4
 
 # mobicore
