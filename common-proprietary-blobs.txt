@@ -349,8 +349,6 @@ bin/cbd
 bin/rild
 lib64/libreference-ril.so
 lib64/libril.so
-lib64/libsec-ril-dsds.so
-lib64/libsec-ril.so
 lib64/libuniplugin.so
 lib/libreference-ril.so
 lib/libril.so
