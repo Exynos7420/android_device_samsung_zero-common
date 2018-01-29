@@ -44,17 +44,6 @@
   #endif
 #endif
 
-/**
- * container_of - cast a member of a structure out to the containing structure
- * @ptr:    the pointer to the member.
- * @type:   the type of the container struct this is embedded in.
- * @member: the name of the member within the struct.
- *
- */
-#define container_of(ptr, type, member) ({              \
-    void *__mptr = (void *)(ptr);                   \
-    ((type *)((uintptr_t)__mptr - offsetof(type, member))); })
-
 static struct pcm_config pcm_config_voicecall = {
     .channels = 2,
     .rate = 8000,
@@ -181,7 +170,6 @@ void stop_voice_session_bt_sco(struct audio_device *adev) {
 void start_voice_session_bt_sco(struct audio_device *adev)
 {
     struct pcm_config *voice_sco_config;
-    struct voice_data *vdata = container_of(session, struct voice_data, session);
 
     if (adev->pcm_sco_rx != NULL || adev->pcm_sco_tx != NULL) {
         ALOGW("%s: SCO PCMs already open!\n", __func__);
@@ -392,10 +380,8 @@ bool voice_session_uses_twomic(struct voice_session *session)
 
 bool voice_session_uses_wideband(struct voice_session *session)
 {
-    struct voice_data *vdata = container_of(session, struct voice_data, session);
-
     if (session->out_device & AUDIO_DEVICE_OUT_ALL_SCO) {
-        return vdata->bluetooth_wb;
+        return session->vdata->bluetooth_wb;
     }
 
     return session->wb_amr_type >= 1;
@@ -481,6 +467,8 @@ struct voice_session *voice_session_init(struct audio_device *adev)
             ALOGV("%s: WB_AMR callback not supported", __func__);
         }
     }
+
+    session->vdata = &adev->voice;
 
     return session;
 }
