@@ -18,6 +18,9 @@ LOCAL_PATH := device/samsung/zerofltexx
 
 $(call inherit-product, $(LOCAL_PATH)/full_zerofltexx.mk)
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
