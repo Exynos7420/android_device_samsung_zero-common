@@ -145,6 +145,10 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-impl \
     android.hardware.biometrics.fingerprint@2.1-service
 
+# Skeletons
+PRODUCT_PACKAGES += \
+	android.hidl.base@1.0
+
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
