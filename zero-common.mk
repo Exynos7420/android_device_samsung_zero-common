@@ -244,7 +244,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # media build properties
 PRODUCT_PROPERTY_OVERRIDES += \
 	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so 
-
+	
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
     libui_shim \
@@ -304,6 +304,10 @@ PRODUCT_COPY_FILES += \
 # Sensorhub
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
+
+# Stagefright-shims
+PRODUCT_PACKAGES += \
+	libstagefright_shim
 
 # USB
 PRODUCT_PACKAGES += \
