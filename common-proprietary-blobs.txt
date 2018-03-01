@@ -97,6 +97,7 @@ bin/gpsd
 lib64/hw/gps.default.so
 lib64/libwrappergps.so
 lib/libwrappergps.so
+etc/zero.gps.rc
 
 # Graphics
 lib64/egl/libGLES_android.so
