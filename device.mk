@@ -70,6 +70,14 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/nfc/libnfc-sec.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-sec.conf \
 	$(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
+# OpenMAX-shims
+PRODUCT_PACKAGES += \
+    libui_shim \
+    libExynosOMX_shim
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
