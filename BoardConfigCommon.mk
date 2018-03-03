@@ -21,9 +21,6 @@ BOARD_VENDOR := samsung
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-# ADB
-TARGET_USES_LEGACY_ADB_INTERFACE := true
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
