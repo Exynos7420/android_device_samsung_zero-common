@@ -309,6 +309,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libstagefright_shim
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/mediaserver.rc:system/etc/init/mediaserver.rc
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-impl \
