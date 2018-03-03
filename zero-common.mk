@@ -245,6 +245,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so 
 
+# OpenMAX-shims
+PRODUCT_PACKAGES += \
+    libui_shim \
+    libExynosOMX_shim
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 
 # Radio
 PRODUCT_PACKAGES += \
