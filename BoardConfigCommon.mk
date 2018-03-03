@@ -71,8 +71,17 @@ EXTENDED_FONT_FOOTPRINT := true
 # Camera
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 
+# Camera-shims
+TARGET_LD_SHIM_LIBS += \
+	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
+	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
+
 # Audio HAL variant
 TARGET_AUDIOHAL_VARIANT := samsung
+
+# Fingerprint-shims
+TARGET_LD_SHIM_LIBS += \
+	/system/lib64/hw/fingerprint.default.so|/system/lib64/libbauthtzcommon_shim.so
 
 # Graphics
 USE_OPENGL_RENDERER := true
@@ -82,6 +91,10 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # (G)SCALER
 BOARD_USES_SCALER := true
 BOARD_USES_DT := true
+
+# GPS-shims
+TARGET_LD_SHIM_LIBS += \
+	/system/bin/gpsd|/vendor/lib64/gpsd_shim.so
 
 # Hardware
 BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
