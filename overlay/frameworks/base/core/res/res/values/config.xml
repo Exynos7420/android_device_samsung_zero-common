@@ -397,4 +397,13 @@ Add a comment to this line
           devices where the display has be tuned to be power efficient in DOZE and/or DOZE_SUSPEND
           states. -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- Values for GPS configuration -->
+    <string-array translatable="false" name="config_gpsParameters">
+        <item>XTRA_SERVER_1=http://1.ssiloc.com:80/packed/A03</item>
+        <item>NTP_SERVER=north-america.pool.ntp.org</item>
+        <item>SUPL_HOST=supl.google.com</item>
+        <item>SUPL_PORT=7275</item>
+        <item>SUPL_MODE=1</item>
+    </string-array>
 </resources>
