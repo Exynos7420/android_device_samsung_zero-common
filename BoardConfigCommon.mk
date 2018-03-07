@@ -240,6 +240,7 @@ TARGET_SCREEN_WIDTH := 1440
 BOARD_USES_WFD := true
 
 # Wifi
+TARGET_USES_64_BIT_BCMDHD        := true
 BOARD_HAVE_SAMSUNG_WIFI          := true
 BOARD_WLAN_DEVICE                := bcmdhd
 WPA_SUPPLICANT_USE_HIDL          := true
