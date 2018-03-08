@@ -154,6 +154,7 @@ TARGET_OMX_LEGACY_RESCALING := true
 # OpenMAX video
 BOARD_USE_DMA_BUF := true
 BOARD_USE_METADATABUFFERTYPE := true
+# BOARD_USE_STOREMETADATA := true  -- not working due to invalid buffer handles
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
