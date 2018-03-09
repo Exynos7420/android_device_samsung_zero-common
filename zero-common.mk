@@ -208,7 +208,8 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     com.android.nfc_extras \
-    android.hardware.nfc@1.0-impl
+    android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml \
