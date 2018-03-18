@@ -185,8 +185,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service
 
 # MDNIE
- PRODUCT_PACKAGES += \
-    AdvancedDisplay
+# PRODUCT_PACKAGES += \
+#    AdvancedDisplay
 
 # Memory
 PRODUCT_PACKAGES += \
