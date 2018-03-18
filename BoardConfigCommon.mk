@@ -75,6 +75,10 @@ EXTENDED_FONT_FOOTPRINT := true
 # Camera
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
+
 # Camera-shims
 TARGET_LD_SHIM_LIBS += \
 	/system/lib/libexynoscamera.so|/system/lib/libexynoscamera_shim.so \
