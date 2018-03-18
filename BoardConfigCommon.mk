@@ -77,15 +77,12 @@ BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 
 # Camera-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
-
-# Audio HAL variant
-TARGET_AUDIOHAL_VARIANT := samsung
+	/system/lib/libexynoscamera.so|/system/lib/libexynoscamera_shim.so \
+	/system/lib64/libexynoscamera.so|/system/lib64/libexynoscamera_shim.so
 
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/lib64/hw/fingerprint.default.so|/system/lib64/libbauthtzcommon_shim.so
+	/system/lib64/libbauthserver.so|/system/lib64/libbauthtzcommon_shim.so
 
 # Graphics
 USE_OPENGL_RENDERER := true
@@ -98,7 +95,7 @@ BOARD_USES_DT := true
 
 # GPS-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/bin/gpsd|/vendor/lib64/gpsd_shim.so
+	/system/bin/gpsd|/system/lib64/libsensor_shim.so
 
 # Hardware
 BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
@@ -159,8 +156,10 @@ TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos7420
 TARGET_SLSI_VARIANT := cm
 
-# PowerHAL
+# Samsung HALs
 TARGET_POWERHAL_VARIANT := samsung
+TARGET_SEC_FP_HAL_VARIANT := bauth
+TARGET_AUDIOHAL_VARIANT := samsung
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
@@ -177,26 +176,26 @@ BOARD_HAS_DOWNLOAD_MODE := true
 
 # OpenMAX-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.HEVC.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.HEVC.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.HEVC.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.HEVC.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.VP8.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.VP8.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.VP9.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.VP9.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib64/libui_shim.so
+	/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.AVC.Decoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.AVC.Encoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.HEVC.Decoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.HEVC.Decoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.HEVC.Encoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.HEVC.Encoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.VP8.Decoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.VP8.Encoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.VP8.Encoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.VP9.Decoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.VP9.Decoder.so|/system/lib64/libui_shim.so \
+	/system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/system/lib/libui_shim.so \
+	/system/lib64/omx/libOMX.Exynos.WMV.Decoder.so|/system/lib64/libui_shim.so
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
