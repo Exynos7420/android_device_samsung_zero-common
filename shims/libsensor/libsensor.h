@@ -28,4 +28,4 @@ class SensorEventQueue {
 
 }
 
-#endif // GPSD_H
+#endif // LIBSENSOR_H
