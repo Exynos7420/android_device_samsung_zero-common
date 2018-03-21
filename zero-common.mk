@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    libsensor_shim
+    libsensor_shim \
+    gps.default
 
 # Graphics
 PRODUCT_PACKAGES += \
