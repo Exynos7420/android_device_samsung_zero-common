@@ -292,7 +292,12 @@ PRODUCT_PACKAGES += \
     init.samsungexynos7420.rc \
     init.samsungexynos7420.usb.rc \
     init.wifi.rc \
-    ueventd.samsungexynos7420.rc
+    ueventd.samsungexynos7420.rc \
+    init.carrier.rc
+
+# cpboot daemon
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ril/sbin/cbd:root/sbin/cbd
 
 # RenderScript
 PRODUCT_PACKAGES += \
