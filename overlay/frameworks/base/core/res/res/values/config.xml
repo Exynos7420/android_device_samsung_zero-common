@@ -327,9 +327,6 @@ Add a comment to this line
     -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
-<!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
-    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
-
     <!-- Doze (Ambient display) -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
@@ -360,17 +357,9 @@ Add a comment to this line
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">35</integer>
+    <integer name="config_screenBrightnessDoze">25</integer>
 
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
-    <bool name="config_dozeAfterScreenOff">true</bool>  
-
-<!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
-    <bool name="config_displayBlanksAfterDoze">false</bool> 
-
-<!-- Control whether the always on display mode is available. This should only be enabled on
-          devices where the display has be tuned to be power efficient in DOZE and/or DOZE_SUSPEND
-          states. -->
-    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+    <bool name="config_dozeAfterScreenOff">true</bool>   
 </resources>
