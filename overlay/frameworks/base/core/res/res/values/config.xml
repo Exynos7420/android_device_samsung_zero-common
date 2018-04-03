@@ -336,6 +336,12 @@ Add a comment to this line
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">true</bool>
 
+    <!-- Default value for proximity check on screen wake
+     NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">400</integer>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+
     <!-- Flag indicating whether strict threshold is used, or lenient threshold is used,
             when evaluating RSRP for LTE antenna bar display
            0. Strict threshold
