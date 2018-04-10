@@ -245,7 +245,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     debug.hwc.force_gpu=1 \
     ro.bq.gpu_to_cpu_unsupported=1 \
-    sys.use_fifo_ui=1
+    sys.use_fifo_ui=1 \
+    wlan.wfd.hdcp=disable \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
     
 # media build properties
 PRODUCT_PROPERTY_OVERRIDES += \
