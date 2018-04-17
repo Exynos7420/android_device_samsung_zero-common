@@ -156,11 +156,8 @@
             32 - Camera
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareKeys">19</integer>
-
-    <bool name="config_button_brightness_support">true</bool>
-    <integer name="config_button_brightness_default">128</integer>
+         config to 7. 
+    <integer name="config_deviceHardwareKeys">19</integer> -->
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
