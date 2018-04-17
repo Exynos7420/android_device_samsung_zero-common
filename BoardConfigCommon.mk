@@ -104,6 +104,7 @@ BOARD_HARDWARE_CLASS += device/samsung/zero-common/lineagehw
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := true
+BOARD_USES_VPP := true
 
 # Renderscript
 BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
