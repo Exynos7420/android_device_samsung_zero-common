@@ -301,7 +301,9 @@ PRODUCT_PACKAGES += \
     init.samsungexynos7420.usb.rc \
     init.wifi.rc \
     ueventd.samsungexynos7420.rc \
-    init.carrier.rc
+    init.carrier.rc \
+    init.rilchip.rc \
+    init.rilchip.sh \
 
 # cpboot daemon
 PRODUCT_COPY_FILES += \
@@ -313,11 +315,13 @@ PRODUCT_PACKAGES += \
 
 # Samsung
 PRODUCT_PACKAGES += \
+    HealthService \
     SamsungServiceMode
 
 # seccomp
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy
+    $(LOCAL_PATH)/seccomp/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
+    $(LOCAL_PATH)/seccomp/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
 
 # Sensorhub
 PRODUCT_PACKAGES += \
@@ -329,6 +333,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mediaserver.rc:system/etc/init/mediaserver.rc
+
+# Tools
+PRODUCT_PACKAGES += \
+	resetprop.zero   # Required for setting ro.*-properties for dual-SIM support
 
 # USB
 PRODUCT_PACKAGES += \
