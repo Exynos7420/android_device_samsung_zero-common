@@ -4,7 +4,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE		:= fstab.samsungexynos7420
 LOCAL_MODULE_TAGS	:= optional eng
 LOCAL_MODULE_CLASS	:= ETC
-LOCAL_SRC_FILES		:= etc/fstab.samsungexynos7420
+LOCAL_SRC_FILES		:= fstab.samsungexynos7420
 LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -13,7 +13,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE            := init.baseband.rc
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := etc/init.baseband.rc.cdma
+LOCAL_SRC_FILES         := init.baseband.rc.cdma
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 else
@@ -21,7 +21,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE            := init.baseband.rc
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := etc/init.baseband.rc.gsm
+LOCAL_SRC_FILES         := init.baseband.rc.gsm
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 endif
@@ -38,7 +38,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE            := init.power.rc
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := etc/init.power.rc
+LOCAL_SRC_FILES         := init.power.rc
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -46,7 +46,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE            := init.wifi.rc
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := etc/init.wifi.rc
+LOCAL_SRC_FILES         := init.wifi.rc
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -54,7 +54,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE		:= init.samsungexynos7420.usb.rc
 LOCAL_MODULE_TAGS	:= optional eng
 LOCAL_MODULE_CLASS	:= ETC
-LOCAL_SRC_FILES		:= etc/init.samsungexynos7420.usb.rc
+LOCAL_SRC_FILES		:= init.samsungexynos7420.usb.rc
 LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -62,7 +62,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE		:= init.samsungexynos7420.rc
 LOCAL_MODULE_TAGS	:= optional eng
 LOCAL_MODULE_CLASS	:= ETC
-LOCAL_SRC_FILES		:= etc/init.samsungexynos7420.rc
+LOCAL_SRC_FILES		:= init.samsungexynos7420.rc
 LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -70,7 +70,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE		:= ueventd.samsungexynos7420.rc
 LOCAL_MODULE_TAGS	:= optional eng
 LOCAL_MODULE_CLASS	:= ETC
-LOCAL_SRC_FILES		:= etc/ueventd.samsungexynos7420.rc
+LOCAL_SRC_FILES		:= ueventd.samsungexynos7420.rc
 LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -78,7 +78,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE            := init.carrier.rc
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := etc/init.carrier.rc
+LOCAL_SRC_FILES         := init.carrier.rc
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -86,7 +86,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE            := init.rilchip.rc
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := etc/init.rilchip.rc
+LOCAL_SRC_FILES         := init.rilchip.rc
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -94,6 +94,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE            := init.rilchip.sh
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := etc/init.rilchip.sh
+LOCAL_SRC_FILES         := init.rilchip.sh
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
