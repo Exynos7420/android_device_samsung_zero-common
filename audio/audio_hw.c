@@ -554,9 +554,7 @@ static int mixer_init(struct audio_device *adev)
             }
 #endif
 
-#ifdef MIXER_PATHS_FILE_ROUTINE
 mixer_paths_def:
-#endif
             sprintf(mixer_path, "/vendor/etc/mixer_paths_%d.xml", card);
             if (access(mixer_path, F_OK) == -1) {
                 ALOGW("%s: Failed to open mixer paths from %s, retrying with legacy location",
@@ -568,9 +566,7 @@ mixer_paths_def:
                 }
             }
 
-#ifdef MIXER_PATHS_FILE_ROUTINE
 mixer_paths_done:
-#endif
             audio_route = audio_route_init(card, mixer_path);
             if (!audio_route) {
                 ALOGE("%s: Failed to init audio route controls for card %d, aborting.",
