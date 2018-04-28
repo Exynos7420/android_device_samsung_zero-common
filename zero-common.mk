@@ -168,6 +168,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl
 
+# Init
+PRORUCT_PACKAGES += \
+    libinit_sec
+
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
