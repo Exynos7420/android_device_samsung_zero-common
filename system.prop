@@ -1,0 +1,126 @@
+###
+# BEGIN zero-common device-properties
+#
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
+#
+
+#
+# ADB (rooted, with early-init support)
+#
+ro.adb.secure=0
+ro.secure=0
+ro.allow.mock.location=0
+ro.debuggable=1
+sys.usb.config=mtp,adb
+persist.sys.usb.config=mtp,adb
+persist.service.adb.enable=1
+persist.service.debuggable=1
+
+#
+# Board
+#
+
+ro.chipname=exynos7420
+
+#
+# HWUI
+#
+ro.hwui.texture_cache_size=88
+ro.hwui.layer_cache_size=58
+ro.hwui.path_cache_size=16
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.shape_cache_size=4
+ro.hwui.gradient_cache_size=2
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_large_cache_width=4096
+ro.hwui.text_large_cache_height=2048
+
+#
+# Dalvik
+#
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.dex2oat-filter=speed
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+
+#
+# Ril
+#
+
+persist.radio.add_power_save=1 
+persist.radio.apm_sim_not_pwdn=1 
+rild.libpath=/system/lib64/libsec-ril.so 
+rild.libpath2=/system/lib64/libsec-ril-dsds.so 
+ro.telephony.ril_class=SlteRIL 
+telephony.lteOnGsmDevice=1 
+telephony.lteOnCdmaDevice=0 
+ro.telephony.default_network=9 
+ro.use_data_netmgrd=false 
+persist.data.netmgrd.qos.enable=false 
+ro.ril.hsxpa=1 
+ro.ril.telephony.mqanelements=6
+ro.ril.gprsclass=10
+
+#
+# OMX
+#
+
+media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so
+persist.media.treble_omx=false
+
+#
+# Miracast (Wireless Display)
+#
+
+wlan.wfd.hdcp=disable 
+persist.debug.wfd.enable=1 
+persist.sys.wfd.virtual=0
+
+#
+# NFC
+#
+
+ro.nfc.sec_hal=true 
+
+#
+# HWC
+#
+
+debug.hwc.force_gpu=1 
+debug.hwc.otf=1
+debug.hwc.winupdate=1
+
+#
+# Graphics
+#
+
+ro.opengles.version=196610 
+debug.hwui.use_buffer_age=false 
+ro.sf.lcd_density=640 
+ro.bq.gpu_to_cpu_unsupported=1
+sys.use_fifo_ui=1 
+
+#
+# Audio
+#
+
+af.fast_track_multiplier=1 
+audio_hal.force_voice_config=wide
+
+#
+# Wi-Fi
+#
+
+wifi.interface=wlan0
+
+#
+# END zero device-properties
+###

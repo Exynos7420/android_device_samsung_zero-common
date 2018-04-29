@@ -40,10 +40,6 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
-
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -238,27 +234,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service \
     android.hardware.power@1.0-impl
 
-# common build properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=640 \
-    ro.opengles.version=196610 \
-    ro.chipname=exynos7420 \
-    af.fast_track_multiplier=1 \
-    audio_hal.force_voice_config=wide \
-    ro.nfc.sec_hal=true \
-    wifi.interface=wlan0 \
-    debug.hwc.force_gpu=1 \
-    ro.bq.gpu_to_cpu_unsupported=1 \
-    sys.use_fifo_ui=1 \
-    wlan.wfd.hdcp=disable \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
-    
-# media build properties
-PRODUCT_PROPERTY_OVERRIDES += \
-	media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so \
-	persist.media.treble_omx=false
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@1.0-service-sdm \
@@ -287,21 +262,8 @@ PRODUCT_PACKAGES += \
 	android.hardware.radio.deprecated@1.0 \
 	modemloader
 
-# Radio Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.add_power_save=1 \
-    persist.radio.apm_sim_not_pwdn=1 \
-    rild.libpath=/system/lib64/libsec-ril.so \
-    rild.libpath2=/system/lib64/libsec-ril-dsds.so \
-    ro.telephony.ril_class=SlteRIL \
-    telephony.lteOnGsmDevice=1 \
-    telephony.lteOnCdmaDevice=0 \
-    ro.telephony.default_network=9 \
-    ro.use_data_netmgrd=false \
-    persist.data.netmgrd.qos.enable=false \
-    ro.ril.hsxpa=1 \
-    ro.ril.telephony.mqanelements=6 \
-    ro.ril.gprsclass=10
+# Properties 
+TARGET_SYSTEM_PROP += device/samsung/zero-common/system.prop
     
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -379,10 +341,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/filter_ie:system/etc/wifi/filter_ie
-
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
