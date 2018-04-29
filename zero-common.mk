@@ -287,6 +287,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# Filesystem tools for resizing system partition filesystem
+PRODUCT_PACKAGES += \
+	e2fsck_static \
+	resize2fs_static
+
 # Samsung
 PRODUCT_PACKAGES += \
     HealthService \
