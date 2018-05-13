@@ -306,6 +306,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
 
+# Synapse
+include device/samsung/zero-common/synapse/synapse.mk
+
 # Stagefright-shims
 PRODUCT_PACKAGES += \
 	libstagefright_shim

@@ -112,10 +112,10 @@ hotplug)
   echo `cat $P`
   ;;
 dev)
-  echo "minealex2244"
+  echo "enesuzun2002"
   ;;
 codename)
-  echo "AldeXus"
+  echo "Ultimate-Kernel"
   ;;    
 version)
   echo `uname -r`

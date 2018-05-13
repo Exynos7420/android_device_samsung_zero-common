@@ -1,4 +1,4 @@
-ALDEON=/sdcard/aldeon;
+ENES=/sdcard/enes;
 
 if [ -f "/system/xbin/sqlite3" ]; then
 	SQL3=/system/xbin/sqlite3;
@@ -15,11 +15,11 @@ DISABLED_ACTIONS="AND key NOT LIKE 'gamma%' AND key NOT LIKE 'gamma_cont%' AND k
 case "$1" in
 	ExportConfigSynapse)
 		BCK_PROF=$2;
-		if [ ! -d /sdcard/aldeon ]; then
-     			mkdir /sdcard/aldeon;
+		if [ ! -d /sdcard/enes ]; then
+     			mkdir /sdcard/enes;
 		fi
-		if [ ! -d /sdcard/aldeon/saved_configs ]; then
-     			mkdir /sdcard/aldeon/saved_configs;
+		if [ ! -d /sdcard/enes/saved_configs ]; then
+     			mkdir /sdcard/enes/saved_configs;
 		fi
 		cd $SYNAPSE_DATA;
 		$SQL3 -separator '=' actionValueStore "SELECT key, value FROM action_value WHERE context = 'global' AND key NOT IN ($DISABLED_SETTINGS) $DISABLED_ACTIONS ORDER BY key ASC;" > "$SYNAPSE_CONFIG_DIR/$BCK_PROF.cfg" 2> /dev/null;

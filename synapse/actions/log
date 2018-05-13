@@ -1,6 +1,6 @@
 # Script make by UpInTheAir
 TIMESTAMP=`date +%Y-%m-%d.%H.%M.%S`;
-LOGS=/sdcard/aldeon/logs;
+LOGS=/sdcard/enes/logs;
 
 if [ "$(mount | grep system | grep -c ro)" -eq "1" ]; then
 	mount -o remount,rw /system;
