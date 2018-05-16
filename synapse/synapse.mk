@@ -32,11 +32,9 @@ PRODUCT_COPY_FILES += \
 	$(SYNAPSE_PATH)/config.json.generate.big:$(SYNAPSE_TARGET)/config.json.generate.big \
 	$(SYNAPSE_PATH)/config.json.generate.bus:$(SYNAPSE_TARGET)/config.json.generate.bus \
 	$(SYNAPSE_PATH)/config.json.generate.doze:$(SYNAPSE_TARGET)/config.json.generate.doze \
-	$(SYNAPSE_PATH)/config.json.generate.dt2w:$(SYNAPSE_TARGET)/config.json.generate.dt2w \
 	$(SYNAPSE_PATH)/config.json.generate.governor:$(SYNAPSE_TARGET)/config.json.generate.governor \
 	$(SYNAPSE_PATH)/config.json.generate.gpu:$(SYNAPSE_TARGET)/config.json.generate.gpu \
 	$(SYNAPSE_PATH)/config.json.generate.io:$(SYNAPSE_TARGET)/config.json.generate.io \
-	$(SYNAPSE_PATH)/config.json.generate.ksm:$(SYNAPSE_TARGET)/config.json.generate.ksm \
 	$(SYNAPSE_PATH)/config.json.generate.little:$(SYNAPSE_TARGET)/config.json.generate.little \
 	$(SYNAPSE_PATH)/config.json.generate.live:$(SYNAPSE_TARGET)/config.json.generate.live \
 	$(SYNAPSE_PATH)/config.json.generate.logs:$(SYNAPSE_TARGET)/config.json.generate.logs \
