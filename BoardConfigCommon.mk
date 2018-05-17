@@ -98,6 +98,10 @@ BOARD_USES_DT := true
 TARGET_LD_SHIM_LIBS += \
 	/system/bin/gpsd|/vendor/lib64/libsensor_shim.so
 
+# Hardware
+BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
+BOARD_HARDWARE_CLASS += device/samsung/zero-common/lineagehw
+
 # HWCServices
 BOARD_USES_HWC_SERVICES := true
 BOARD_USES_VPP := true
