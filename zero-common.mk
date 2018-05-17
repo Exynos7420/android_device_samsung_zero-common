@@ -234,6 +234,14 @@ PRODUCT_PACKAGES += \
     power.universal7420 \
     android.hardware.power@1.0-service \
     android.hardware.power@1.0-impl
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@1.0-service-sdm \
+    vendor.lineage.livedisplay-V1.0-java
+
+PRODUCT_BOOT_JARS += \
+    vendor.lineage.livedisplay-V1.0-java
 	
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
