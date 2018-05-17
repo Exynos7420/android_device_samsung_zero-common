@@ -220,6 +220,11 @@ TARGET_LD_SHIM_LIBS +=\
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
+#
+# Security
+#
+BOARD_USES_TRUST_KEYMASTER := true
+
 # Seccomp filters
 BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
 
