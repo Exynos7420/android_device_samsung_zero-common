@@ -6,18 +6,6 @@
 #
 
 #
-# ADB (rooted, with early-init support)
-#
-ro.adb.secure=0
-ro.secure=0
-ro.allow.mock.location=0
-ro.debuggable=1
-sys.usb.config=mtp,adb
-persist.sys.usb.config=mtp,adb
-persist.service.adb.enable=1
-persist.service.debuggable=1
-
-#
 # Board
 #
 
