@@ -116,14 +116,11 @@ static bool zero_audio_supports_audience() {
 __maybe_unused
 static bool zero_audio_select_mixer_paths(char *path) {
 	if (AUDIENCE_SUPPORTED())
-		strcpy(path, "/vendor/etc/mixer_paths-audience.xml");
+		strcpy(path, "/vendor/etc/mixer_paths_%d-audience.xml");
 	else
-		strcpy(path, "/vendor/etc/mixer_paths.xml");
+		strcpy(path, "/vendor/etc/mixer_paths_%d.xml");
 
 	return true;
 }
-
-#define MIXER_PATH_MAX_LENGTH 255
-#define MIXER_XML_PATH "mixer_paths.xml" 
 
 #endif // SAMSUNG_AUDIO_COMMON_H
