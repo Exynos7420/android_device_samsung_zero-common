@@ -3156,7 +3156,7 @@ false_alarm:
                     out->echo_reference->write(out->echo_reference, &b);
                  }
 #endif
-                ALOGVV("%s: writing buffer (%d bytes) to pcm device", __func__, bytes);
+                ALOGVV("%s: writing buffer (%d bytes) to pcm device", __func__, (int)bytes);
                 pcm_device->status = pcm_write(pcm_device->pcm, (void *)buffer, bytes);
                 if (pcm_device->status != 0)
                     ret = pcm_device->status;
