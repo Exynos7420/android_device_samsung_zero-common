@@ -247,7 +247,7 @@ device/samsung/zero-common/hardware/power/profiles.xml:system/etc/power_profiles
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-sdm \
+    vendor.lineage.livedisplay@1.0-service.zero \
     vendor.lineage.livedisplay-V1.0-java
 
 PRODUCT_BOOT_JARS += \
