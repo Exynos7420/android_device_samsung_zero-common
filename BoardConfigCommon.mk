@@ -170,8 +170,7 @@ TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos7420
 TARGET_SLSI_VARIANT := cm
 
-# Samsung HALs
-TARGET_POWERHAL_VARIANT := samsung
+# Fingerprint HAL
 TARGET_SEC_FP_HAL_VARIANT := bauth
 
 # Radio
