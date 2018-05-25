@@ -1,3 +1,63 @@
 subdirs = [
     "vibrator",
 ]
+
+cc_library_shared {
+    name: "libzeroutils",
+    defaults: ["hidl_defaults"],
+    proprietary: true,
+    srcs: ["Utils.cpp"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+		"-DSTRICT_BEHAVIOUR",
+		"-DNR_CPUS=8"
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libhardware",
+        "libutils",
+    ],
+}
+
+cc_library_shared {
+    name: "libzerops",
+    defaults: ["hidl_defaults"],
+    proprietary: true,
+    srcs: ["PersistentStorage.cpp"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    shared_libs: [
+        "libcrypto",
+        "libhardware",
+        "liblog",
+        "libutils",
+		"libzeroutils",
+    ],
+}
+
+cc_binary {
+    name: "zerops",
+    defaults: ["hidl_defaults"],
+    proprietary: true,
+    srcs: ["PersistentStorageExec.cpp"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    shared_libs: [
+        "libcrypto",
+        "libhardware",
+        "liblog",
+        "libutils",
+		"libzerops",
+    ],
+}
