@@ -281,16 +281,16 @@
 					<core4>true</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>1</above_hispeed_delay>
+					<above_hispeed_delay>25000</above_hispeed_delay>
 					<go_hispeed_load>99</go_hispeed_load>
-					<target_loads>45</target_loads>
-					<timer_rate>10000</timer_rate>
-					<timer_slack>10000</timer_slack>
+					<min_sample_time>40000</min_sample_time>
+					<target_loads>80</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
-					<single_enter_load>50</single_enter_load>
+					<single_enter_load>200</single_enter_load>
 					<!-- Multi mode -->
-					<multi_enter_load>200</multi_enter_load>
-                    <io_is_busy>1</io_is_busy>
+					<multi_enter_load>800</multi_enter_load>
 				</governor_data>
 			</apollo>
 			<atlas>
@@ -308,16 +308,22 @@
 					<core4>false</core4>
 				</cores>
 			    <governor_data>
-                    <above_hispeed_delay>1</above_hispeed_delay>
+					<above_hispeed_delay>25000</above_hispeed_delay>
 					<go_hispeed_load>99</go_hispeed_load>
-					<target_loads>45</target_loads>
-					<timer_rate>10000</timer_rate>
-					<timer_slack>10000</timer_slack>
+					<min_sample_time>40000</min_sample_time>
+					<target_loads>80</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
-					<single_enter_load>50</single_enter_load>
+					<single_enter_load>200</single_enter_load>
+					<single_enter_time>179000</single_enter_time>
+					<single_exit_load>150</single_exit_load>
+					<single_exit_time>79000</single_exit_time>
 					<!-- Multi mode -->
-					<multi_enter_load>200</multi_enter_load>
-                    <io_is_busy>1</io_is_busy>
+					<multi_enter_load>800</multi_enter_load>
+					<multi_enter_time>59000</multi_enter_time>
+					<multi_exit_load>650</multi_exit_load>
+					<multi_exit_time>279000</multi_exit_time>
 				</governor_data>
 			</atlas>
 		</cpu>
@@ -388,16 +394,16 @@
 					<core4>true</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>1</above_hispeed_delay>
-					<go_hispeed_load>99</go_hispeed_load>
-					<target_loads>55</target_loads>
-					<timer_rate>10000</timer_rate>
-					<timer_slack>10000</timer_slack>
+					<above_hispeed_delay>22000</above_hispeed_delay>
+					<go_hispeed_load>95</go_hispeed_load>
+					<min_sample_time>40000</min_sample_time>
+					<target_loads>80</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
-					<single_enter_load>60</single_enter_load>
+					<single_enter_load>200</single_enter_load>
 					<!-- Multi mode -->
-					<multi_enter_load>260</multi_enter_load>
-                    <io_is_busy>1</io_is_busy>
+					<multi_enter_load>800</multi_enter_load>
 				</governor_data>
 			</apollo>
 			<atlas>
@@ -415,16 +421,22 @@
 					<core4>true</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>1</above_hispeed_delay>
-					<go_hispeed_load>99</go_hispeed_load>
-					<target_loads>55</target_loads>
-					<timer_rate>10000</timer_rate>
-					<timer_slack>10000</timer_slack>
+					<above_hispeed_delay>22000</above_hispeed_delay>
+					<go_hispeed_load>95</go_hispeed_load>
+					<min_sample_time>40000</min_sample_time>
+					<target_loads>80</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
-					<single_enter_load>60</single_enter_load>
+					<single_enter_load>200</single_enter_load>
+					<single_enter_time>179000</single_enter_time>
+					<single_exit_load>150</single_exit_load>
+					<single_exit_time>79000</single_exit_time>
 					<!-- Multi mode -->
-					<multi_enter_load>260</multi_enter_load>
-                    <io_is_busy>1</io_is_busy>
+					<multi_enter_load>800</multi_enter_load>
+					<multi_enter_time>59000</multi_enter_time>
+					<multi_exit_load>650</multi_exit_load>
+					<multi_exit_time>279000</multi_exit_time>
 				</governor_data>
 			</atlas>
 		</cpu>
@@ -496,16 +508,16 @@
 					<core4>true</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>0</above_hispeed_delay>
-					<go_hispeed_load>89</go_hispeed_load>
-					<target_loads>65</target_loads>
-					<timer_rate>10000</timer_rate>
-					<timer_slack>10000</timer_slack>
+					<above_hispeed_delay>19000</above_hispeed_delay>
+					<go_hispeed_load>93</go_hispeed_load>
+					<min_sample_time>40000</min_sample_time>
+					<target_loads>80</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
-					<single_enter_load>70</single_enter_load>
+					<single_enter_load>200</single_enter_load>
 					<!-- Multi mode -->
-					<multi_enter_load>300</multi_enter_load>
-                    <io_is_busy>1</io_is_busy>
+					<multi_enter_load>800</multi_enter_load>
 				</governor_data>
 			</apollo>
 			<atlas>
@@ -523,16 +535,22 @@
 					<core4>true</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>0</above_hispeed_delay>
-					<go_hispeed_load>89</go_hispeed_load>
-					<target_loads>65</target_loads>
-					<timer_rate>10000</timer_rate>
-					<timer_slack>10000</timer_slack>
+					<above_hispeed_delay>19000</above_hispeed_delay>
+					<go_hispeed_load>93</go_hispeed_load>
+					<min_sample_time>40000</min_sample_time>
+					<target_loads>80</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
-					<single_enter_load>70</single_enter_load>
+					<single_enter_load>200</single_enter_load>
+					<single_enter_time>179000</single_enter_time>
+					<single_exit_load>150</single_exit_load>
+					<single_exit_time>79000</single_exit_time>
 					<!-- Multi mode -->
-					<multi_enter_load>300</multi_enter_load>
-                    <io_is_busy>1</io_is_busy>
+					<multi_enter_load>800</multi_enter_load>
+					<multi_enter_time>59000</multi_enter_time>
+					<multi_exit_load>650</multi_exit_load>
+					<multi_exit_time>279000</multi_exit_time>
 				</governor_data>
 			</atlas>
 		</cpu>
@@ -601,9 +619,9 @@
 				</cores>
 				<governor_data>
 					<above_hispeed_delay>19000</above_hispeed_delay>
-					<go_hispeed_load>95</go_hispeed_load>
+					<go_hispeed_load>90</go_hispeed_load>
 					<min_sample_time>40000</min_sample_time>
-					<target_loads>85</target_loads>
+					<target_loads>80</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
@@ -628,15 +646,21 @@
 				</cores>
 				<governor_data>
 					<above_hispeed_delay>19000</above_hispeed_delay>
-					<go_hispeed_load>95</go_hispeed_load>
+					<go_hispeed_load>90</go_hispeed_load>
 					<min_sample_time>40000</min_sample_time>
-					<target_loads>85</target_loads>
+					<target_loads>80</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
 					<single_enter_load>200</single_enter_load>
+					<single_enter_time>179000</single_enter_time>
+					<single_exit_load>150</single_exit_load>
+					<single_exit_time>79000</single_exit_time>
 					<!-- Multi mode -->
 					<multi_enter_load>800</multi_enter_load>
+					<multi_enter_time>59000</multi_enter_time>
+					<multi_exit_load>650</multi_exit_load>
+					<multi_exit_time>279000</multi_exit_time>
 				</governor_data>
 			</atlas>
 		</cpu>
@@ -705,8 +729,8 @@
 				<governor_data>
 					<above_hispeed_delay>14000</above_hispeed_delay>
 					<go_hispeed_load>90</go_hispeed_load>
-					<min_sample_time>40000</min_sample_time>
-					<target_loads>75</target_loads>
+					<min_sample_time>35000</min_sample_time>
+					<target_loads>80</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
@@ -732,8 +756,8 @@
 				<governor_data>
 					<above_hispeed_delay>14000</above_hispeed_delay>
 					<go_hispeed_load>90</go_hispeed_load>
-					<min_sample_time>40000</min_sample_time>
-					<target_loads>75</target_loads>
+					<min_sample_time>35000</min_sample_time>
+					<target_loads>74</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
