@@ -83,7 +83,6 @@ Power::Power()
 
 	// enable all input-devices
 	setInputState(true);
-	setFingerprintState(true);
 
 	ALOGV("%s: exit;", __func__);
 }
@@ -523,49 +522,6 @@ void Power::setInputState(bool enabled) {
 	auto diff = end - begin;
 
 	ALOGV("%s: exit; took %lldms", __func__, diff.count());
-}
-
-void Power::setFingerprintState(bool enabled) {
-	/*
-	 * vfs7xxx power management interface:
-	 *
-	 * regulator: fp sensor's main GPIO regulation pins
-	 * sleep-pin: GPIO pin setting the current power-state
-	 * SMC: secure monitor (TrustZone) call
-	 *
-	 * 1 (true)  -> power on:
-	 *   * removing internal pm management block
-	 *   * resuming debugging timer work
-	 *   * powering on regulator
-	 *       * SMC to initialize FP sensor boot
-	 *       * delaying for ~2,95-3,00ms
-	 *       * powering on ldo_pin2 GPIO pin
-	 *       * powering on ldo_pin GPIO pin
-	 *   * delaying for 10ms
-	 *   * hard resetting GPIO sleep pin
-	 *       * setting sleep pin(0)
-	 *       * delaying for 1ms
-	 *       * setting sleep pin(1)
-	 *       * delaying for 5ms
-	 *   * delaying for 20ms
-	 *
-	 * 0 (false)  -> power off:
-	 *   * powering off regulator
-	 *       * powering off ldo_pin GPIO pin
-	 *       * powering off ldo_pin2 GPIO pin
-	 *       * SMC to finish FP sensor shutdown
-	 *   * setting GPIO sleep pin
-	 *       * setting sleep pin(0)
-	 *   * stopping debugging timer work
-	 *   * setting internal pm management block
-	 */
-	if (enabled) {
-		DEBUG_TIMING(fingerprint_wakelocks, Utils::write(POWER_FINGERPRINT_WAKELOCKS, true));
-		DEBUG_TIMING(fingerprint_pm, Utils::write(POWER_FINGERPRINT_PM, true));
-	} else {
-		DEBUG_TIMING(fingerprint_pm, Utils::write(POWER_FINGERPRINT_PM, false));
-		DEBUG_TIMING(fingerprint_wakelocks, Utils::write(POWER_FINGERPRINT_WAKELOCKS, false));
-	}
 }
 
 void Power::setDT2WState() {
