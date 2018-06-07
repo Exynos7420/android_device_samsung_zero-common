@@ -74,6 +74,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Camera
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_zero
 
 
 # Camera-shims
