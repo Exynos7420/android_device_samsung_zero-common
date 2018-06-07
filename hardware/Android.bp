@@ -1,5 +1,6 @@
 subdirs = [
     "vibrator",
+    "camera",
 ]
 
 cc_library_shared {
