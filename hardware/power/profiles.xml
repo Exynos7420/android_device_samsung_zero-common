@@ -274,7 +274,7 @@
 				<governor>interactive</governor>
 				<freq_min>200000</freq_min>
 				<freq_max>1000000</freq_max>
-				<freq_hispeed>800000</freq_hispeed>
+				<freq_hispeed>700000</freq_hispeed>
 				<freq_boost>0</freq_boost>
 				<cores>
 					<enabled>true</enabled>
@@ -284,10 +284,10 @@
 					<core4>true</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>25000</above_hispeed_delay>
+					<above_hispeed_delay>30000</above_hispeed_delay>
 					<go_hispeed_load>99</go_hispeed_load>
-					<min_sample_time>40000</min_sample_time>
-					<target_loads>80</target_loads>
+					<min_sample_time>50000</min_sample_time>
+					<target_loads>90</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
@@ -300,8 +300,8 @@
 				<enabled>true</enabled>
 				<governor>interactive</governor>
 				<freq_min>200000</freq_min>
-				<freq_max>1500000</freq_max>
-				<freq_hispeed>800000</freq_hispeed>
+				<freq_max>1400000</freq_max>
+				<freq_hispeed>700000</freq_hispeed>
 				<freq_boost>0</freq_boost>
 				<cores>
 					<enabled>true</enabled>
@@ -311,10 +311,10 @@
 					<core4>false</core4>
 				</cores>
 			    <governor_data>
-					<above_hispeed_delay>25000</above_hispeed_delay>
+					<above_hispeed_delay>30000</above_hispeed_delay>
 					<go_hispeed_load>99</go_hispeed_load>
-					<min_sample_time>40000</min_sample_time>
-					<target_loads>80</target_loads>
+					<min_sample_time>50000</min_sample_time>
+					<target_loads>90</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
@@ -349,7 +349,7 @@
 			<highspeed>
 				<enabled>true</enabled>
 				<freq>420</freq>
-				<load>95</load>
+				<load>99</load>
 			</highspeed>
 		</gpu>
 	    <hmp>
@@ -398,10 +398,10 @@
 					<core4>true</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>22000</above_hispeed_delay>
+					<above_hispeed_delay>25000</above_hispeed_delay>
 					<go_hispeed_load>95</go_hispeed_load>
-					<min_sample_time>40000</min_sample_time>
-					<target_loads>80</target_loads>
+					<min_sample_time>45000</min_sample_time>
+					<target_loads>85</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
@@ -413,7 +413,7 @@
 			<atlas>
 				<enabled>true</enabled>
 				<governor>interactive</governor>
-				<freq_min>400000</freq_min>
+				<freq_min>200000</freq_min>
 				<freq_max>1704000</freq_max>
 				<freq_hispeed>800000</freq_hispeed>
 				<freq_boost>0</freq_boost>
@@ -422,13 +422,13 @@
 					<core1>true</core1>
 					<core2>true</core2>
 					<core3>true</core3>
-					<core4>true</core4>
+					<core4>false</core4>
 				</cores>
 				<governor_data>
-					<above_hispeed_delay>22000</above_hispeed_delay>
+					<above_hispeed_delay>25000</above_hispeed_delay>
 					<go_hispeed_load>95</go_hispeed_load>
-					<min_sample_time>40000</min_sample_time>
-					<target_loads>80</target_loads>
+					<min_sample_time>45000</min_sample_time>
+					<target_loads>85</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
@@ -457,13 +457,13 @@
 			<enabled>true</enabled>
 			<dvfs>
 				<enabled>true</enabled>
-				<freq_min>160</freq_min>
+				<freq_min>100</freq_min>
 				<freq_max>700</freq_max>
 			</dvfs>
 
 			<highspeed>
 				<enabled>true</enabled>
-				<freq>540</freq>
+				<freq>420</freq>
 				<load>95</load>
 			</highspeed>
 		</gpu>
@@ -503,8 +503,8 @@
 				<governor>interactive</governor>
 				<freq_min>400000</freq_min>
 				<freq_max>1500000</freq_max>
-				<freq_hispeed>900000</freq_hispeed>
-				<freq_boost>900000</freq_boost>
+				<freq_hispeed>1000000</freq_hispeed>
+				<freq_boost>700000</freq_boost>
 				<cores>
 					<enabled>true</enabled>
 					<core1>true</core1>
@@ -530,8 +530,8 @@
 				<governor>interactive</governor>
 				<freq_min>400000</freq_min>
 				<freq_max>2100000</freq_max>
-				<freq_hispeed>900000</freq_hispeed>
-				<freq_boost>0</freq_boost>
+				<freq_hispeed>1000000</freq_hispeed>
+				<freq_boost>700000</freq_boost>
 				<cores>
 					<enabled>true</enabled>
 					<core1>true</core1>
@@ -578,7 +578,7 @@
 			<highspeed>
 				<enabled>true</enabled>
 				<freq>540</freq>
-				<load>90</load>
+				<load>95</load>
 			</highspeed>
 		</gpu>
 		<hmp>
@@ -615,7 +615,7 @@
 				<freq_min>400000</freq_min>
 				<freq_max>1500000</freq_max>
 				<freq_hispeed>1100000</freq_hispeed>
-				<freq_boost>900000</freq_boost>
+				<freq_boost>800000</freq_boost>
 				<cores>
 					<enabled>true</enabled>
 					<core1>true</core1>
@@ -642,7 +642,7 @@
 				<freq_min>600000</freq_min>
 				<freq_max>2100000</freq_max>
 				<freq_hispeed>1200000</freq_hispeed>
-				<freq_boost>900000</freq_boost>
+				<freq_boost>800000</freq_boost>
 				<cores>
 					<enabled>true</enabled>
 					<core1>true</core1>
@@ -725,7 +725,7 @@
 				<freq_min>400000</freq_min>
 				<freq_max>1500000</freq_max>
 				<freq_hispeed>1300000</freq_hispeed>
-				<freq_boost>1100000</freq_boost>
+				<freq_boost>900000</freq_boost>
 				<cores>
 					<enabled>true</enabled>
 					<core1>true</core1>
@@ -735,9 +735,9 @@
 				</cores>
 				<governor_data>
 					<above_hispeed_delay>14000</above_hispeed_delay>
-					<go_hispeed_load>90</go_hispeed_load>
+					<go_hispeed_load>87</go_hispeed_load>
 					<min_sample_time>35000</min_sample_time>
-					<target_loads>80</target_loads>
+					<target_loads>75</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 					<!-- Single mode -->
@@ -762,7 +762,7 @@
 				</cores>
 				<governor_data>
 					<above_hispeed_delay>14000</above_hispeed_delay>
-					<go_hispeed_load>90</go_hispeed_load>
+					<go_hispeed_load>87</go_hispeed_load>
 					<min_sample_time>35000</min_sample_time>
 					<target_loads>74</target_loads>
 					<timer_rate>20000</timer_rate>
