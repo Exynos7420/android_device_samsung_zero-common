@@ -43,7 +43,7 @@
 				<enabled>true</enabled>
 
 				<!-- {string} The governor used on this cluster -->
-				<governor>nexus</governor>
+				<governor>interactive</governor>
 
 				<!-- {number} Minimal frequency of this cluster -->
 				<freq_min>200000</freq_min>
@@ -79,18 +79,16 @@
 				</cores>
 
 				<governor_data>
-					<down_load>40</down_load>
-					<down_step>1</down_step>
-					<down_delay>0</down_delay>
-					<up_load>50</up_load>
-					<up_step>1</up_step>
-					<up_delay>0</up_delay>
-					<lpr_ratio>150</lpr_ratio>
-					<lpr_down_elevation>1</lpr_down_elevation>
-					<lpr_up_elevation>1</lpr_up_elevation>
-					<hispeed_delay>2</hispeed_delay>
-					<hispeed_load>99</hispeed_load>
-					<io_is_busy>0</io_is_busy>
+					<above_hispeed_delay>35000</above_hispeed_delay>
+					<go_hispeed_load>99</go_hispeed_load>
+					<min_sample_time>60000</min_sample_time>
+					<target_loads>90</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
+					<!-- Single mode -->
+					<single_enter_load>200</single_enter_load>
+					<!-- Multi mode -->
+					<multi_enter_load>800</multi_enter_load>
 				</governor_data>
 
 			</apollo>
@@ -101,7 +99,7 @@
 				<enabled>true</enabled>
 
 				<!-- {string} The governor used on this cluster -->
-				<governor>nexus</governor>
+				<governor>interactive</governor>
 
 				<!-- {number} Minimal frequency of this cluster -->
 				<freq_min>200000</freq_min>
@@ -137,18 +135,22 @@
 				</cores>
 
 				<governor_data>
-					<down_load>40</down_load>
-					<down_step>1</down_step>
-					<down_delay>0</down_delay>
-					<up_load>50</up_load>
-					<up_step>1</up_step>
-					<up_delay>0</up_delay>
-					<lpr_ratio>150</lpr_ratio>
-					<lpr_down_elevation>1</lpr_down_elevation>
-					<lpr_up_elevation>1</lpr_up_elevation>
-					<hispeed_delay>2</hispeed_delay>
-					<hispeed_load>99</hispeed_load>
-					<io_is_busy>0</io_is_busy>
+					<above_hispeed_delay>35000</above_hispeed_delay>
+					<go_hispeed_load>99</go_hispeed_load>
+					<min_sample_time>60000</min_sample_time>
+					<target_loads>90</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
+					<!-- Single mode -->
+					<single_enter_load>200</single_enter_load>
+					<single_enter_time>179000</single_enter_time>
+					<single_exit_load>150</single_exit_load>
+					<single_exit_time>79000</single_exit_time>
+					<!-- Multi mode -->
+					<multi_enter_load>800</multi_enter_load>
+					<multi_enter_time>59000</multi_enter_time>
+					<multi_exit_load>650</multi_exit_load>
+					<multi_exit_time>279000</multi_exit_time>
 				</governor_data>
 
 			</atlas>
