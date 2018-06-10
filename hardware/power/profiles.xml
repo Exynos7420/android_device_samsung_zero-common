@@ -168,9 +168,6 @@
 			<!-- {string} CPU-configuration for the "foreground"-cpuset -->
 			<foreground>0-3</foreground>
 
-			<!-- {string} CPU-configuration for the "foreground/boost"-cpuset -->
-			<foreground_boost>0-3</foreground_boost>
-
 			<!-- {string} CPU-configuration for the "background"-cpuset -->
 			<background>0-3</background>
 
@@ -336,7 +333,6 @@
 			<enabled>true</enabled>
 			<default>0-5</default>
 			<foreground>0-5</foreground>
-			<foreground_boost>2-5</foreground_boost>
 			<background>0-3</background>
 			<system_background>0-3</system_background>
 			<top_app>2-5</top_app>
@@ -450,7 +446,6 @@
 			<enabled>true</enabled>
 			<default>0-5</default>
 			<foreground>0-7</foreground>
-			<foreground_boost>2-5</foreground_boost>
 			<background>0-4</background>
 			<system_background>0-4</system_background>
 			<top_app>4-7</top_app>
@@ -565,7 +560,6 @@
 			<enabled>true</enabled>
 			<default>0-5</default>
 			<foreground>0-7</foreground>
-			<foreground_boost>4-7</foreground_boost>
 			<background>0-4</background>
 			<system_background>0-4</system_background>
 			<top_app>4-7</top_app>
@@ -676,7 +670,6 @@
 			<enabled>true</enabled>
 			<default>0-7</default>
 			<foreground>0-7</foreground>
-			<foreground_boost>4-7</foreground_boost>
 			<background>0,1,6,7</background>
 			<system_background>2,3,4,5</system_background>
 			<top_app>4-7</top_app>
@@ -788,7 +781,6 @@
 			<enabled>true</enabled>
 			<default>0-7</default>
 			<foreground>0-7</foreground>
-			<foreground_boost>4-7</foreground_boost>
 			<background>0,1,6,7</background>
 			<system_background>2,3,4,5</system_background>
 			<top_app>4-7</top_app>

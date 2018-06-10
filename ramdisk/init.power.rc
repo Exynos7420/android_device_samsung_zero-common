@@ -41,7 +41,6 @@ on boot
 
     # cpusets
     write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 4-7
     write /dev/cpuset/background/cpus 0-4
     write /dev/cpuset/system-background/cpus 0-4
     write /dev/cpuset/top-app/cpus 4-7
@@ -277,7 +276,6 @@ on boot
 
 # Setup cpusets with default values
     write /dev/cpuset/foreground/cpus          "0-7"
-    write /dev/cpuset/foreground/boost/cpus    "0-7"
     write /dev/cpuset/background/cpus          "0-7"
     write /dev/cpuset/system-background/cpus   "0-7"
     write /dev/cpuset/top-app/cpus             "0-7"
