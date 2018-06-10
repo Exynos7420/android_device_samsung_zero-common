@@ -92,8 +92,6 @@ struct SecPowerProfile {
 
 		string foreground;
 
-		string foreground_boost;
-
 		string background;
 
 		string system_background;
