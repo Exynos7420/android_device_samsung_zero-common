@@ -281,6 +281,10 @@ on boot
     write /dev/cpuset/top-app/cpus             "0-7"
     write /dev/cpuset/cpus                     "0-7"
 
+    # Kernel Workqueue
+	chown system system /sys/module/workqueue/parameters/power_efficient
+    chmod 0644 /sys/module/workqueue/parameters/power_efficient
+
     # CPU Idle
     chown system system /sys/module/cpuidle_exynos64/parameters/enable_mask
 
@@ -461,7 +465,3 @@ on property:ro.bootmode=charger
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
-
-# Kernel Workqueue
-	chown system system /sys/module/workqueue/parameters/power_efficient
-    chmod 0664 /sys/module/workqueue/parameters/power_efficient
