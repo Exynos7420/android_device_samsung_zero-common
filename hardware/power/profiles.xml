@@ -573,8 +573,8 @@
 			</dvfs>
 			<highspeed>
 				<enabled>true</enabled>
-				<freq>540</freq>
-				<load>95</load>
+				<freq>544</freq>
+				<load>90</load>
 			</highspeed>
 		</gpu>
 		<hmp>
