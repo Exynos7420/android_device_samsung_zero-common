@@ -153,6 +153,16 @@ struct SecPowerProfile {
 
 		bool enabled;
 
+		bool mode_toggle;
+
+		int timer_rate;
+
+	} slow;
+
+	struct {
+
+		bool enabled;
+
 		string tail;
 
 		string head;
