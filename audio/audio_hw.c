@@ -133,26 +133,6 @@ static struct pcm_device_profile pcm_device_capture_low_latency = {
     .devices = AUDIO_DEVICE_IN_BUILTIN_MIC|AUDIO_DEVICE_IN_WIRED_HEADSET|AUDIO_DEVICE_IN_BACK_MIC,
 };
 
-#ifdef SOUND_CAPTURE_LOOPBACK_AEC_DEVICE
-static struct pcm_device_profile pcm_device_capture_loopback_aec = {
-    .config = {
-        .channels = CAPTURE_DEFAULT_CHANNEL_COUNT,
-        .rate = CAPTURE_DEFAULT_SAMPLING_RATE,
-        .period_size = CAPTURE_PERIOD_SIZE,
-        .period_count = CAPTURE_PERIOD_COUNT,
-        .format = PCM_FORMAT_S16_LE,
-        .start_threshold = CAPTURE_START_THRESHOLD,
-        .stop_threshold = 0,
-        .silence_threshold = 0,
-        .avail_min = 0,
-    },
-    .card = SOUND_CARD,
-    .id = SOUND_CAPTURE_LOOPBACK_AEC_DEVICE,
-    .type = PCM_CAPTURE,
-    .devices = SND_DEVICE_IN_LOOPBACK_AEC,
-};
-#endif
-
 static struct pcm_device_profile pcm_device_capture_sco = {
     .config = {
         .channels = SCO_DEFAULT_CHANNEL_COUNT,
@@ -176,9 +156,6 @@ static struct pcm_device_profile * const pcm_devices[] = {
     &pcm_device_capture,
     &pcm_device_capture_low_latency,
     &pcm_device_capture_sco,
-#ifdef SOUND_CAPTURE_LOOPBACK_AEC_DEVICE
-    &pcm_device_capture_loopback_aec,
-#endif
     NULL,
 };
 
@@ -426,7 +403,6 @@ static const char * const device_table[SND_DEVICE_MAX] = {
     [SND_DEVICE_IN_CAMCORDER_MIC] = "camcorder-mic",
     [SND_DEVICE_IN_VOICE_REC_HEADSET_MIC] = "voice-rec-headset-mic",
     [SND_DEVICE_IN_VOICE_REC_MIC] = "voice-rec-mic",
-    [SND_DEVICE_IN_LOOPBACK_AEC] = "loopback-aec",
 };
 
 static struct mixer_card *adev_get_mixer_for_card(struct audio_device *adev, int card)
