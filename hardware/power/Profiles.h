@@ -107,6 +107,11 @@ struct SecPowerProfile {
 		bool boost;
 		bool semiboost;
 
+		bool power_migration;
+
+		bool active_down_migration;
+		bool aggressive_up_migration;
+
 	} hmp;
 
 	struct {
