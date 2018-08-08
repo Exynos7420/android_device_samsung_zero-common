@@ -2570,6 +2570,9 @@ static int out_set_format(struct audio_stream *stream, audio_format_t format)
 static int do_out_standby_l(struct stream_out *out)
 {
     int status = 0;
+#ifdef PREPROCESSING_ENABLED
+    struct audio_device *adev = out->dev;
+#endif
 
     out->standby = true;
     if (out->usecase != USECASE_AUDIO_PLAYBACK_OFFLOAD) {
