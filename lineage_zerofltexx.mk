@@ -16,18 +16,18 @@
 
 LOCAL_PATH := device/samsung/zerofltexx
 
-$(call inherit-product, $(LOCAL_PATH)/full_zerofltexx.mk)
-
-# Inherit from the common Open Source product configuration
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit common Lineage phone.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := lineage_zerofltexx
 PRODUCT_DEVICE := zerofltexx
 PRODUCT_MODEL := SM-G920F
-PRODUCT_BRAND := Samsung
+PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
