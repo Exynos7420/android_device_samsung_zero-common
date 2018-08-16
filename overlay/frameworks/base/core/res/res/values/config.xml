@@ -407,4 +407,9 @@ Add a comment to this line
         <item>SUPL_PORT=7275</item>
         <item>SUPL_MODE=1</item>
     </string-array>
+
+    <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
+         For this time after the screen turns on, the Power Manager
+         will not debounce light sensor readings -->
+    <integer name="config_lightSensorWarmupTime">200</integer>
 </resources>
