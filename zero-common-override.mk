@@ -25,9 +25,11 @@ __PRODUCT_TARGET_NAME := $(PRODUCT_NAME)
 PRODUCT_BUILD_PROP_OVERRIDES += \
 	BUILD_DISPLAY_ID=$(zero_build_descr) \
     PRIVATE_BUILD_DESC=$(zero_build_descr) \
-    BUILD_FINGERPRINT=$(zero_build_fingerprint) \
     BUILD_FINGERPRINT_FROM_FILE=$(zero_build_fingerprint) \
 	TARGET_BUILD_FLAVOR="$(zero_build_flavor)"
+
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := $(zero_build_fingerprint)
 
 # Set OTA-required properties in default.prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
