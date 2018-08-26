@@ -258,10 +258,6 @@ WIFI_DRIVER_FW_PATH_STA          := "/system/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
 
-# Workaround for non-working incall/callspeaker-mic
-RIL_SET_CALL_CLOCK_SYNC_WORKAROUND := true
-RIL_SET_TWO_MIC_CONTROL_WORKAROUND := true
-
 # inherit from the proprietary version
 -include vendor/samsung/zero-common/BoardConfigVendor.mk
 
