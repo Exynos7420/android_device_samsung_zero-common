@@ -333,7 +333,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
 
 # Synapse
-include device/samsung/zero-common/synapse/synapse.mk
+# include device/samsung/zero-common/synapse/synapse.mk
 
 # Stagefright-shims
 PRODUCT_PACKAGES += \
