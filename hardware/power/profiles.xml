@@ -313,11 +313,6 @@
 		<hmp>
 			<semiboost>true</semiboost>
 		</hmp>
-		<gpu>
-			<highspeed>
-				<freq>700</freq>
-			</highspeed>
-		</gpu>
         <ipa>
 			<control_temp>75</control_temp>
 		</ipa>
@@ -341,6 +336,9 @@
 			<dvfs>
 				<freq_min>420</freq_min>
 			</dvfs>
+            <highspeed>
+				<freq>700</freq>
+			</highspeed>
 		</gpu>
 	</bias_performance>
 
