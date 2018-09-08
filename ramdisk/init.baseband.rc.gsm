@@ -28,8 +28,35 @@ service cpboot-daemon /system/bin/cbd -d -t ss333 -b s -m l -P platform/15570000
     group radio cache inet misc audio sdcard_r sdcard_rw log shell
     seclabel u:r:cpboot-daemon:s0
 
-on property:persist.sys.cpboot=disable
+ on property:persist.sys.cpboot=disable
     stop cpboot-daemon
+
+#
+# RIL daemon for slot1
+#
+service ril-daemon /vendor/bin/hw/rild -c 1
+	class main
+	socket rild stream 660 system radio
+	socket sap_uim_socket1 stream 660 bluetooth bluetooth
+	socket rild-debug stream 660 system radio
+	user radio
+	group radio cache inet misc audio sdcard_r sdcard_rw log vpn system readproc wakelock qcom_diag
+	capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+	onrestart restart cpboot-daemon
+	disabled
+
+#
+# RIL daemon for slot2
+#
+service ril-daemon1 /vendor/bin/hw/rild -c 2 -s dsds
+	class main
+	socket rild2 stream 660 system radio
+	socket rild-debug2 stream 660 system radio
+	user radio
+	group radio cache inet misc audio sdcard_r sdcard_rw log vpn system readproc wakelock qcom_diag
+	capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+	onrestart restart cpboot-daemon
+	disabled
 
 #RIL diagexe for CP
 service DIAG-daemon /system/bin/diagexe
@@ -41,4 +68,3 @@ on property:ro.debuggable=1
 	write /sys/kernel/debug/tracing/buffer_size_kb 1408
 	write /sys/kernel/debug/tracing/set_event modem_if:mif_log
 	write /sys/kernel/debug/tracing/tracing_on 1
-
