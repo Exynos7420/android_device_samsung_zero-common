@@ -346,7 +346,6 @@ Add a comment to this line
          to reduce it to preserve the battery. Value of 100% means no scaling. -->
     <fraction name="config_screenAutoBrightnessDozeScaleFactor">50%</fraction>
 
-    <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
     <!-- The device supports freeform window management. Windows have title bars and can be moved
@@ -355,5 +354,11 @@ Add a comment to this line
          The duplication is necessary, because this information is used before the features are
          available to the system.-->
     <bool name="config_freeformWindowManagement">true</bool>
+
+    <!-- Whether or not swipe up gesture is enabled by default -->
+    <bool name="config_swipe_up_gesture_default">false</bool>
+
+    <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
+    <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
 </resources>
