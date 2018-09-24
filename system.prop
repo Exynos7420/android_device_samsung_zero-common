@@ -108,6 +108,7 @@ ro.sys.sdcardfs.legacy-mounting=1
 #
 
 wifi.interface=wlan0
+wifi.direct.interface=p2p-dev-wlan0
 
 #
 # USB
