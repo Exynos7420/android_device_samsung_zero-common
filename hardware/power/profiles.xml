@@ -29,7 +29,7 @@
 			<enabled>true</enabled>
 			<apollo>
 				<enabled>true</enabled>
-				<governor>interactive</governor>
+				<governor>nexus</governor>
 				<freq_min>200000</freq_min>
 				<freq_max>600000</freq_max>
 				<freq_hispeed>400000</freq_hispeed>
@@ -43,39 +43,24 @@
 				</cores>
 				<!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
-					<!-- Mode index -->
-					<param_index>0</param_index>
-
-					<above_hispeed_delay>35000</above_hispeed_delay>
-					<boost>0</boost>
-					<boostpulse_duration>40000</boostpulse_duration>
-					<enforced_mode>0</enforced_mode>
-					<go_hispeed_load>95</go_hispeed_load>
-					<io_is_busy>1</io_is_busy>
-					<min_sample_time>40000</min_sample_time>
-					<mode>0</mode>
-					<target_loads>75</target_loads>
-					<timer_rate>20000</timer_rate>
-					<timer_slack>20000</timer_slack>
-
-					<!-- Single mode -->
-					<single_cluster0_min_freq>0</single_cluster0_min_freq>
-					<single_enter_load>200</single_enter_load>
-					<single_enter_time>160000</single_enter_time>
-					<single_exit_load>90</single_exit_load>
-					<single_exit_time>80000</single_exit_time>
-
-                    <!-- Multi mode -->
-					<multi_cluster0_min_freq>0</multi_cluster0_min_freq>
-					<multi_enter_load>800</multi_enter_load>
-					<multi_enter_time>80000</multi_enter_time>
-					<multi_exit_load>360</multi_exit_load>
-                    <multi_exit_time>320000</multi_exit_time>
+					<down_load>40</down_load>
+					<down_step>1</down_step>
+					<down_delay>0</down_delay>
+					<up_load>50</up_load>
+					<up_step>1</up_step>
+					<up_delay>0</up_delay>
+					<lpr_down_ratio>0</lpr_down_ratio>
+					<lpr_down_elevation>0</lpr_down_elevation>
+					<lpr_up_ratio>0</lpr_up_ratio>
+					<lpr_up_elevation>0</lpr_up_elevation>
+					<hispeed_delay>2</hispeed_delay>
+					<hispeed_load>99</hispeed_load>
+					<io_is_busy>0</io_is_busy>
 				</governor_data>
 			</apollo>
 			<atlas>
 				<enabled>true</enabled>
-				<governor>interactive</governor>
+				<governor>nexus</governor>
 				<freq_min>200000</freq_min>
 				<freq_max>400000</freq_max>
 				<freq_hispeed>300000</freq_hispeed>
@@ -89,31 +74,19 @@
 				</cores>
 				<!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
-					<above_hispeed_delay>35000</above_hispeed_delay>
-					<boost>0</boost>
-					<boostpulse_duration>40000</boostpulse_duration>
-					<enforced_mode>0</enforced_mode>
-					<go_hispeed_load>97</go_hispeed_load>
-					<io_is_busy>1</io_is_busy>
-					<min_sample_time>40000</min_sample_time>
-					<mode>0</mode>
-					<target_loads>80</target_loads>
-					<timer_rate>20000</timer_rate>
-					<timer_slack>20000</timer_slack>
-
-					<!-- Single mode -->
-					<single_cluster0_min_freq>0</single_cluster0_min_freq>
-					<single_enter_load>95</single_enter_load>
-					<single_enter_time>199000</single_enter_time>
-					<single_exit_load>60</single_exit_load>
-					<single_exit_time>99000</single_exit_time>
-
-					<!-- Multi mode -->
-					<multi_cluster0_min_freq>0</multi_cluster0_min_freq>
-					<multi_enter_load>360</multi_enter_load>
-					<multi_enter_time>79000</multi_enter_time>
-					<multi_exit_load>240</multi_exit_load>
-					<multi_exit_time>299000</multi_exit_time>
+					<down_load>40</down_load>
+					<down_step>1</down_step>
+					<down_delay>0</down_delay>
+					<up_load>50</up_load>
+					<up_step>1</up_step>
+					<up_delay>0</up_delay>
+					<lpr_down_ratio>0</lpr_down_ratio>
+					<lpr_down_elevation>0</lpr_down_elevation>
+					<lpr_up_ratio>0</lpr_up_ratio>
+					<lpr_up_elevation>0</lpr_up_elevation>
+					<hispeed_delay>2</hispeed_delay>
+					<hispeed_load>99</hispeed_load>
+					<io_is_busy>0</io_is_busy>
 				</governor_data>
 			</atlas>
 		</cpu>
@@ -187,11 +160,41 @@
 				<freq_min>200000</freq_min>
 				<freq_max>1500000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
+                <governor_data>
+					<down_load>30</down_load>
+					<down_step>1</down_step>
+					<down_delay>0</down_delay>
+					<up_load>40</up_load>
+					<up_step>2</up_step>
+					<up_delay>0</up_delay>
+					<lpr_down_ratio>125</lpr_down_ratio>
+					<lpr_down_elevation>2</lpr_down_elevation>
+					<lpr_up_ratio>125</lpr_up_ratio>
+					<lpr_up_elevation>2</lpr_up_elevation>
+					<hispeed_delay>0</hispeed_delay>
+					<hispeed_load>89</hispeed_load>
+					<io_is_busy>1</io_is_busy>
+				</governor_data>
 			</apollo>
 			<atlas>
 				<freq_min>200000</freq_min>
 				<freq_max>1704000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
+                <governor_data>
+					<down_load>40</down_load>
+					<down_step>1</down_step>
+					<down_delay>0</down_delay>
+					<up_load>50</up_load>
+					<up_step>1</up_step>
+					<up_delay>0</up_delay>
+					<lpr_down_ratio>125</lpr_down_ratio>
+					<lpr_down_elevation>2</lpr_down_elevation>
+					<lpr_up_ratio>125</lpr_up_ratio>
+					<lpr_up_elevation>2</lpr_up_elevation>
+					<hispeed_delay>0</hispeed_delay>
+					<hispeed_load>89</hispeed_load>
+					<io_is_busy>1</io_is_busy>
+				</governor_data>
 			</atlas>
 		</cpu>
 		<gpu>
@@ -216,7 +219,6 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-				<freq_min>400000</freq_min>
 				<freq_hispeed>900000</freq_hispeed>
 			</apollo>
 			<atlas>
@@ -243,6 +245,8 @@
 		<cpu>
 			<enabled>true</enabled>
 			<apollo>
+                <freq_min>400000</freq_min>
+                <governor>interactive</governor>
 				<freq_boost>1500000</freq_boost>
                 <!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
@@ -278,6 +282,7 @@
 			</apollo>
 			<atlas>
 				<freq_boost>0</freq_boost>
+                <governor>interactive</governor>
                 <governor_data>
 					<!-- Mode index -->
 					<param_index>0</param_index>
