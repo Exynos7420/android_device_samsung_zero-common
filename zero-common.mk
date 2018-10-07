@@ -214,9 +214,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
 
-# MDNIE
-# PRODUCT_PACKAGES += \
-#    AdvancedDisplay
 
 # Memory
 PRODUCT_PACKAGES += \
@@ -317,7 +314,6 @@ PRODUCT_PACKAGES += \
 
 # Samsung
 PRODUCT_PACKAGES += \
-    HealthService \
     SamsungServiceMode
 
 # seccomp
@@ -328,9 +324,6 @@ PRODUCT_COPY_FILES += \
 # Sensorhub
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
-
-# Synapse
-# include device/samsung/zero-common/synapse/synapse.mk
 
 # Stagefright-shims
 PRODUCT_PACKAGES += \
