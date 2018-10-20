@@ -41,6 +41,14 @@ ro.ril.hsxpa=1
 ro.ril.telephony.mqanelements=6
 ro.ril.gprsclass=10
 
+# read single/dual-SIM properties
+import /vendor/etc/properties/radio.prop
+import /efs/factory.prop
+
+# read model properties
+import /init.rilchip.prop
+
+
 #
 # OMX
 #
