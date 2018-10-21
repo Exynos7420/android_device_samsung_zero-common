@@ -36,9 +36,7 @@ function error {
 }
 
 function debug {
-	if [ ! -z $RILCHIP_DEBUG ]; then
-		log "D" "$1"
-	fi
+	log "D" "$1"
 }
 
 function svc_start {
@@ -52,7 +50,7 @@ function svc_start {
 }
 
 function svc_stop {
-	if [ "$(getprop init.svc.$1)" == "stopped" ]; then
+	if [[ "$(getprop init.svc.$1)" == "stopped" ]] || [[ "$(getprop init.svc.$1)" == "" ]]; then
 		warn "failed to stop $1: already stopped!"
 		return 0
 	fi
@@ -67,16 +65,22 @@ function svc_status {
 
 debug "rilchip command: \"$RILCHIP_STATE\""
 
+if [ "$(getprop ro.boot.baseband)" == "mdm2" ]; then
+	IS_QC_DEVICE=1
+else
+	IS_QC_DEVICE=0
+fi
+debug "baseband: \"$(getprop ro.boot.baseband)\""
+
+if [ ! -f /proc/simslot_count ]; then
+	error "cannot find /proc/simslot_count, assuming 1"
+	SIMSLOT_COUNT=1
+else
+	SIMSLOT_COUNT=$(cat /proc/simslot_count)
+fi
+debug "simslot count: $SIMSLOT_COUNT"
+
 if [ "$RILCHIP_STATE" == "init" ]; then
-
-	if [ ! -f /proc/simslot_count ]; then
-		error "cannot find /proc/simslot_count, assuming 1"
-		SIMSLOT_COUNT=1
-	else
-		SIMSLOT_COUNT=$(cat /proc/simslot_count)
-	fi
-
-	debug "SIMSLOT_COUNT = $SIMSLOT_COUNT"
 
 	if [ "$SIMSLOT_COUNT" == "1" ]; then
 		# RIL configuration
@@ -95,29 +99,20 @@ elif [ "$RILCHIP_STATE" == "late-init" ]; then
 	NORIL=$(getprop ro.ril.noril)
 
 	# If RIL is disabled, stop everything
-	if [ "$NORIL" == "1" ] || ["$NORIL" == "yes" ]; then
+	if [[ "$NORIL" == "1" ]] || [[ "$NORIL" == "yes" ]] || [[ $IS_QC_DEVICE == 1 ]]; then
 		/system/bin/sh $0 stop
 	fi
 
 elif [ "$RILCHIP_STATE" == "start" ]; then
 
-	if [ ! -f /proc/simslot_count ]; then
-		error "cannot find /proc/simslot_count, assuming 1"
-		SIMSLOT_COUNT=1
-	else
-		SIMSLOT_COUNT=$(cat /proc/simslot_count)
-	fi
-
-	debug "SIMSLOT_COUNT = $SIMSLOT_COUNT"
-
 	# on QC-modem devices we need to control other services too
-	if [ -f /system/bin/qmuxd ]; then
+	if [ $IS_QC_DEVICE == 1 ]; then
 		svc_start qmuxd
 		svc_start mdm_helper_proxy
+	else
+		# start modem boot daemon (not needed on QC-devices)
+		svc_start cpboot-daemon
 	fi
-
-	# start modem boot daemon
-	svc_start cpboot-daemon
 
 	# start slot1 daemon
 	svc_start ril-daemon
@@ -129,23 +124,14 @@ elif [ "$RILCHIP_STATE" == "start" ]; then
 
 elif [ "$RILCHIP_STATE" == "stop" ]; then
 
-	if [ ! -f /proc/simslot_count ]; then
-		error "cannot find /proc/simslot_count, assuming 1"
-		SIMSLOT_COUNT=1
-	else
-		SIMSLOT_COUNT=$(cat /proc/simslot_count)
-	fi
-
-	debug "SIMSLOT_COUNT = $SIMSLOT_COUNT"
-
 	# on QC-modem devices we need to control other services too
-	if [ -f /system/bin/qmuxd ]; then
+	if [ $IS_QC_DEVICE == 1 ]; then
 		svc_stop qmuxd
 		svc_stop mdm_helper_proxy
+	else
+		# stop modem boot daemon (not needed on QC-devices)
+		svc_stop cpboot-daemon
 	fi
-
-	# stop modem boot daemon
-	svc_stop cpboot-daemon
 
 	# stop slot1 daemon
 	svc_stop ril-daemon
@@ -172,23 +158,14 @@ elif [ "$RILCHIP_STATE" == "restart" ]; then
 
 elif [ "$RILCHIP_STATE" == "status" ]; then
 
-	if [ ! -f /proc/simslot_count ]; then
-		error "cannot find /proc/simslot_count, assuming 1"
-		SIMSLOT_COUNT=1
-	else
-		SIMSLOT_COUNT=$(cat /proc/simslot_count)
-	fi
-
-	debug "SIMSLOT_COUNT = $SIMSLOT_COUNT"
-
 	# dump QC-modem daemons
-	if [ -f /system/bin/qmuxd ]; then
+	if [ $IS_QC_DEVICE == 1 ]; then
 		svc_status qmuxd
 		svc_status mdm_helper_proxy
+	else
+		# dump modem boot daemon (not needed on QC-devices)
+		svc_status cpboot-daemon
 	fi
-
-	# dump modem boot daemon
-	svc_status cpboot-daemon
 
 	# dump slot1 daemon
 	svc_status ril-daemon

@@ -299,9 +299,9 @@ PRODUCT_PACKAGES += \
     init.samsungexynos7420.usb.rc \
     init.wifi.rc \
     ueventd.samsungexynos7420.rc \
-    init.carrier.rc \
     init.rilchip.rc \
     init.rilchip.sh \
+    init.rilchip.prop
 
 # RenderScript
 PRODUCT_PACKAGES += \

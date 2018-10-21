@@ -352,12 +352,12 @@ void Profiles::loadProfileImpl(SecPowerProfile *profile, xmlXPathContext *ctx, c
 		}
 	}
 
-	if (profile->cpusets.enabled) {
-		profile->cpusets.defaults          = XML_GET("cpusets/default", "0-7");
-		profile->cpusets.foreground        = XML_GET("cpusets/foreground", "0-7");
-		profile->cpusets.background        = XML_GET("cpusets/background", "0-7");
-		profile->cpusets.system_background = XML_GET("cpusets/system_background", "0-7");
-		profile->cpusets.top_app           = XML_GET("cpusets/top_app", "0-7");
+	if (profile->cpusets.enabled) { 
+		PROFILE_SET(cpusets, defaults,          "cpusets/default",           "0-7");
+		PROFILE_SET(cpusets, foreground,        "cpusets/foreground",        "0-7");
+		PROFILE_SET(cpusets, background,        "cpusets/background",        "0-7");
+		PROFILE_SET(cpusets, system_background, "cpusets/system_background", "0-7");
+		PROFILE_SET(cpusets, top_app,           "cpusets/top_app",           "0-7");
 	}
 
 	if (profile->hmp.enabled) {

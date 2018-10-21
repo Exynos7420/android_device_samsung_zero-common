@@ -339,7 +339,7 @@
 		</hmp>
 		<gpu>
 			<dvfs>
-				<freq_min>420</freq_min>
+				<freq_min>266</freq_min>
 			</dvfs>
             <highspeed>
 				<freq>700</freq>

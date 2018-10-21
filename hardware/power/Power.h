@@ -41,8 +41,6 @@ using std::ostringstream;
 #define POWER_DT2W_ENABLED                "/sys/class/dt2w/enabled"
 #define POWER_TOUCHKEYS_ENABLED           "/sys/class/sec/sec_touchkey/input/enabled"
 #define POWER_TOUCHKEYS_BRIGHTNESS        "/sys/class/sec/sec_touchkey/brightness"
-#define POWER_FINGERPRINT_PM			  "/sys/class/fingerprint/fingerprint/pm"
-#define POWER_FINGERPRINT_WAKELOCKS       "/sys/class/fingerprint/fingerprint/wakelocks"
 
 #define POWER_TOUCHSCREEN_NAME            "/sys/class/input/input1/name"
 #define POWER_TOUCHSCREEN_NAME_EXPECT     "sec_touchscreen"

@@ -75,14 +75,6 @@ LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE            := init.carrier.rc
-LOCAL_MODULE_TAGS       := optional eng
-LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := init.carrier.rc
-LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE            := init.rilchip.rc
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
@@ -95,5 +87,17 @@ LOCAL_MODULE            := init.rilchip.sh
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
 LOCAL_SRC_FILES         := init.rilchip.sh
+LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE            := init.rilchip.prop
+LOCAL_MODULE_TAGS       := optional eng
+LOCAL_MODULE_CLASS      := ETC
+  ifneq ($(filter zerofltespr zeroltespr,$(TARGET_DEVICE)),)
+    LOCAL_SRC_FILES       := init.rilchip.prop.cdma
+  else
+    LOCAL_SRC_FILES       := init.rilchip.prop.gsm
+  endif
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
