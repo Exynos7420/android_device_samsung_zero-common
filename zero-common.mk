@@ -102,7 +102,7 @@ PRODUCT_PACKAGES += \
 
 # Browser
 PRODUCT_PACKAGES += \
-    Jelly
+    Chromium
 
 # Camera
 PRODUCT_PACKAGES += \
