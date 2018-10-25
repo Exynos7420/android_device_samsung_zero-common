@@ -292,6 +292,7 @@ TARGET_SYSTEM_PROP += device/samsung/zero-common/system.prop
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
     init.baseband.rc \
+    init.battery.rc \
     init.gps.rc \
     init.power.rc \
     init.samsungexynos7420.rc \
