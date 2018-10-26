@@ -115,7 +115,7 @@
 # daemons
 /system/bin/mcDriverDaemon   u:object_r:tee_exec:s0
 /system/bin/macloader        u:object_r:macloader_exec:s0
-/sbin/cbd                    u:object_r:cpboot-daemon_exec:s0
+/system/bin/cbd                    u:object_r:cpboot-daemon_exec:s0
 /system/bin/modemloader      u:object_r:modemloader_exec:s0
 /system/bin/sensorhubservice u:object_r:sensorhubservice_exec:s0
 /system/bin/wifiloader       u:object_r:wifiloader_exec:s0
@@ -142,7 +142,9 @@
 /sys/devices/system/cpu/cpu[0-9]*/cpufreq/scaling_max_freq       u:object_r:power_hal_sysfs:s0
 /sys/devices/system/cpu/cpu[0-9]*/cpufreq/scaling_min_freq       u:object_r:power_hal_sysfs:s0
 /sys/devices/system/cpu/cpu[0-9]*/cpufreq/interactive(/.*)?      u:object_r:power_hal_sysfs:s0
+/sys/devices/system/cpu/cpu[0-9]*/cpufreq/nexus(/.*)?            u:object_r:power_hal_sysfs:s0
 /sys/power/enable_dm_hotplug                                     u:object_r:power_hal_sysfs:s0
+/sys/class/input_booster(/.*)                                    u:object_r:power_hal_sysfs:s0
 /data/power(/.*)                                                 u:object_r:power_hal_data_files:s0
 
 # audioserver libraries
