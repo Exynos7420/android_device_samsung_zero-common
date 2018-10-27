@@ -208,3 +208,7 @@ on boot
 
     # CPU Idle
     chown system system /sys/module/cpuidle_exynos64/parameters/enable_mask
+
+    # DT2W Permissions
+    chown system system /sys/class/dt2w/enabled
+    chmod 0644 /sys/class/dt2w/enabled

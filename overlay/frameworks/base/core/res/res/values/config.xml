@@ -345,4 +345,8 @@ Add a comment to this line
     <!-- If we allow automatic adjustment of screen brightness while dozing, how many times we want
          to reduce it to preserve the battery. Value of 100% means no scaling. -->
     <fraction name="config_screenAutoBrightnessDozeScaleFactor">50%</fraction>
+
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
+
 </resources>
