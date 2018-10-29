@@ -207,20 +207,6 @@ on post-fs-data
     chmod 0775 /efs/bluetooth
 
 on boot
-
-    # DRM directory creation
-    mkdir /system/etc/security/.drm 0775
-    chown root root /system/etc/security/.drm
-    chmod 0775 /system/etc/security/.drm
-
-    # Added drm folder to copy drm plugins
-    mkdir /system/lib/drm 0775
-    chown root root /system/lib/drm
-    chmod 0775 /system/lib/drm
-	
-    mkdir /system/lib64/drm 0775
-    chown root root /system/lib64/drm
-    chmod 0775 /system/lib64/drm
     
     # Use higher control-temperature for IPA (default: 45)
     write /sys/power/ipa/control_temp 65
