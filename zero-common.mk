@@ -100,10 +100,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
 	libbt-vendor
 
-# Browser
-PRODUCT_PACKAGES += \
-    Chromium
-
 # Camera
 PRODUCT_PACKAGES += \
     libexynoscamera_shim \
@@ -133,6 +129,12 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     ZeroDoze
+
+##################
+# F-Droid
+PRODUCT_PACKAGES += \
+    FDroid \
+FDroidPrivilegedExtension
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
