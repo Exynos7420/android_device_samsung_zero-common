@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 TeamNexus
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,15 +16,4 @@
 
 LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE               := FDroid
-LOCAL_SRC_FILES            := $(LOCAL_MODULE).apk
-LOCAL_MODULE_TAGS          := optional
-LOCAL_MODULE_CLASS         := APPS
-LOCAL_MODULE_SUFFIX        := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_PRIVILEGED_MODULE    := true
-LOCAL_BUILT_MODULE_STEM    := package.apk
-LOCAL_OVERRIDES_PACKAGES   := Jelly
-LOCAL_CERTIFICATE          := PRESIGNED
-LOCAL_DEX_PREOPT           := false
-include $(BUILD_PREBUILT)
+include $(call all-makefiles-under,$(LOCAL_PATH))
