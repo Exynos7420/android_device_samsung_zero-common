@@ -41,18 +41,18 @@ on boot
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
-    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
     chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
     chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
     chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq
-    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
-    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
-    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq
 
     # change permissions for all cpusets we touch at runtime
     chown system system /dev/cpuset/cpus
@@ -131,6 +131,12 @@ on boot
     chmod 0660 /sys/kernel/hmp/up_threshold
     chown system system /sys/kernel/hmp/down_threshold
     chmod 0660 /sys/kernel/hmp/down_threshold
+
+    # HMP Little Packing
+    chown system system /sys/kernel/hmp/packing_enable
+    chmod 0660 /sys/kernel/hmp/packing_enable
+    chown system system /sys/kernel/hmp/packing_limit
+    chmod 0660 /sys/kernel/hmp/packing_limit
 
     # Assume HMP uses shared cpufreq policy for all LITTLE CPUs
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
