@@ -33,6 +33,7 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53.a57
+TARGET_NR_CPUS := 8
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
@@ -47,12 +48,15 @@ BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := universal7420
 TARGET_NO_BOOTLOADER := true
 
 # Charger
+WITH_LINEAGE_CHARGER := false
 BACKLIGHT_PATH := /sys/devices/13900000.dsim/backlight/panel/brightness
 BOARD_BATTERY_DEVICE_NAME := battery
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -84,9 +88,23 @@ USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 BOARD_USES_VIRTUAL_DISPLAY := true
 
+# Gralloc
+TARGET_USES_GRALLOC1_ADAPTER := true
+
 # (G)SCALER
 BOARD_USES_SCALER := true
 BOARD_USES_DT := true
+
+## ION
+TARGET_USES_ION := true
+
+##
+## Samsung LSI Graphics
+##
+### Buffers
+BOARD_USE_ANB_OUTBUF_SHARE := true
+BOARD_USE_IMPROVED_BUFFER := true
+BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 
 # GPS-shims
 TARGET_LD_SHIM_LIBS += \
@@ -98,7 +116,6 @@ BOARD_HARDWARE_CLASS += device/samsung/zero-common/lineagehw
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := false
-BOARD_USES_VPP := true
 
 # Renderscript
 BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53.a57
@@ -109,7 +126,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/zero-common/releasetools
 
 # HDMI
 BOARD_HDMI_INCAPABLE := true
-BOARD_USES_GSC_VIDEO := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sec
@@ -149,6 +165,14 @@ TARGET_OMX_LEGACY_RESCALING := true
 BOARD_USE_DMA_BUF := true
 BOARD_USE_METADATABUFFERTYPE := true
 # BOARD_USE_STOREMETADATA := true  -- not working due to invalid buffer handles
+
+### Others
+BOARD_USE_CSC_HW := false
+BOARD_USE_GSC_RGB_ENCODER := true
+BOARD_USE_QOS_CTRL := false
+BOARD_USE_S3D_SUPPORT := false
+BOARD_USES_GSC_VIDEO := true
+BOARD_USES_VIRTUAL_DISPLAY := true
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -230,10 +254,6 @@ BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
 -include device/samsung/zero-common/twrp.mk
 endif
-
-# Bootanimation Dimensions
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1440
 
 # WFD
 BOARD_USES_WFD := true
