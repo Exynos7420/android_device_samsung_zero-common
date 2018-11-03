@@ -146,8 +146,3 @@
 /sys/power/enable_dm_hotplug                                     u:object_r:power_hal_sysfs:s0
 /sys/class/input_booster(/.*)                                    u:object_r:power_hal_sysfs:s0
 /data/power(/.*)                                                 u:object_r:power_hal_data_files:s0
-
-# audioserver libraries
-/system/lib/libaudio-ril.so                         -- u:object_r:audioserver_libraries:s0
-/system/lib/lib_soundaliveresampler.so              -- u:object_r:audioserver_libraries:s0
-/system/lib/lib_SamsungRec_V04013_WNR004.so         -- u:object_r:audioserver_libraries:s0
