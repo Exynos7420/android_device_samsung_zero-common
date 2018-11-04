@@ -134,7 +134,7 @@ PRODUCT_PACKAGES += \
 # F-Droid
 PRODUCT_PACKAGES += \
     FDroid \
-FDroidPrivilegedExtension
+    F-DroidPrivilegedExtension
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
