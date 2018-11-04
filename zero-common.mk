@@ -376,3 +376,13 @@ $(call inherit-product-if-exists, vendor/samsung/zero-private/zero-private-vendo
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.mk)
+
+##################
+# Superuser
+ifneq (,$(wildcard vendor/lineage/))
+PRODUCT_PACKAGES += \
+    su
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/su/superuser.rc:system/etc/init/superuser.rc
+endif
