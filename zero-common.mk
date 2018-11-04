@@ -258,16 +258,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 device/samsung/zero-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
 
-#
 # LiveDisplay
-#
-## Packages
 PRODUCT_PACKAGES += \
-	vendor.lineage.livedisplay-V1.0-java
+    vendor.lineage.livedisplay@1.0-service-sdm \
+    vendor.lineage.livedisplay-V1.0-java
 
-## Frameworks
 PRODUCT_BOOT_JARS += \
-	vendor.lineage.livedisplay-V1.0-java
+    vendor.lineage.livedisplay-V1.0-java
 	
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
