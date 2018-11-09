@@ -54,6 +54,14 @@
 #endif
 #endif
 
+/* RIL initialization */
+/*
+ * If you encounter issues like non-received WB-AMR callbacks,
+ * you may consider enabling this switch to delay the audioserver
+ * boot-process until a RIL connection was established.
+ */
+// #define RIL_OPEN_SYNCHRONOUS
+
 /* Unusupported
 #define SOUND_CAPTURE_LOOPBACK_AEC_DEVICE 1
 #define SOUND_CAPTURE_HOTWORD_DEVICE 0

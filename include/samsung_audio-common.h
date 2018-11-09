@@ -19,6 +19,7 @@
 #define SAMSUNG_AUDIO_COMMON_H
 
 #include <zero-helpers.h>
+#include <telephony/ril.h>
 
 /*
  * Sound card specific defines.
@@ -47,13 +48,11 @@
 #define SOUND_CAPTURE_VOICE_DEVICE 1
 
 /* Wideband AMR callback */
-#ifndef RIL_UNSOL_SNDMGR_WB_AMR_REPORT
-#ifdef RIL_UNSOL_WB_AMR_STATE
+#ifdef RIL_UNSOL_SNDMGR_WB_AMR_REPORT
+  #undef RIL_UNSOL_SNDMGR_WB_AMR_REPORT
+#endif
+
 #define RIL_UNSOL_SNDMGR_WB_AMR_REPORT RIL_UNSOL_WB_AMR_STATE
-#else
-#define RIL_UNSOL_SNDMGR_WB_AMR_REPORT 0
-#endif
-#endif
 
 /* DSP offload */
 #define SOUND_COMPRESS_OFFLOAD_DEVICE 11
@@ -116,11 +115,14 @@ static bool zero_audio_supports_audience() {
 __maybe_unused
 static bool zero_audio_select_mixer_paths(char *path) {
 	if (AUDIENCE_SUPPORTED())
-		strcpy(path, "/vendor/etc/mixer_paths_%d-audience.xml");
+		strcpy(path, "/vendor/etc/mixer_paths-audience.xml");
 	else
-		strcpy(path, "/vendor/etc/mixer_paths_%d.xml");
+		strcpy(path, "/vendor/etc/mixer_paths.xml");
 
 	return true;
 }
+
+#define MIXER_PATH_MAX_LENGTH 255
+#define MIXER_XML_PATH "mixer_paths.xml" 
 
 #endif // SAMSUNG_AUDIO_COMMON_H

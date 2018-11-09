@@ -31,41 +31,46 @@
 #define VOLUME_STEPS_DEFAULT  "5"
 #define VOLUME_STEPS_PROPERTY "ro.config.vc_call_vol_steps"
 
-/* Audio WB AMR callback */
-/*
- * TODO:
- * struct audio_device {
- *     HRilClient client;
- *     void *data
- * }
- * static struct audio_device _audio_devices[64];
- *
- * When registering a call back we should store it in the array and when
- * the callback is triggered find the data pointer based on the client
- * passed in.
- */
-static ril_wb_amr_callback _wb_amr_callback;
-static void *_wb_amr_data = NULL;
+#define RIL_MAX_WB_AMR_CALLBACK_CLIENTS  4
+typedef struct ril_wb_amr_client
+{
+    HRilClient client;
+    ril_wb_amr_callback callback;
+    void *data;
+} ril_wb_amr_client_t;
+
+static ril_wb_amr_client_t _wb_amr_clients[RIL_MAX_WB_AMR_CALLBACK_CLIENTS];
 
 /* This is the callback function that the RIL uses to
-set the wideband AMR state */
+   set the wideband AMR state */
 static int ril_internal_wb_amr_callback(HRilClient client __unused,
                                         const void *data,
                                         size_t datalen)
 {
-    int wb_amr_type = 0;
+    int wb_amr_type = 0, i;
+    ril_wb_amr_client_t *wb_amr_client = NULL;
 
-    if (_wb_amr_data == NULL || _wb_amr_callback == NULL) {
-        return -1;
+    for (i = 0; i < RIL_MAX_WB_AMR_CALLBACK_CLIENTS; i++) {
+        if (_wb_amr_clients[i].client == client) {
+            wb_amr_client = &_wb_amr_clients[i];
+            break;
+        }
+    }
+
+    if (!wb_amr_client) {
+        ALOGE("%s: no matching WB_AMR callback client found", __func__);
+        return -ENOENT;
     }
 
     if (datalen != 1) {
+        ALOGE("%s: datalen(%zd) does not match expected size(1)", __func__, datalen);
         return -1;
     }
 
     wb_amr_type = *((int *)data);
+    ALOGI("%s: wb_amr_type = %d", __func__, wb_amr_type);
 
-    _wb_amr_callback(_wb_amr_data, wb_amr_type);
+    wb_amr_client->callback(wb_amr_client->data, wb_amr_type);
 
     return 0;
 }
@@ -95,9 +100,27 @@ static int ril_connect_if_required(struct ril_handle *ril)
     return 0;
 }
 
+static void *ril_connect(void *data)
+{
+    struct ril_handle *ril = (struct ril_handle *)data;
+    int rc;
+
+    do {
+        rc = ril_connect_if_required(ril);
+        if (rc != 0) {
+            ALOGE("%s: Failed to connect to RIL (%s), retrying...", __func__, strerror(rc));
+            sleep(1);
+        }
+    } while (rc != 0);
+
+    ALOGI("%s: connected to RIL!!", __func__);
+    return NULL;
+}
+
 int ril_open(struct ril_handle *ril)
 {
     char property[PROPERTY_VALUE_MAX];
+    int rc, i;
 
     if (ril == NULL) {
         return -1;
@@ -107,6 +130,10 @@ int ril_open(struct ril_handle *ril)
     if (ril->client == NULL) {
         ALOGE("OpenClient_RILD() failed");
         return -1;
+    }
+
+    for (i = 0; i < RIL_MAX_WB_AMR_CALLBACK_CLIENTS; i++) {
+        memset(&_wb_amr_clients[i], 0, sizeof(ril_wb_amr_client_t));
     }
 
     property_get(VOLUME_STEPS_PROPERTY, property, VOLUME_STEPS_DEFAULT);
@@ -120,15 +147,33 @@ int ril_open(struct ril_handle *ril)
         ril->volume_steps_max = atoi(VOLUME_STEPS_DEFAULT);
     }
 
+#ifndef RIL_OPEN_SYNCHRONOUS
+    rc = pthread_create(&ril->rilConnThread, NULL, ril_connect, ril);
+    if (rc)
+#endif
+    {
+        /*
+         * Legacy operation:
+         *   If the device does not properly support connecting to the RIL
+         *   asynchronously, the connection will be done synchronously. Be cautious
+         *   as this extends the total boot for several seconds.
+         */
+        ril_connect((void *)ril);
+    }
+
     return 0;
 }
 
 int ril_close(struct ril_handle *ril)
 {
-    int rc;
+    int rc, i;
 
     if (ril == NULL || ril->client == NULL) {
         return -1;
+    }
+
+    for (i = 0; i < RIL_MAX_WB_AMR_CALLBACK_CLIENTS; i++) {
+        memset(&_wb_amr_clients[i], 0, sizeof(ril_wb_amr_client_t));
     }
 
     rc = Disconnect_RILD(ril->client);
@@ -151,19 +196,29 @@ int ril_set_wb_amr_callback(struct ril_handle *ril,
                             ril_wb_amr_callback fn,
                             void *data)
 {
-    int rc;
+    int rc, i;
+    ril_wb_amr_client_t *wb_amr_client = NULL;
 
     if (fn == NULL || data == NULL) {
         return -1;
     }
 
-    _wb_amr_callback = fn;
-    _wb_amr_data = data;
+    for (i = 0; i < RIL_MAX_WB_AMR_CALLBACK_CLIENTS; i++) {
+        if (!_wb_amr_clients[i].client) {
+            wb_amr_client = &_wb_amr_clients[i];
+            break;
+        }
+    }
+
+    if (!wb_amr_client) {
+        ALOGE("%s: could not find unassigned WB_AMR callback client", __func__);
+        return -EAGAIN;
+    }
 
     ALOGV("%s: RegisterUnsolicitedHandler(%d, %p)",
           __func__,
           RIL_UNSOL_SNDMGR_WB_AMR_REPORT,
-          ril_set_wb_amr_callback);
+          ril_internal_wb_amr_callback);
 
     /* register the wideband AMR callback */
     rc = RegisterUnsolicitedHandler(ril->client,
@@ -174,6 +229,13 @@ int ril_set_wb_amr_callback(struct ril_handle *ril,
         ril_close(ril);
         return -1;
     }
+
+    ALOGV("%s: WB_AMR callback(%p) registered successfully",
+          __func__, ril_internal_wb_amr_callback);
+
+    wb_amr_client->client = ril->client;
+    wb_amr_client->callback = fn;
+    wb_amr_client->data = data;
 
     return 0;
 }
