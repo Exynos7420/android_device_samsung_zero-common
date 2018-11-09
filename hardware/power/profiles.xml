@@ -106,9 +106,9 @@
 			<active_down_migration>false</active_down_migration>
 			<aggressive_up_migration>false</aggressive_up_migration>
 			<threshold>
-				<enabled>false</enabled>
-				<down>214</down>
-				<up>479</up>
+				<enabled>true</enabled>
+				<down>256</down>
+				<up>700</up>
 			</threshold>
 			<sb_threshold>
 				<enabled>false</enabled>
@@ -130,7 +130,7 @@
 			</highspeed>
 		</gpu>
 		<kernel>
-			<enabled>false</enabled>
+			<enabled>true</enabled>
 			<pewq>true</pewq>
 		</kernel>
 		<ipa>
@@ -158,7 +158,7 @@
 		<cpu>
 			<apollo>
 				<freq_min>200000</freq_min>
-				<freq_max>1500000</freq_max>
+				<freq_max>1296000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
                 <governor_data>
 					<down_load>30</down_load>
@@ -200,7 +200,7 @@
 		<gpu>
 			<dvfs>
 				<freq_min>160</freq_min>
-				<freq_max>772</freq_max>
+				<freq_max>700</freq_max>
 			</dvfs>
 			<highspeed>
 				<freq>544</freq>
@@ -219,6 +219,7 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
+    <freq_max>1500000</freq_max>
 				<freq_hispeed>900000</freq_hispeed>
 			</apollo>
 			<atlas>
@@ -227,11 +228,6 @@
 				<freq_hispeed>900000</freq_hispeed>
 			</atlas>
 		</cpu>
-		<gpu>
-			<highspeed>
-				<freq>600</freq>
-			</highspeed>
-		</gpu>
 		<ipa>
 			<control_temp>65</control_temp>
 		</ipa>
@@ -245,9 +241,9 @@
 		<cpu>
 			<enabled>true</enabled>
 			<apollo>
-                <freq_min>400000</freq_min>
-                <governor>interactive</governor>
-				<freq_boost>1500000</freq_boost>
+   <freq_min>400000</freq_min>
+   <governor>interactive</governor>
+			<freq_boost>1500000</freq_boost>
                 <!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
 					<!-- Mode index -->
@@ -315,9 +311,18 @@
 				</governor_data>
 			</atlas>
 		</cpu>
-		<hmp>
-			<semiboost>true</semiboost>
-		</hmp>
+        <hmp>
+            <threshold>
+
+				<down>214</down>
+				<up>479</up>
+			</threshold>
+        </hmp>
+        <gpu>
+            <highspeed>
+				<freq>600</freq>
+			</highspeed>
+		</gpu>
         <ipa>
 			<control_temp>75</control_temp>
 		</ipa>
@@ -336,15 +341,21 @@
 		</cpu>
 		<hmp>
 			<power_migration>false</power_migration>
+            <semiboost>true</semiboost>
 		</hmp>
 		<gpu>
 			<dvfs>
 				<freq_min>266</freq_min>
+                <freq_max>772</freq_max>
 			</dvfs>
             <highspeed>
 				<freq>700</freq>
 			</highspeed>
 		</gpu>
+  <kernel>
+
+			<pewq>false</pewq>
+		</kernel>
 	</bias_performance>
 
 	<!--
