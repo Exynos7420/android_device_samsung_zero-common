@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.exynos5 \
     libexynoscamera_shim \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
