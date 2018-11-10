@@ -8,6 +8,7 @@ on post-fs-data
     chown dhcp dhcp /data/misc/dhcp
 
     # for WIFI TRP/TIS
+    write /data/.psm.info 1
     chown system root /data/.psm.info
     chmod 0664 /data/.psm.info
 
