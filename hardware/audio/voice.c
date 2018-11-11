@@ -44,17 +44,6 @@
   #endif
 #endif
 
-/**
- * container_of - cast a member of a structure out to the containing structure
- * @ptr:    the pointer to the member.
- * @type:   the type of the container struct this is embedded in.
- * @member: the name of the member within the struct.
- *
- */
-#define container_of(ptr, type, member) ({              \
-    void *__mptr = (void *)(ptr);                   \
-    ((type *)((uintptr_t)__mptr - offsetof(type, member))); })
-
 static struct pcm_config pcm_config_voicecall = {
     .channels = 2,
     .rate = 8000,
@@ -79,9 +68,10 @@ struct pcm_config pcm_config_voice_sco = {
     .format = PCM_FORMAT_S16_LE,
 };
 
+/* SCO WB and NB uses 8kHz for now, 16kHz it's on TO DO*/
 struct pcm_config pcm_config_voice_sco_wb = {
     .channels = 1,
-    .rate = SCO_WB_SAMPLING_RATE,
+    .rate = SCO_DEFAULT_SAMPLING_RATE,
     .period_size = SCO_PERIOD_SIZE,
     .period_count = SCO_PERIOD_COUNT,
     .format = PCM_FORMAT_S16_LE,
@@ -93,7 +83,6 @@ int stop_voice_call(struct audio_device *adev);
 
 void set_voice_session_audio_path(struct voice_session *session)
 {
-    struct voice_data *vdata = container_of(session, struct voice_data, session);
     enum _AudioPath device_type;
     int rc;
 
@@ -113,11 +102,7 @@ void set_voice_session_audio_path(struct voice_session *session)
         case AUDIO_DEVICE_OUT_BLUETOOTH_SCO:
         case AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET:
         case AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT:
-            if (vdata->bluetooth_wb) {
-                device_type = SOUND_AUDIO_PATH_BLUETOOTH_WB;
-            } else {
-                device_type = SOUND_AUDIO_PATH_BLUETOOTH;
-            }
+            device_type = SOUND_AUDIO_PATH_BLUETOOTH;
             break;
         default:
             /* if output device isn't supported, use earpiece by default */
@@ -161,35 +146,39 @@ void prepare_voice_session(struct voice_session *session,
  * This must be called with the hw device mutex locked, OK to hold other
  * mutexes.
  */
-static void stop_voice_session_bt_sco(struct voice_session *session) {
+void stop_voice_session_bt_sco(struct audio_device *adev) {
     ALOGV("%s: Closing SCO PCMs", __func__);
 
-    if (session->pcm_sco_rx != NULL) {
-        pcm_stop(session->pcm_sco_rx);
-        pcm_close(session->pcm_sco_rx);
-        session->pcm_sco_rx = NULL;
+    if (adev->pcm_sco_rx != NULL) {
+        pcm_stop(adev->pcm_sco_rx);
+        pcm_close(adev->pcm_sco_rx);
+        adev->pcm_sco_rx = NULL;
     }
 
-    if (session->pcm_sco_tx != NULL) {
-        pcm_stop(session->pcm_sco_tx);
-        pcm_close(session->pcm_sco_tx);
-        session->pcm_sco_tx = NULL;
+    if (adev->pcm_sco_tx != NULL) {
+        pcm_stop(adev->pcm_sco_tx);
+        pcm_close(adev->pcm_sco_tx);
+        adev->pcm_sco_tx = NULL;
     }
+
+    /* audio codecs like wm5201 need open modem pcm while using bt sco */
+    if (adev->mode != AUDIO_MODE_IN_CALL)
+        stop_voice_session(adev->voice.session);
 }
 
 /* must be called with the hw device mutex locked, OK to hold other mutexes */
-void start_voice_session_bt_sco(struct voice_session *session)
+void start_voice_session_bt_sco(struct audio_device *adev)
 {
     struct pcm_config *voice_sco_config;
 
-    if (session->pcm_sco_rx != NULL || session->pcm_sco_tx != NULL) {
+    if (adev->pcm_sco_rx != NULL || adev->pcm_sco_tx != NULL) {
         ALOGW("%s: SCO PCMs already open!\n", __func__);
         return;
     }
 
     ALOGV("%s: Opening SCO PCMs", __func__);
 
-    if (voice_session_uses_wideband(session)) {
+    if (adev->voice.bluetooth_wb) {
         ALOGV("%s: pcm_config wideband", __func__);
         voice_sco_config = &pcm_config_voice_sco_wb;
     } else {
@@ -197,37 +186,41 @@ void start_voice_session_bt_sco(struct voice_session *session)
         voice_sco_config = &pcm_config_voice_sco;
     }
 
-    session->pcm_sco_rx = pcm_open(SOUND_CARD,
+    adev->pcm_sco_rx = pcm_open(SOUND_CARD,
                                    SOUND_PLAYBACK_SCO_DEVICE,
                                    PCM_OUT|PCM_MONOTONIC,
                                    voice_sco_config);
-    if (session->pcm_sco_rx != NULL && !pcm_is_ready(session->pcm_sco_rx)) {
+    if (adev->pcm_sco_rx != NULL && !pcm_is_ready(adev->pcm_sco_rx)) {
         ALOGE("%s: cannot open PCM SCO RX stream: %s",
-              __func__, pcm_get_error(session->pcm_sco_rx));
+              __func__, pcm_get_error(adev->pcm_sco_rx));
         goto err_sco_rx;
     }
 
-    session->pcm_sco_tx = pcm_open(SOUND_CARD,
+    adev->pcm_sco_tx = pcm_open(SOUND_CARD,
                                    SOUND_CAPTURE_SCO_DEVICE,
                                    PCM_IN|PCM_MONOTONIC,
                                    voice_sco_config);
-    if (session->pcm_sco_tx && !pcm_is_ready(session->pcm_sco_tx)) {
+    if (adev->pcm_sco_tx && !pcm_is_ready(adev->pcm_sco_tx)) {
         ALOGE("%s: cannot open PCM SCO TX stream: %s",
-              __func__, pcm_get_error(session->pcm_sco_tx));
+              __func__, pcm_get_error(adev->pcm_sco_tx));
         goto err_sco_tx;
     }
 
-    pcm_start(session->pcm_sco_rx);
-    pcm_start(session->pcm_sco_tx);
+    pcm_start(adev->pcm_sco_rx);
+    pcm_start(adev->pcm_sco_tx);
+
+    /* audio codecs like wm5201 need open modem pcm while using bt sco */
+    if (adev->mode != AUDIO_MODE_IN_CALL)
+        start_voice_session(adev->voice.session);
 
     return;
 
 err_sco_tx:
-    pcm_close(session->pcm_sco_tx);
-    session->pcm_sco_tx = NULL;
+    pcm_close(adev->pcm_sco_tx);
+    adev->pcm_sco_tx = NULL;
 err_sco_rx:
-    pcm_close(session->pcm_sco_rx);
-    session->pcm_sco_rx = NULL;
+    pcm_close(adev->pcm_sco_rx);
+    adev->pcm_sco_rx = NULL;
 }
 /*
  * This function must be called with hw device mutex locked, OK to hold other
@@ -245,7 +238,7 @@ int start_voice_session(struct voice_session *session)
     ALOGV("%s: Opening voice PCMs", __func__);
 
     /* TODO: Handle wb_amr=2 */
-    if (voice_session_uses_wideband(session)) {
+    if (session->wb_amr_type >= 1) {
         ALOGV("%s: pcm_config wideband", __func__);
         voice_config = &pcm_config_voicecall_wideband;
     } else {
@@ -286,10 +279,6 @@ int start_voice_session(struct voice_session *session)
 
     pcm_start(session->pcm_voice_rx);
     pcm_start(session->pcm_voice_tx);
-
-    if (session->out_device & AUDIO_DEVICE_OUT_ALL_SCO) {
-        start_voice_session_bt_sco(session);
-    }
 
     if (AUDIENCE_SUPPORTED()) {
         ALOGV("%s: Enabling Audience IC", __func__);
@@ -333,10 +322,6 @@ void stop_voice_session(struct voice_session *session)
         pcm_close(session->pcm_voice_tx);
         session->pcm_voice_tx = NULL;
         status++;
-    }
-
-    if (session->out_device & AUDIO_DEVICE_OUT_ALL_SCO) {
-        stop_voice_session_bt_sco(session);
     }
 
     if (AUDIENCE_SUPPORTED()) {
@@ -395,10 +380,8 @@ bool voice_session_uses_twomic(struct voice_session *session)
 
 bool voice_session_uses_wideband(struct voice_session *session)
 {
-    struct voice_data *vdata = container_of(session, struct voice_data, session);
-
     if (session->out_device & AUDIO_DEVICE_OUT_ALL_SCO) {
-        return vdata->bluetooth_wb;
+        return session->vdata->bluetooth_wb;
     }
 
     return session->wb_amr_type >= 1;
@@ -484,6 +467,8 @@ struct voice_session *voice_session_init(struct audio_device *adev)
             ALOGV("%s: WB_AMR callback not supported", __func__);
         }
     }
+
+    session->vdata = &adev->voice;
 
     return session;
 }
