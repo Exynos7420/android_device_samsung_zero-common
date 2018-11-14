@@ -109,8 +109,8 @@ lib/libsec-ril-dsds.so:vendor/lib/libsec-ril-dsds.so
 lib64/libsec-ril-dsds.so:vendor/lib64/libsec-ril-dsds.so
 lib/libsec-ril.so:vendor/lib/libsec-ril.so
 lib64/libsec-ril.so:vendor/lib64/libsec-ril.so
-lib/libprotobuf-cpp-full.so:lib/libprotobuf-cpp-v24.so
-lib64/libprotobuf-cpp-full.so:lib64/libprotobuf-cpp-v24.so
+lib/libprotobuf-cpp-full.so:lib/libprotobuf-cpp-fl24.so
+lib64/libprotobuf-cpp-full.so:lib64/libprotobuf-cpp-fl24.so
 
 # Sensors
 bin/gps.cer
