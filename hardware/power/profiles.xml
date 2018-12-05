@@ -203,7 +203,7 @@
 				<freq_max>700</freq_max>
 			</dvfs>
 			<highspeed>
-				<freq>544</freq>
+				<freq>420</freq>
 				<load>89</load>
 			</highspeed>
 		</gpu>
@@ -228,6 +228,11 @@
 				<freq_hispeed>900000</freq_hispeed>
 			</atlas>
 		</cpu>
+        <gpu>
+			<highspeed>
+				<freq>544</freq>
+			</highspeed>
+		</gpu>
 		<ipa>
 			<control_temp>65</control_temp>
 		</ipa>
@@ -368,13 +373,10 @@
 				<freq_min>600000</freq_min>
 			</apollo>
 			<atlas>
-				<freq_min>800000</freq_min>
+				<freq_min>600000</freq_min>
 			</atlas>
 		</cpu>
 		<gpu>
-			<dvfs>
-				<freq_min>350</freq_min>
-			</dvfs>
 			<highspeed>
 				<freq>772</freq>
 			</highspeed>
