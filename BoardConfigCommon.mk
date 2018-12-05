@@ -108,7 +108,7 @@ BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 
 # GPS-shims
 TARGET_LD_SHIM_LIBS += \
-	/system/bin/gpsd|/vendor/lib64/libsensor_shim.so
+	/system/bin/gpsd|/system/lib64/libsensor.so
 
 # Hardware
 BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
