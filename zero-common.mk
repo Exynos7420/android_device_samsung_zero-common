@@ -378,6 +378,9 @@ $(call inherit-product-if-exists, vendor/samsung/zero-private/zero-private-vendo
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.mk)
 
+# include private blob configs
+-include vendor/samsung/zero-private/config.mk
+
 ##################
 # Superuser
 ifneq (,$(wildcard vendor/lineage/))
