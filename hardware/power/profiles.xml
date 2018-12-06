@@ -68,9 +68,9 @@
 				<cores>
 					<enabled>true</enabled>
 					<core1>true</core1>
-					<core2>true</core2>
-					<core3>true</core3>
-					<core4>true</core4>
+					<core2>false</core2>
+					<core3>false</core3>
+					<core4>false</core4>
 				</cores>
 				<!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
@@ -179,7 +179,12 @@
 			<atlas>
 				<freq_min>200000</freq_min>
 				<freq_max>1704000</freq_max>
-				<freq_hispeed>600000</freq_hispeed>
+				<freq_hispeed>200000</freq_hispeed>
+                <cores>
+					<core2>true</core2>
+					<core3>true</core3>
+					<core4>true</core4>
+				</cores>
                 <governor_data>
 					<down_load>40</down_load>
 					<down_step>1</down_step>
@@ -203,7 +208,7 @@
 				<freq_max>700</freq_max>
 			</dvfs>
 			<highspeed>
-				<freq>420</freq>
+				<freq>350</freq>
 				<load>89</load>
 			</highspeed>
 		</gpu>
@@ -225,12 +230,12 @@
 			<atlas>
 				<freq_min>400000</freq_min>
                 <freq_max>2100000</freq_max>
-				<freq_hispeed>900000</freq_hispeed>
+				<freq_hispeed>400000</freq_hispeed>
 			</atlas>
 		</cpu>
         <gpu>
 			<highspeed>
-				<freq>544</freq>
+				<freq>420</freq>
 			</highspeed>
 		</gpu>
 		<ipa>
