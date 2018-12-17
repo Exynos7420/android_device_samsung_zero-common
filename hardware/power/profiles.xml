@@ -173,7 +173,7 @@
 					<lpr_up_elevation>2</lpr_up_elevation>
 					<hispeed_delay>0</hispeed_delay>
 					<hispeed_load>89</hispeed_load>
-					<io_is_busy>1</io_is_busy>
+					<io_is_busy>0</io_is_busy>
 				</governor_data>
 			</apollo>
 			<atlas>
@@ -198,7 +198,7 @@
 					<lpr_up_elevation>2</lpr_up_elevation>
 					<hispeed_delay>0</hispeed_delay>
 					<hispeed_load>89</hispeed_load>
-					<io_is_busy>1</io_is_busy>
+					<io_is_busy>0</io_is_busy>
 				</governor_data>
 			</atlas>
 		</cpu>
