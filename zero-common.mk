@@ -123,10 +123,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	dtbhtoolExynos
 
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Doze
 PRODUCT_PACKAGES += \
     ZeroDoze
@@ -243,7 +239,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml \
     $(LOCAL_PATH)/configs/libnfc-sec-hal.conf:system/vendor/etc/libnfc-sec-hal.conf \
     $(LOCAL_PATH)/configs/libnfc-sec.conf:system/vendor/etc/libnfc-sec.conf \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf
+    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/vendor/etc/libnfc-nci.conf
 
 # Network
 PRODUCT_PACKAGES += \
@@ -340,7 +336,7 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-impl \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.basic
 
 # Vibrator
 PRODUCT_PACKAGES += \

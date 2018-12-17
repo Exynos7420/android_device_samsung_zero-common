@@ -74,9 +74,10 @@ ro.nfc.sec_hal=true
 # HWC
 #
 
-debug.hwc.force_gpu=0
-debug.hwc.winupdate=1
-debug.hwc.max_hw_overlays=6
+debug.hwc.force_gpu=1
+debug.egl.hw=0
+debug.sf.hw=0
+persist.sys.ui.hw=false
 
 #
 # Graphics
@@ -101,6 +102,11 @@ ro.config.vc_call_vol_steps=15
 #
 
 wifi.interface=wlan0
+
+#
+# USB
+#
+sys.usb.ffs.aio_compat=1
 
 #
 # END zero device-properties
