@@ -204,7 +204,7 @@
 		</cpu>
 		<gpu>
 			<dvfs>
-				<freq_min>160</freq_min>
+				<freq_min>266</freq_min>
 				<freq_max>700</freq_max>
 			</dvfs>
 			<highspeed>
