@@ -13,8 +13,15 @@ ro.chipname=exynos7420
 ro.arch=exynos7420
 
 #
+# Camera
+#
+
+vendor.camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
+
+#
 # Dalvik
 #
+
 dalvik.vm.image-dex2oat-filter=speed
 dalvik.vm.dex2oat-filter=speed
 dalvik.vm.heapgrowthlimit=256m
