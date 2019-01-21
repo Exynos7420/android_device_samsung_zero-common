@@ -116,9 +116,13 @@ BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 TARGET_LD_SHIM_LIBS += \
 	/system/bin/gpsd|/system/lib64/libsensor.so
 
-# Hardware
-BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
-BOARD_HARDWARE_CLASS += device/samsung/zero-common/lineagehw
+#
+# Hardware Classes
+#
+## LineageOS HW
+JAVA_SOURCE_OVERLAYS := \
+    org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java \
+    org.lineageos.hardware|device/samsung/zero-common/lineagehw|**/*.java
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := false
