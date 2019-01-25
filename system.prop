@@ -110,6 +110,12 @@ ro.sys.sdcardfs=1
 ro.sys.sdcardfs.legacy-mounting=1
 
 #
+# Vendor Security Patch Level (TODO: UPDATE BLOBS)
+#
+
+ro.lineage.build.vendor_security_patch=2017-12-01
+
+#
 # Wi-Fi
 #
 

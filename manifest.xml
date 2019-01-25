@@ -7,7 +7,7 @@
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport arch="32+64">passthrough</transport>
-        <version>2.0</version>
+        <version>4.0</version>
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
@@ -16,7 +16,7 @@
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
         <transport arch="32+64">passthrough</transport>
-        <version>2.0</version>
+        <version>4.0</version>
         <interface>
             <name>IEffectsFactory</name>
             <instance>default</instance>
@@ -44,7 +44,7 @@
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>ISurfaceFlingerConfigs</name>
             <instance>default</instance>
@@ -288,7 +288,7 @@
         <name>android.hardware.wifi</name>
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
-        <version>1.0</version>
+        <version>1.2</version>
         <interface>
             <name>IWifi</name>
             <instance>default</instance>
@@ -298,7 +298,7 @@
         <name>android.hardware.wifi.supplicant</name>
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>ISupplicant</name>
             <instance>default</instance>
