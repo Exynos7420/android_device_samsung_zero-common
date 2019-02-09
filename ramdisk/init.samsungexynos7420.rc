@@ -733,8 +733,11 @@ service charger /charger
     class charger
     seclabel u:r:charger:s0
 
-service sswap /system/bin/sswap -s
+service sswap /vendor/bin/sswap -s -f 2048
     class core
     user root
     group root
     oneshot
+
+on property:sys.boot_completed=1
+    start sswap
