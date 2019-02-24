@@ -107,27 +107,32 @@ status_t Power::registerAsSystemService() {
 
 Power::~Power() { }
 
+// Methods from ::android::hardware::power::V1_0::IPower follow.
 Return<void> Power::setInteractive(bool interactive) {
 	auto begin = Utils::getTime();
-    int brightness;
-
-    brightness = Utils::read("/sys/devices/13900000.dsim/backlight/panel/brightness", brightness);
 
 	ALOGV("%s: enter; interactive=%d", __func__, interactive ? 1 : 0);
 	power_lock();
 
-	if (brightness > 0) {
-		ALOGW("%s: moving to non-interactive state but screen is still on", __func__);
+	this->mIsInteractive = interactive;
+
+	if (!interactive && Utils::screenIsOn()) {
+		ALOGW("%s: not disabling interactive state when screen is still on", __func__);
 		goto exit;
 	}
 
-	if (brightness == 0) {
+	if (!interactive) {
 		setProfile(SecPowerProfiles::SCREEN_OFF);
-        setInputState(false);
 	} else {
 		// reset to requested- or fallback-profile
 		resetProfile(500);
 	}
+
+	// speed up the device a bit
+	/* Utils::write("/sys/kernel/hmp/boostpulse_duration", 2500000); // 2.5s
+	Utils::write("/sys/kernel/hmp/boostpulse", true); */
+
+	setInputState(interactive);
 
 exit:
 	auto end = Utils::getTime();
