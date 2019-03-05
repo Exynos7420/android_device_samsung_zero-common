@@ -10,6 +10,7 @@
 #
 
 ro.chipname=exynos7420
+ro.arch=exynos7420
 
 #
 # Dalvik
