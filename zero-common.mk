@@ -201,7 +201,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	keystore.exynos5 \
 	android.hardware.keymaster@3.0-impl \
-	android.hardware.keymaster@3.0-service
+	android.hardware.keymaster@3.0-service	
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -326,6 +326,10 @@ PRODUCT_COPY_FILES += \
 # Tools
 PRODUCT_PACKAGES += \
 	resetprop.zero   # Required for setting ro.*-properties for dual-SIM support
+
+# Trust	
+PRODUCT_PACKAGES += \	
+    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
