@@ -1,4 +1,8 @@
 # Wi-Fi init file
+
+    #Create directory for hostapd
+    mkdir /data/hostapd 0770 system wifi
+
 on post-fs-data
     # give system access to wpa_supplicant.conf for backup and restore
     mkdir /data/misc/wifi 0770 wifi system
@@ -23,8 +27,9 @@ on post-fs-data
     chmod 0664 /data/.psm.info
 
     # for WIFI Antenna Selection
-    chown system root /data/.ant.info
-    chmod 0664 /data/.ant.info
+    write /data/.wificable.info E
+    chown system root /data/.wificable.info
+    chmod 0664 /data/.wificable.info
 
     # for WIFI Version
     write /data/.wifiver.info 0
