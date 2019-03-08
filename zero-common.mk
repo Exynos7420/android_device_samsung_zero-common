@@ -328,7 +328,7 @@ PRODUCT_PACKAGES += \
 	resetprop.zero   # Required for setting ro.*-properties for dual-SIM support
 
 # Trust	
-PRODUCT_PACKAGES += \	
+PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
 # USB
