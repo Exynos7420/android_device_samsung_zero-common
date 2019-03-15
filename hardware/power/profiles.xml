@@ -158,7 +158,7 @@
 		<cpu>
 			<apollo>
 				<freq_min>200000</freq_min>
-				<freq_max>1296000</freq_max>
+				<freq_max>1200000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
                 <governor_data>
 					<down_load>30</down_load>
@@ -182,10 +182,8 @@
 				<freq_hispeed>200000</freq_hispeed>
                 <cores>
 					<core2>true</core2>
-					<core3>true</core3>
-					<core4>true</core4>
 				</cores>
-                                <governor_data>
+                <governor_data>
 					<down_load>40</down_load>
 					<down_step>1</down_step>
 					<down_delay>0</down_delay>
@@ -204,11 +202,11 @@
 		</cpu>
 		<gpu>
 			<dvfs>
-				<freq_min>266</freq_min>
-				<freq_max>700</freq_max>
+				<freq_min>160</freq_min>
+				<freq_max>544</freq_max>
 			</dvfs>
 			<highspeed>
-				<freq>350</freq>
+				<freq>266</freq>
 				<load>89</load>
 			</highspeed>
 		</gpu>
@@ -224,16 +222,20 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-                                <freq_max>1500000</freq_max>
+                <freq_max>1500000</freq_max>
 				<freq_hispeed>900000</freq_hispeed>
 			</apollo>
 			<atlas>
 				<freq_min>400000</freq_min>
-                                <freq_max>2100000</freq_max>
+                <freq_max>2100000</freq_max>
 				<freq_hispeed>400000</freq_hispeed>
+                <cores>
+					<core3>true</core3>
+					<core4>true</core4>
+				</cores>
 			</atlas>
 		</cpu>
-                <gpu>
+        <gpu>
 			<highspeed>
 				<freq>420</freq>
 			</highspeed>
@@ -250,19 +252,22 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-                                <freq_min>400000</freq_min>
-                                <freq_boost>1500000</freq_boost>
+                <freq_min>400000</freq_min>
+                <freq_boost>1500000</freq_boost>
 			</apollo>
 			<atlas>
 				<freq_boost>0</freq_boost>
 			</atlas>
 		</cpu>
-                <gpu>
-                        <highspeed>
-				<freq>600</freq>
+        <gpu>
+            <dvfs>
+				<freq_max>700</freq_max>
+			</dvfs>
+            <highspeed>
+				<freq>544</freq>
 			</highspeed>
 		</gpu>
-                <ipa>
+        <ipa>
 			<control_temp>75</control_temp>
 		</ipa>
 	</balanced>
@@ -274,9 +279,9 @@
 	<bias_performance extends="balanced">
 		<enabled>true</enabled>
 		<cpu>
-                        <apollo>
-                        <governor>interactive</governor>
-                        <!-- TODO: governor-data cannot be inherited yet -->
+            <apollo>
+                <governor>interactive</governor>
+                <!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
 					<!-- Mode index -->
 					<param_index>0</param_index>
@@ -306,12 +311,12 @@
 					<multi_enter_time>80000</multi_enter_time>
 					<multi_exit_load>360</multi_exit_load>
 					<multi_exit_time>320000</multi_exit_time>
-                                </governor_data>
-                        </apollo>
+                </governor_data>
+            </apollo>
 			<atlas>
 				<freq_hispeed>1000000</freq_hispeed>
-                                <governor>interactive</governor>
-                                 <governor_data>
+                <governor>interactive</governor>
+                <governor_data>
 					<!-- Mode index -->
 					<param_index>0</param_index>
 
@@ -345,12 +350,12 @@
 		</cpu>
 		<hmp>
 			<power_migration>false</power_migration>
-                        <semiboost>true</semiboost>
-                        <threshold>
-				<down>214</down>
-				<up>479</up>
+            <semiboost>true</semiboost>
+            <threshold>
+			<down>214</down>
+			<up>479</up>
 			</threshold>
-                </hmp>
+		</hmp>
 		<gpu>
 			<dvfs>
 				<freq_min>266</freq_min>
@@ -360,8 +365,7 @@
 				<freq>700</freq>
 			</highspeed>
 		</gpu>
-  <kernel>
-
+        <kernel>
 			<pewq>false</pewq>
 		</kernel>
 	</bias_performance>
@@ -373,12 +377,17 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
+			    <freq_hispeed>1200000</freq_hispeed>
 				<freq_min>600000</freq_min>
 			</apollo>
 			<atlas>
 				<freq_min>600000</freq_min>
 			</atlas>
 		</cpu>
+		<hmp>
+		    <boost>true</boost>
+            <semiboost>false</semiboost>
+		</hmp>
 		<gpu>
 			<highspeed>
 				<freq>772</freq>
@@ -390,4 +399,3 @@
 	</performance>
 
 </profiles>
-
