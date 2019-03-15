@@ -37,3 +37,7 @@ allow init su:process { transition rlimitinh siginh noatsecure };
 
 # RIL
 allow init socket_device:sock_file { create open read write getattr setattr };
+
+# read/chown bluetooth/cpu
+allow init sysfs_bluetooth_writable:file setattr;
+allow init sysfs_devices_system_cpu:file write;

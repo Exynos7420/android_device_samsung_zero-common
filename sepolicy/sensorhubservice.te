@@ -4,3 +4,5 @@ type sensorhubservice, domain;
 type sensorhubservice_exec, exec_type, file_type;
 
 init_daemon_domain(sensorhubservice)
+
+allow sensorhubservice sysfs:file { getattr open read };
