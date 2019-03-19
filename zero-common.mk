@@ -125,12 +125,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ZeroDoze
 
-##################
-# F-Droid
-PRODUCT_PACKAGES += \
-    FDroid \
-    F-DroidPrivilegedExtension
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
@@ -373,13 +367,3 @@ $(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.
 
 # include private blob configs
 -include vendor/samsung/zero-private/config.mk
-
-##################
-# Superuser
-ifneq (,$(wildcard vendor/lineage/))
-PRODUCT_PACKAGES += \
-    su
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/su/superuser.rc:system/etc/init/superuser.rc
-endif
