@@ -8,6 +8,9 @@ on init
 
 on boot
 
+    # Disable touch input booster
+    write /sys/class/input_booster/level 0
+
     # Restore the previous batt_capacity_max (if it exists)
     copy /efs/Battery/prev_batt_capacity_max /sys/class/power_supply/battery/batt_capacity_max
 
