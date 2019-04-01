@@ -457,8 +457,10 @@ void Power::setProfile(SecPowerProfiles profile) {
 		}
 	}
 
-	// enable dynamic_hotplogging
-	Utils::write("/sys/power/enable_dm_hotplug", true);
+	// Keep dynamic hotplugging disabled to 1.) ensure availability of all
+	// clusters when power-HAL gets a setInteractive()-event and 2.)
+	// to drastically lower the the screen-on-delay
+	Utils::write("/sys/power/enable_dm_hotplug", false);
 
 	if (data->kernel.enabled) {
 		// The power-efficient workqueue is useful for lower-power-situations, but
