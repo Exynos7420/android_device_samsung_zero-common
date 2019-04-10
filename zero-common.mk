@@ -20,6 +20,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Common Overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay
 
+ifneq (,$(wildcard lineage-sdk/ ))
+DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-lineage
+else
+DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-aosp
+endif
+
 ifneq ($(filter zerofltespr zeroltespr,$(TARGET_DEVICE)),)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-cdma
 else
@@ -152,10 +158,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.zero \
 	android.hardware.gnss@1.0-service
-
-# GPS
-PRODUCT_PACKAGES += \
-    gps.default
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -323,9 +325,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	resetprop.zero   # Required for setting ro.*-properties for dual-SIM support
 
+ifneq (,$(wildcard lineage-sdk/ ))
 # Trust	
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
+endif
 
 # USB
 PRODUCT_PACKAGES += \
