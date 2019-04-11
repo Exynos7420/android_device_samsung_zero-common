@@ -321,6 +321,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mediaserver.rc:system/etc/init/mediaserver.rc
 
+#
+# Touch
+#
+PRODUCT_PACKAGES += \
+	vendor.lineage.touch@1.0-service.samsung
+
 # Tools
 PRODUCT_PACKAGES += \
 	resetprop.zero   # Required for setting ro.*-properties for dual-SIM support
