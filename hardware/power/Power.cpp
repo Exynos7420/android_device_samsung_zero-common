@@ -316,10 +316,10 @@ void Power::setProfile(SecPowerProfiles profile) {
 	mCurrentProfile = profile;
 
 	// check if user disabled power-profiles
-	if (!isModuleEnabled("profiles")) {
-		ALOGI("power profiles disabled by user!");
-		return;
-	}
+	// if (!isModuleEnabled("profiles")) {
+	//	ALOGI("power profiles disabled by user!");
+	//	return;
+	//}
 
 	// apply settings
 	const SecPowerProfile* data = Profiles::getProfileData(mCurrentProfile);
