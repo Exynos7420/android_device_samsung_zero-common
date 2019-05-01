@@ -24,7 +24,7 @@ Front Camera   | 5 MP                                            |
 	Copyright (C) 2017 Aljoshua (J0SH1X) Hell
 	Copyright (C) 2017 Lukas (Lukas0610) Berger <mail@lukasberger.at>
 	Copyright (C) 2017 Usaamah (Usaamah99) Patel
-        Copyright (C) 2018 Enes (enesuzun2002) Uzun
+	Copyright (C) 2018 Enes (enesuzun2002) Uzun
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
