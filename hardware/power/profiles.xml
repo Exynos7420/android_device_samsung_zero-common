@@ -29,10 +29,10 @@
 			<enabled>true</enabled>
 			<apollo>
 				<enabled>true</enabled>
-				<governor>nexus</governor>
-				<freq_min>200000</freq_min>
-				<freq_max>600000</freq_max>
-				<freq_hispeed>400000</freq_hispeed>
+				<governor>interactive</governor>
+				<freq_min>300000</freq_min>
+				<freq_max>400000</freq_max>
+				<freq_hispeed>300000</freq_hispeed>
 				<freq_boost>0</freq_boost>
 				<cores>
 					<enabled>true</enabled>
@@ -43,27 +43,42 @@
 				</cores>
 				<!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
-					<down_load>40</down_load>
-					<down_step>1</down_step>
-					<down_delay>0</down_delay>
-					<up_load>50</up_load>
-					<up_step>1</up_step>
-					<up_delay>0</up_delay>
-					<lpr_down_ratio>0</lpr_down_ratio>
-					<lpr_down_elevation>0</lpr_down_elevation>
-					<lpr_up_ratio>0</lpr_up_ratio>
-					<lpr_up_elevation>0</lpr_up_elevation>
-					<hispeed_delay>2</hispeed_delay>
-					<hispeed_load>99</hispeed_load>
+					<!-- Mode index -->
+					<param_index>0</param_index>
+
+					<above_hispeed_delay>19000</above_hispeed_delay>
+					<boost>0</boost>
+					<boostpulse_duration>40000</boostpulse_duration>
+					<enforced_mode>0</enforced_mode>
+					<go_hispeed_load>99</go_hispeed_load>
 					<io_is_busy>0</io_is_busy>
+					<min_sample_time>40000</min_sample_time>
+					<mode>0</mode>
+					<target_loads>75</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
+
+					<!-- Single mode -->
+					<single_cluster0_min_freq>300000</single_cluster0_min_freq>
+					<single_enter_load>200</single_enter_load>
+					<single_enter_time>160000</single_enter_time>
+					<single_exit_load>90</single_exit_load>
+					<single_exit_time>80000</single_exit_time>
+
+                                        <!-- Multi mode -->
+					<multi_cluster0_min_freq>300000</multi_cluster0_min_freq>
+					<multi_enter_load>800</multi_enter_load>
+					<multi_enter_time>80000</multi_enter_time>
+					<multi_exit_load>360</multi_exit_load>
+					<multi_exit_time>320000</multi_exit_time>
 				</governor_data>
 			</apollo>
 			<atlas>
 				<enabled>true</enabled>
-				<governor>nexus</governor>
+				<governor>interactive</governor>
 				<freq_min>200000</freq_min>
-				<freq_max>400000</freq_max>
-				<freq_hispeed>300000</freq_hispeed>
+				<freq_max>600000</freq_max>
+				<freq_hispeed>400000</freq_hispeed>
 				<freq_boost>0</freq_boost>
 				<cores>
 					<enabled>true</enabled>
@@ -74,19 +89,34 @@
 				</cores>
 				<!-- TODO: governor-data cannot be inherited yet -->
 				<governor_data>
-					<down_load>40</down_load>
-					<down_step>1</down_step>
-					<down_delay>0</down_delay>
-					<up_load>50</up_load>
-					<up_step>1</up_step>
-					<up_delay>0</up_delay>
-					<lpr_down_ratio>0</lpr_down_ratio>
-					<lpr_down_elevation>0</lpr_down_elevation>
-					<lpr_up_ratio>0</lpr_up_ratio>
-					<lpr_up_elevation>0</lpr_up_elevation>
-					<hispeed_delay>2</hispeed_delay>
-					<hispeed_load>99</hispeed_load>
+					<!-- Mode index -->
+					<param_index>0</param_index>
+
+					<above_hispeed_delay>59000 1300000:39000 1700000:19000</above_hispeed_delay>
+					<boost>0</boost>
+					<boostpulse_duration>40000</boostpulse_duration>
+					<enforced_mode>0</enforced_mode>
+					<go_hispeed_load>99</go_hispeed_load>
 					<io_is_busy>0</io_is_busy>
+					<min_sample_time>40000</min_sample_time>
+					<mode>0</mode>
+					<target_loads>75</target_loads>
+					<timer_rate>20000</timer_rate>
+					<timer_slack>20000</timer_slack>
+
+					<!-- Single mode -->
+					<single_cluster0_min_freq>600000</single_cluster0_min_freq>
+					<single_enter_load>95</single_enter_load>
+					<single_enter_time>199000</single_enter_time>
+					<single_exit_load>60</single_exit_load>
+					<single_exit_time>99000</single_exit_time>
+
+					<!-- Multi mode -->
+					<multi_cluster0_min_freq>600000</multi_cluster0_min_freq>
+					<multi_enter_load>360</multi_enter_load>
+					<multi_enter_time>79000</multi_enter_time>
+					<multi_exit_load>240</multi_exit_load>
+					<multi_exit_time>299000</multi_exit_time>
 				</governor_data>
 			</atlas>
 		</cpu>
