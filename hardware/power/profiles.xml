@@ -314,7 +314,6 @@
 		<cpu>
 			<apollo>
                 <freq_boost>1500000</freq_boost>
-                <freq_min>400000</freq_min>
 			</apollo>
 			<atlas>
 				<freq_boost>0</freq_boost>
