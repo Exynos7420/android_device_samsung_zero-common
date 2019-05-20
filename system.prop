@@ -68,6 +68,7 @@ import /init.rilchip.prop
 
 media.sf.omx-plugin=libffmpeg_omx.so,libsomxcore.so
 persist.media.treble_omx=false
+debug.stagefright.ccodec=0
 
 #
 # Miracast (Wireless Display)
