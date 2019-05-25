@@ -35,7 +35,7 @@
         <value>49</value>
         <value>48</value>
     </array>
-    <array name="cpu.speeds.cluster0">
+    <array name="cpu.core_speeds.cluster0">
         <value>1500000</value>
         <value>1400000</value>
         <value>1300000</value>
@@ -64,7 +64,7 @@
         <value>91</value>
         <value>82</value>
     </array>
-    <array name="cpu.speeds.cluster1">
+    <array name="cpu.core_speeds.cluster1">
         <value>2100000</value>
         <value>2000000</value>
         <value>1896000</value>
@@ -80,8 +80,8 @@
         <value>900000</value>
         <value>800000</value>
     </array>
-    <item name="cpu.idle">4.3</item>
-    <item name="cpu.awake">40.1</item>
+    <item name="cpu.suspend">4.3</item>
+    <item name="cpu.idle">40.1</item>
     <item name="wakeup.power">0.15</item>
     <item name="battery.capacity">2550</item>
     <array name="wifi.batchedscan">
