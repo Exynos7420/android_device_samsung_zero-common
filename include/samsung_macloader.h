@@ -35,6 +35,6 @@
 #define MACADDR_PATH "/efs/wifi/.mac.info"
 
 /* Consumer identification number (CID) */
-#define CID_PATH "/data/.cid.info"
+#define CID_PATH "/data/misc/conn/.cid.info"
 
 #endif // SAMSUNG_MACLOADER_H
