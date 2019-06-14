@@ -296,7 +296,7 @@ PRODUCT_PACKAGES += \
 
 # Remove AudioFX
 PRODUCT_PACKAGES += \
-    remove_packages
+    RemovePackages
 
 # RenderScript
 PRODUCT_PACKAGES += \
