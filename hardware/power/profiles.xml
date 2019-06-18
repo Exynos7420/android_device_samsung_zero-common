@@ -16,7 +16,7 @@
 <profiles>
 
 	<!--
-		This files contains all six profiles used in zer Zero Power HAL.
+		This files contains all six profiles used in Zero Power HAL.
 		To override this configuration, copy this file to /data/system/power_profiles.xml
 		and make your changes in the new files. Be aware that in case of updates you will
 		need to update your custom configuration yourself.
@@ -160,8 +160,8 @@
 			</highspeed>
 		</gpu>
 		<kernel>
-			<enabled>true</enabled>
-			<pewq>true</pewq>
+			<enabled>false</enabled>
+			<pewq>false</pewq>
 		</kernel>
         <iosched>
 			<enabled>true</enabled>
@@ -195,7 +195,7 @@
 				<freq_max>1200000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
 				<governor>interactive</governor>
-                <governor_data>
+                                <governor_data>
 					<!-- Mode index -->
 					<param_index>0</param_index>
 
@@ -203,11 +203,11 @@
 					<boost>0</boost>
 					<boostpulse_duration>40000</boostpulse_duration>
 					<enforced_mode>0</enforced_mode>
-					<go_hispeed_load>95</go_hispeed_load>
+					<go_hispeed_load>85</go_hispeed_load>
 					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
-					<target_loads>75 600000:17 800000:80 1000000:9 1200000:83 1500000:85</target_loads>
+					<target_loads>75</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
@@ -218,7 +218,7 @@
 					<single_exit_load>90</single_exit_load>
 					<single_exit_time>80000</single_exit_time>
 
-                    <!-- Multi mode -->
+                                        <!-- Multi mode -->
 					<multi_cluster0_min_freq>400000</multi_cluster0_min_freq>
 					<multi_enter_load>800</multi_enter_load>
 					<multi_enter_time>80000</multi_enter_time>
@@ -231,10 +231,12 @@
 				<freq_max>1704000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
 				<governor>interactive</governor>
-                <cores>
+                                <cores>
 					<core2>true</core2>
+					<core3>true</core3>
+					<core4>true</core4>
 				</cores>
-                    <governor_data>
+                                <governor_data>
 					<!-- Mode index -->
 					<param_index>0</param_index>
 
@@ -246,7 +248,7 @@
 					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
-					<target_loads>70 600000:17 800000:80 1300000:7 1500000:84 2100000:87</target_loads>
+					<target_loads>65 1500000:75</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
@@ -288,16 +290,12 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-                <freq_max>1500000</freq_max>
+                            <freq_max>1500000</freq_max>
 			    <freq_hispeed>900000</freq_hispeed>
 			</apollo>
 			<atlas>
-                <freq_max>2100000</freq_max>
+                                <freq_max>2100000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
-                <cores>
-					<core3>true</core3>
-					<core4>true</core4>
-				</cores>
 			</atlas>
 		</cpu>
                <gpu>
@@ -317,21 +315,21 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-                <freq_boost>1500000</freq_boost>
+                                <freq_boost>1500000</freq_boost>
 			</apollo>
 			<atlas>
 				<freq_boost>0</freq_boost>
 			</atlas>
 		</cpu>
-        <gpu>
-            <dvfs>
+                <gpu>
+                        <dvfs>
 	 			<freq_max>700</freq_max>
 			</dvfs>
-            <highspeed>
+                        <highspeed>
 				<freq>544</freq>
 			</highspeed>
 		</gpu>
-        <ipa>
+                <ipa>
 			<control_temp>75</control_temp>
 		</ipa>
 	</balanced>
@@ -349,19 +347,16 @@
 		</cpu>
 		<hmp>
 			<power_migration>false</power_migration>
-            <semiboost>true</semiboost>
+                        <semiboost>true</semiboost>
 		</hmp>
 		<gpu>
 			<dvfs>
-            <freq_max>772</freq_max>
+                                <freq_max>772</freq_max>
 			</dvfs>
-            <highspeed>
+                        <highspeed>
 				<freq>700</freq>
 			</highspeed>
 		</gpu>
-                <kernel>
-			<pewq>false</pewq>
-		</kernel>
 	</bias_performance>
 
 	<!--
@@ -371,7 +366,7 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-			    <freq_hispeed>1200000</freq_hispeed>
+			        <freq_hispeed>1200000</freq_hispeed>
 				<freq_min>600000</freq_min>
 			</apollo>
 			<atlas>
@@ -379,8 +374,8 @@
 			</atlas>
 		</cpu>
 		<hmp>
-		    <boost>true</boost>
-            <semiboost>false</semiboost>
+		        <boost>true</boost>
+                        <semiboost>false</semiboost>
 		</hmp>
 		<gpu>
 			<highspeed>
