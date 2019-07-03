@@ -207,7 +207,7 @@
 					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
-					<target_loads>75</target_loads>
+					<target_loads>75 600000:17 800000:80 1000000:9 1200000:83 1500000:85</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
@@ -248,7 +248,7 @@
 					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
-					<target_loads>65 1500000:75</target_loads>
+					<target_loads>70 600000:17 800000:80 1300000:7 1500000:84 2100000:87</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
