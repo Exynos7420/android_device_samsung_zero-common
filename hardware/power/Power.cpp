@@ -416,7 +416,7 @@ void Power::setProfile(SecPowerProfiles profile) {
 		PROFILE_WRITE("/dev/cpuset/top-app/cpus",           cpusets, top_app);
 	}
 
-    /*********************
+        /*********************
 	 * IO-Scheduler
 	 */
 	if (data->iosched.enabled) {

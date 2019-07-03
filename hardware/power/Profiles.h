@@ -176,7 +176,7 @@ struct SecPowerProfile {
 
 	}, kernel);
 
-    PROFILE_DEFINE(struct {
+        PROFILE_DEFINE(struct {
 
 		PROFILE_BOOL(enabled);
 
@@ -184,7 +184,7 @@ struct SecPowerProfile {
 
 	}, iosched);
 
-    PROFILE_DEFINE(struct {
+        PROFILE_DEFINE(struct {
 
 		PROFILE_BOOL(enabled);
 

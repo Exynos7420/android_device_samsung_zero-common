@@ -320,7 +320,7 @@ void Profiles::loadProfileImpl(SecPowerProfile *profile, xmlXPathContext *ctx, c
 	PROFILE_INIT2(gpu,           dvfs,         "gpu/dvfs");
 	PROFILE_INIT2(gpu,           highspeed,    "gpu/highspeed");
 	PROFILE_INIT (kernel,                      "kernel");
-    PROFILE_INIT (iosched,                     "iosched");
+        PROFILE_INIT (iosched,                     "iosched");
 	PROFILE_INIT (ipa,                         "ipa");
 	PROFILE_INIT (slow,                        "slow");
 	PROFILE_INIT (input_booster,               "input_booster");
@@ -341,7 +341,7 @@ void Profiles::loadProfileImpl(SecPowerProfile *profile, xmlXPathContext *ctx, c
 		}
 	}
 
-    if (profile->cpu.enabled) {
+        if (profile->cpu.enabled) {
 		if (profile->cpu.apollo.enabled) {
 			XML_GET_CPUCLUSTER(apollo, 0);
 			XML_GET_CPUGOV(apollo);
@@ -394,7 +394,7 @@ void Profiles::loadProfileImpl(SecPowerProfile *profile, xmlXPathContext *ctx, c
 		PROFILE_SET_BOOL(kernel, pewq, "kernel/pewq", "false");
 	}
 
-    if (profile->iosched.enabled) {
+        if (profile->iosched.enabled) {
 		PROFILE_SET(iosched, scheduler, "iosched/scheduler", "");
 	}
 
@@ -410,7 +410,7 @@ void Profiles::loadProfileImpl(SecPowerProfile *profile, xmlXPathContext *ctx, c
 	if (profile->input_booster.enabled) {
 		PROFILE_SET(input_booster, tail, "input_booster/tail", "0 0 0 0 0 0");
 		PROFILE_SET(input_booster, head, "input_booster/head", "0 0 0 0 0 0");
-    }
+        }
 }
 
 const SecPowerProfile* Profiles::getProfileData(SecPowerProfiles profile) {
