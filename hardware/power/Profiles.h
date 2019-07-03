@@ -176,7 +176,15 @@ struct SecPowerProfile {
 
 	}, kernel);
 
-	PROFILE_DEFINE(struct {
+    PROFILE_DEFINE(struct {
+
+		PROFILE_BOOL(enabled);
+
+		PROFILE_STRING(scheduler);
+
+	}, iosched);
+
+    PROFILE_DEFINE(struct {
 
 		PROFILE_BOOL(enabled);
 

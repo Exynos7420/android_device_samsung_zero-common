@@ -316,10 +316,10 @@ void Power::setProfile(SecPowerProfiles profile) {
 	mCurrentProfile = profile;
 
 	// check if user disabled power-profiles
-	if (!isModuleEnabled("profiles")) {
-		ALOGI("power profiles disabled by user!");
-		return;
-	}
+	//if (!isModuleEnabled("profiles")) {
+	//	ALOGI("power profiles disabled by user!");
+	//	return;
+	//}
 
 	// apply settings
 	const SecPowerProfile* data = Profiles::getProfileData(mCurrentProfile);
@@ -414,6 +414,13 @@ void Power::setProfile(SecPowerProfiles profile) {
 		PROFILE_WRITE("/dev/cpuset/background/cpus",        cpusets, background);
 		PROFILE_WRITE("/dev/cpuset/system-background/cpus", cpusets, system_background);
 		PROFILE_WRITE("/dev/cpuset/top-app/cpus",           cpusets, top_app);
+	}
+
+    /*********************
+	 * IO-Scheduler
+	 */
+	if (data->iosched.enabled) {
+		PROFILE_WRITE("/sys/block/sda/queue/scheduler", iosched, scheduler);
 	}
 
 	/*********************

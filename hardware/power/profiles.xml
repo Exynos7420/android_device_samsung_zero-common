@@ -163,6 +163,10 @@
 			<enabled>true</enabled>
 			<pewq>true</pewq>
 		</kernel>
+        <iosched>
+			<enabled>true</enabled>
+			<scheduler>maple</scheduler>
+		</iosched>
 		<ipa>
 			<enabled>true</enabled>
 			<control_temp>45</control_temp>
