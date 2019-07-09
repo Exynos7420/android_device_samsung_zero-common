@@ -165,7 +165,7 @@
 		</kernel>
                 <iosched>
 			<enabled>true</enabled>
-			<scheduler>maple</scheduler>
+			<scheduler>noop</scheduler>
 		</iosched>
 		<ipa>
 			<enabled>true</enabled>
@@ -203,11 +203,11 @@
 					<boost>0</boost>
 					<boostpulse_duration>40000</boostpulse_duration>
 					<enforced_mode>0</enforced_mode>
-					<go_hispeed_load>85</go_hispeed_load>
+					<go_hispeed_load>95</go_hispeed_load>
 					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
-					<target_loads>75 600000:17 800000:80 1000000:9 1200000:83 1500000:85</target_loads>
+					<target_loads>75 600000:17 900000:81 1200000:83 1500000:84</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
@@ -240,15 +240,15 @@
 					<!-- Mode index -->
 					<param_index>0</param_index>
 
-					<above_hispeed_delay>59000 1300000:39000 1700000:19000</above_hispeed_delay>
+					<above_hispeed_delay>59000 1300000:39000 1704000:19000</above_hispeed_delay>
 					<boost>0</boost>
 					<boostpulse_duration>40000</boostpulse_duration>
 					<enforced_mode>0</enforced_mode>
-					<go_hispeed_load>89</go_hispeed_load>
+					<go_hispeed_load>95</go_hispeed_load>
 					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
-					<target_loads>70 600000:17 800000:80 1300000:7 1500000:84 2100000:87</target_loads>
+					<target_loads>70 600000:17 900000:81 1500000:84 2100000:87</target_loads>
 					<timer_rate>20000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
@@ -315,10 +315,11 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-                                <freq_boost>1500000</freq_boost>
+                                <freq_hispeed>1000000</freq_hispeed>
+                                <freq_boost>1296000</freq_boost>
 			</apollo>
 			<atlas>
-				<freq_boost>0</freq_boost>
+				<freq_boost>900000</freq_boost>
 			</atlas>
 		</cpu>
                 <gpu>
@@ -329,6 +330,9 @@
 				<freq>544</freq>
 			</highspeed>
 		</gpu>
+                <iosched>
+			<scheduler>maple</scheduler>
+		</iosched>
                 <ipa>
 			<control_temp>75</control_temp>
 		</ipa>
@@ -366,12 +370,8 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-			        <freq_hispeed>1200000</freq_hispeed>
-				<freq_min>600000</freq_min>
+			        <freq_hispeed>1296000</freq_hispeed>
 			</apollo>
-			<atlas>
-				<freq_min>600000</freq_min>
-			</atlas>
 		</cpu>
 		<hmp>
 		        <boost>true</boost>
