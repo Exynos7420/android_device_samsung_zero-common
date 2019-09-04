@@ -65,5 +65,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/sensors/gps.xml:system/etc/gps.xml \
 	$(LOCAL_PATH)/configs/sensors/lhd.conf:system/etc/lhd.conf
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Call the proprietary
 $(call inherit-product, vendor/samsung/zerofltexx/zerofltexx-vendor.mk)
