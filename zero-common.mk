@@ -335,6 +335,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/android.hardware.sensors@1.0-service.rc:system/vendor/etc/init/android.hardware.sensors@1.0-service.rc
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Stagefright-shims
 PRODUCT_PACKAGES += \
 	libstagefright_shim

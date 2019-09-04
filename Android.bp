@@ -3,3 +3,6 @@ subdirs = [
     "init",
     "shims",
 ]
+
+soong_namespace {
+}
