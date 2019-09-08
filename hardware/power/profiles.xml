@@ -160,8 +160,8 @@
 			</highspeed>
 		</gpu>
 		<kernel>
-			<enabled>false</enabled>
-			<pewq>false</pewq>
+			<enabled>true</enabled>
+			<pewq>true</pewq>
 		</kernel>
                 <iosched>
 			<enabled>true</enabled>
@@ -233,8 +233,6 @@
 				<governor>interactive</governor>
                                 <cores>
 					<core2>true</core2>
-					<core3>true</core3>
-					<core4>true</core4>
 				</cores>
                                 <governor_data>
 					<!-- Mode index -->
@@ -271,7 +269,7 @@
 		<gpu>
 			<dvfs>
 				<freq_min>266</freq_min>
-				<freq_max>544</freq_max>
+				<freq_max>420</freq_max>
 			</dvfs>
 			<highspeed>
 				<freq>266</freq>
@@ -296,9 +294,16 @@
 			<atlas>
                                 <freq_max>2100000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
+                                <cores>
+					<core3>true</core3>
+					<core4>true</core4>
+				</cores>
 			</atlas>
 		</cpu>
-               <gpu>
+                <gpu>
+                        <dvfs>
+				<freq_max>544</freq_max>
+			</dvfs>
 			<highspeed>
 				<freq>420</freq>
 			</highspeed>
@@ -330,6 +335,9 @@
 				<freq>544</freq>
 			</highspeed>
 		</gpu>
+                <kernel>
+			<pewq>false</pewq>
+		</kernel>
                 <iosched>
 			<scheduler>maple</scheduler>
 		</iosched>
