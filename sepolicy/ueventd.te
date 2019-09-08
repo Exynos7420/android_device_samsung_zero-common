@@ -2,6 +2,6 @@
 allow ueventd emmcblk_device:blk_file { ioctl read write create getattr setattr lock append unlink open };
 
 # /sys/devices/virtual/misc/multipdp/uevent
-allow ueventd sysfs_multipdp_writable:file rw_file_perms;
+allow ueventd sysfs_multipdp:file rw_file_perms;
 
 allow ueventd camera_device:file { relabelto getattr write open };

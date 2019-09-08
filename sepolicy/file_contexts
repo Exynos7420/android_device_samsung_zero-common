@@ -71,9 +71,10 @@
 # data files
 /data/camera(/.*)?           u:object_r:camera_data_file:s0
 /data/nfc(/.*)?              u:object_r:nfc_data_file:s0
-/data/.cid.info              u:object_r:wifi_data_file:s0
-/data/.wifiver.info          u:object_r:wifi_data_file:s0
+/data/misc/conn/.cid.info              u:object_r:wifi_data_file:s0
+/data/misc/conn/.wifiver.info          u:object_r:wifi_data_file:s0
 /data/misc/radio(/.*)?       u:object_r:radio_data_file:s0
+/data/vendor/display(/.*)?   u:object_r:display_vendor_data_file:s0
 
 # biometrics
 /data/biometrics(/.*)?	     u:object_r:biometrics_data_file:s0
@@ -92,7 +93,7 @@
 
 ####################################
 # camera
-/sys/devices/virtual/camera(/.*)?           u:object_r:camera_device:s0
+/sys/devices/virtual/camera(/.*)?           u:object_r:sysfs_camera:s0
 
 ####################################
 # cbd
@@ -102,14 +103,17 @@
 # rild
 /data/data/com.android.providers.telephony/databases(/.*)?     u:object_r:radio_data_file:s0
 /data/data/com.android.providers.telephony/shared_prefs(/.*)?  u:object_r:radio_data_file:s0
-/sys/devices/virtual/misc/multipdp(/.*)     u:object_r:sysfs_multipdp_writable:s0
+/sys/devices/virtual/misc/multipdp(/.*)     u:object_r:sysfs_multipdp:s0
 /dev/socket/rild2                           u:object_r:rild_socket:s0
 /dev/socket/rild-debug[0-9]*                u:object_r:rild_debug_socket:s0
 
 ####################################
 # mDNIe
-/sys/devices/[0-9]*.decon_fb/lcd/panel/mdnie/mode       u:object_r:sysfs_mdnie_writable:s0
-/sys/devices/[0-9]*.decon_fb/lcd/panel/mdnie/scenario   u:object_r:sysfs_mdnie_writable:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/accessibility       u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/mode                u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/scenario            u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/lux                 u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/sensorRGB           u:object_r:sysfs_mdnie:s0
 
 ####################################
 # daemons
@@ -133,6 +137,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service.zero     u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung               u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung                 u:object_r:hal_lineage_touch_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.zero    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 ####################################
 # Nexus7420 Power HAL
 #
