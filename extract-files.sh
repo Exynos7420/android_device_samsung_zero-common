@@ -73,4 +73,7 @@ patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl24.so $BLOB_
 patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl24.so $BLOB_ROOT/vendor/lib/libsec-ril-dsds.so
 patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl24.so $BLOB_ROOT/vendor/lib64/libsec-ril-dsds.so
 
+# replace SSLv3_client_method with SSLv23_method
+sed -i "s/SSLv3_client_method/SSLv23_method\x00\x00\x00\x00\x00\x00/" $BLOB_ROOT/bin/gpsd
+
 "${MY_DIR}/setup-makefiles.sh"
