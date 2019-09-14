@@ -80,11 +80,9 @@ ro.nfc.sec_hal=true
 # HWC
 #
 
-debug.hwc.force_gpu=1
-debug.egl.hw=0
-debug.sf.hw=0
-persist.sys.ui.hw=false
-debug.sf.latch_unsignaled=1
+debug.hwc.force_gpu=0
+debug.hwc.winupdate=1
+debug.hwc.max_hw_overlays=6
 
 #
 # Graphics

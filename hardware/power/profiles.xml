@@ -202,9 +202,9 @@
 					<above_hispeed_delay>19000</above_hispeed_delay>
 					<boost>0</boost>
 					<boostpulse_duration>40000</boostpulse_duration>
-					<enforced_mode>1</enforced_mode>
+					<enforced_mode>0</enforced_mode>
 					<go_hispeed_load>95</go_hispeed_load>
-					<io_is_busy>0</io_is_busy>
+					<io_is_busy>1</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
 					<target_loads>75 600000:17 900000:81 1200000:10 1500000:84</target_loads>
