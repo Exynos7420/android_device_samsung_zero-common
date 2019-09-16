@@ -128,7 +128,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service
 
 # DTB
-PRODUCT_PACKAGES += \
+PRODUCT_HOST_PACKAGES += \
 	dtbhtoolExynos
 
 # Doze
