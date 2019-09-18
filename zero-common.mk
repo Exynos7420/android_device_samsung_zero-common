@@ -285,6 +285,11 @@ PRODUCT_PACKAGES += \
 	android.hardware.radio.deprecated@1.0 \
 	modemloader
 
+# APN Definitions - override incomplete/broken lineageos version with Samsung version
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/telephony/apns-conf.xml:system/etc/apns-conf.xml \
+    $(LOCAL_PATH)/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
+
 # Properties 
 TARGET_SYSTEM_PROP += device/samsung/zero-common/system.prop
     
