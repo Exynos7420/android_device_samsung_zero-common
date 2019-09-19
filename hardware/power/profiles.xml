@@ -204,7 +204,7 @@
 					<boostpulse_duration>40000</boostpulse_duration>
 					<enforced_mode>0</enforced_mode>
 					<go_hispeed_load>95</go_hispeed_load>
-					<io_is_busy>1</io_is_busy>
+					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
 					<target_loads>75 600000:17 900000:81 1200000:10 1500000:84</target_loads>
@@ -243,7 +243,7 @@
 					<boostpulse_duration>40000</boostpulse_duration>
 					<enforced_mode>0</enforced_mode>
 					<go_hispeed_load>95</go_hispeed_load>
-					<io_is_busy>1</io_is_busy>
+					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
 					<target_loads>70 600000:17 900000:81 1200000:10 1500000:84 2100000:87</target_loads>
@@ -292,7 +292,6 @@
 			    <freq_hispeed>900000</freq_hispeed>
 			</apollo>
 			<atlas>
-                                <freq_max>2100000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
                                 <cores>
 					<core3>true</core3>
@@ -324,6 +323,7 @@
                                 <freq_boost>1296000</freq_boost>
 			</apollo>
 			<atlas>
+                                <freq_max>2100000</freq_max>
 				<freq_boost>900000</freq_boost>
 			</atlas>
 		</cpu>
