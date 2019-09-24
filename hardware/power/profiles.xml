@@ -59,14 +59,14 @@
 					<timer_slack>20000</timer_slack>
 
 					<!-- Single mode -->
-					<single_cluster0_min_freq>300000</single_cluster0_min_freq>
+					<single_cluster0_min_freq>0</single_cluster0_min_freq>
 					<single_enter_load>200</single_enter_load>
 					<single_enter_time>160000</single_enter_time>
 					<single_exit_load>90</single_exit_load>
 					<single_exit_time>80000</single_exit_time>
 
                                         <!-- Multi mode -->
-					<multi_cluster0_min_freq>300000</multi_cluster0_min_freq>
+					<multi_cluster0_min_freq>0</multi_cluster0_min_freq>
 					<multi_enter_load>800</multi_enter_load>
 					<multi_enter_time>80000</multi_enter_time>
 					<multi_exit_load>360</multi_exit_load>
@@ -105,14 +105,14 @@
 					<timer_slack>20000</timer_slack>
 
 					<!-- Single mode -->
-					<single_cluster0_min_freq>600000</single_cluster0_min_freq>
+					<single_cluster0_min_freq>0</single_cluster0_min_freq>
 					<single_enter_load>95</single_enter_load>
 					<single_enter_time>199000</single_enter_time>
 					<single_exit_load>60</single_exit_load>
 					<single_exit_time>99000</single_exit_time>
 
 					<!-- Multi mode -->
-					<multi_cluster0_min_freq>600000</multi_cluster0_min_freq>
+					<multi_cluster0_min_freq>0</multi_cluster0_min_freq>
 					<multi_enter_load>360</multi_enter_load>
 					<multi_enter_time>79000</multi_enter_time>
 					<multi_exit_load>240</multi_exit_load>
@@ -208,18 +208,18 @@
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
 					<target_loads>75 600000:17 900000:81 1200000:10 1500000:84</target_loads>
-					<timer_rate>20000</timer_rate>
+					<timer_rate>30000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
 					<!-- Single mode -->
-					<single_cluster0_min_freq>400000</single_cluster0_min_freq>
+					<single_cluster0_min_freq>0</single_cluster0_min_freq>
 					<single_enter_load>200</single_enter_load>
 					<single_enter_time>160000</single_enter_time>
 					<single_exit_load>90</single_exit_load>
 					<single_exit_time>80000</single_exit_time>
 
                                         <!-- Multi mode -->
-					<multi_cluster0_min_freq>400000</multi_cluster0_min_freq>
+					<multi_cluster0_min_freq>0</multi_cluster0_min_freq>
 					<multi_enter_load>800</multi_enter_load>
 					<multi_enter_time>80000</multi_enter_time>
 					<multi_exit_load>360</multi_exit_load>
@@ -233,6 +233,8 @@
 				<governor>interactive</governor>
                                 <cores>
 					<core2>true</core2>
+					<core3>true</core3>
+					<core4>true</core4>
 				</cores>
                                 <governor_data>
 					<!-- Mode index -->
@@ -246,19 +248,19 @@
 					<io_is_busy>0</io_is_busy>
 					<min_sample_time>40000</min_sample_time>
 					<mode>0</mode>
-					<target_loads>70 600000:17 900000:81 1200000:10 1500000:84 2100000:87</target_loads>
-					<timer_rate>20000</timer_rate>
+					<target_loads>80 600000:17 900000:81 1200000:10 1500000:84 2100000:87</target_loads>
+					<timer_rate>25000</timer_rate>
 					<timer_slack>20000</timer_slack>
 
 					<!-- Single mode -->
-					<single_cluster0_min_freq>600000</single_cluster0_min_freq>
+					<single_cluster0_min_freq>0</single_cluster0_min_freq>
 					<single_enter_load>95</single_enter_load>
 					<single_enter_time>199000</single_enter_time>
 					<single_exit_load>60</single_exit_load>
 					<single_exit_time>99000</single_exit_time>
 
 					<!-- Multi mode -->
-					<multi_cluster0_min_freq>600000</multi_cluster0_min_freq>
+					<multi_cluster0_min_freq>0</multi_cluster0_min_freq>
 					<multi_enter_load>360</multi_enter_load>
 					<multi_enter_time>79000</multi_enter_time>
 					<multi_exit_load>240</multi_exit_load>
@@ -292,11 +294,7 @@
 			    <freq_hispeed>900000</freq_hispeed>
 			</apollo>
 			<atlas>
-				<freq_hispeed>600000</freq_hispeed>
-                                <cores>
-					<core3>true</core3>
-					<core4>true</core4>
-				</cores>
+				<freq_hispeed>800000</freq_hispeed>
 			</atlas>
 		</cpu>
                 <gpu>
@@ -304,7 +302,7 @@
 				<freq_max>544</freq_max>
 			</dvfs>
 			<highspeed>
-				<freq>420</freq>
+				<freq>350</freq>
 			</highspeed>
 		</gpu>
 		<ipa>
@@ -320,7 +318,7 @@
 		<cpu>
 			<apollo>
                                 <freq_hispeed>1000000</freq_hispeed>
-                                <freq_boost>1296000</freq_boost>
+                                <freq_boost>1200000</freq_boost>
 			</apollo>
 			<atlas>
                                 <freq_max>2100000</freq_max>
