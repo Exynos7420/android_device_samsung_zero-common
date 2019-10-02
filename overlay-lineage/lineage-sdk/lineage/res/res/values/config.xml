@@ -21,13 +21,6 @@
      NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
     <bool name="config_proximityCheckOnWake">true</bool>
 
-    <!-- Default values for LiveDisplay -->
-    <integer name="config_dayColorTemperature">6500</integer>
-    <integer name="config_nightColorTemperature">4800</integer>
-    <integer name="config_outdoorAmbientLux">10000</integer>
-    <integer name="config_outdoorAmbientLuxHysteresis">1000</integer>
-    <integer name="config_defaultLiveDisplayMode">0</integer>
-
     <!-- BurnIn protection. This should be enabled on devices that have OLED displays -->
     <bool name="config_enableBurnInProtection">true</bool>
 
