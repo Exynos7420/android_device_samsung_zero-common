@@ -155,10 +155,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/zero-common/releasetools
 # HDMI
 BOARD_HDMI_INCAPABLE := true
 
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_sec
-TARGET_UNIFIED_DEVICE := true
-
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
