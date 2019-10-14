@@ -431,14 +431,6 @@
 		<path name="main-mic" />
 		<path name="2nd-mic" />
 	</path>
-	
-	<path name="camcorder-headset-mic">
-		<path name="media-headset-mic" />
-	</path>
-
-	<path name="camcorder-headphone-mic">
-		<path name="camcorder-mic" />
-    </path>
 
     <!-- NB -->
 	<path name="incall_nb-handset-mic">
@@ -828,19 +820,6 @@
 		<ctl name="IN3L Digital Volume" value="168" />
 		<ctl name="LHPF2 Input 1 Volume" value="40" />
 	</path>
-	
-	<path name="gain-camcorder-headset-mic">
-		<ctl name="IN2L Volume" value="30" />
-		<ctl name="IN2L Digital Volume" value="130" />
-		<ctl name="LHPF1 Input 1 Volume" value="32" />
-	</path>
-
-	<path name="gain-camcorder-headphone-mic">
-		<ctl name="IN1L Digital Volume" value="168" />
-		<ctl name="LHPF1 Input 1 Volume" value="40" />
-		<ctl name="IN3L Digital Volume" value="168" />
-		<ctl name="LHPF2 Input 1 Volume" value="40" />
-    </path>
 
     <!-- recognition input volume -->
 	<path name="gain-recognition-mic">
