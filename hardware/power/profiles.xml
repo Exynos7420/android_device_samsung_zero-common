@@ -31,7 +31,7 @@
 				<enabled>true</enabled>
 				<governor>interactive</governor>
 				<freq_min>300000</freq_min>
-				<freq_max>400000</freq_max>
+				<freq_max>900000</freq_max>
 				<freq_hispeed>300000</freq_hispeed>
 				<freq_boost>0</freq_boost>
 				<cores>
@@ -76,9 +76,9 @@
 			<atlas>
 				<enabled>true</enabled>
 				<governor>interactive</governor>
-				<freq_min>200000</freq_min>
-				<freq_max>600000</freq_max>
-				<freq_hispeed>400000</freq_hispeed>
+				<freq_min>600000</freq_min>
+				<freq_max>900000</freq_max>
+				<freq_hispeed>600000</freq_hispeed>
 				<freq_boost>0</freq_boost>
 				<cores>
 					<enabled>true</enabled>
