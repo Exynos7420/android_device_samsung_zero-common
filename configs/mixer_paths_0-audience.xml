@@ -4682,6 +4682,8 @@
     </path>
 
     <path name="voice-rec-headset-mic">
+        <ctl name="AIF1TX1 Input 1" value="LHPF1" />
+	<ctl name="AIF1TX2 Input 1" value="LHPF1" />
         <path name="recording-headset-mic" />
     	<path name="gain-recording-headset-mic" />
     </path>
