@@ -8,9 +8,6 @@ on init
 
 on boot
 
-    # Restore the previous batt_capacity_max (if it exists)
-    copy /efs/Battery/prev_batt_capacity_max /sys/class/power_supply/battery/batt_capacity_max
-
     # cpusets
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/background/cpus 0-4
@@ -203,8 +200,3 @@ on boot
     # DT2W Permissions
     chown system system /sys/class/dt2w/enabled
     chmod 0644 /sys/class/dt2w/enabled
-
-on shutdown
-    # Fix permissions then store the current batt_capacity_max value in the EFS partition
-    chmod 600 /sys/class/power_supply/battery/batt_capacity_max
-    copy /sys/class/power_supply/battery/batt_capacity_max /efs/Battery/prev_batt_capacity_max
