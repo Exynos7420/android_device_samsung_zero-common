@@ -1196,13 +1196,6 @@
 		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
 	</path>
 
-	<!-- camcorder input -->
-	<path name="camcorder-mic">
-		<path name="capture_channel_invert" />
-		<path name="main-mic" />
-		<path name="2nd-mic" />
-	</path>
-
 	<!-- voice input -->
 	<path name="recording-mic">
 		<path name="media-mic" />
@@ -3476,14 +3469,6 @@
 		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
 	</path>
 
-	<!-- camcorder input volume -->
-	<path name="gain-camcorder-mic">
-		<ctl name="IN1L Digital Volume" value="168" />
-		<ctl name="LHPF1 Input 1 Volume" value="40" />
-		<ctl name="IN3L Digital Volume" value="168" />
-		<ctl name="LHPF2 Input 1 Volume" value="40" />
-	</path>
-
 	<!-- voice recording input volume -->
 	<path name="gain-recording-mic">
 		<ctl name="IN1L Digital Volume" value="128" />
@@ -4695,11 +4680,6 @@
         <path name="recording-mic" />
     	<path name="gain-recording-mic" />
     </path>
-
-	<!-- samsung uses the same path
-    <path name="camcorder-mic">
-    </path>
-	-->
 
     <path name="loopback-aec">
         <!-- Empty path -->

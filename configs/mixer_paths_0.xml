@@ -425,13 +425,6 @@
 		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
 	</path>
 
-	<!-- camcorder input -->
-	<path name="camcorder-mic">
-		<path name="capture_channel_invert" />
-		<path name="main-mic" />
-		<path name="2nd-mic" />
-	</path>
-
     <!-- NB -->
 	<path name="incall_nb-handset-mic">
 		<ctl name="Headset Mic Switch" value="0" />
@@ -811,14 +804,6 @@
 		<ctl name="AIF2TX2 Input 1 Volume" value="32" />
 		<ctl name="AIF1TX1 Input 1 Volume" value="32" />
 		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
-	</path>
-
-    <!-- camcorder input volume -->
-	<path name="gain-camcorder-mic">
-		<ctl name="IN1L Digital Volume" value="168" />
-		<ctl name="LHPF1 Input 1 Volume" value="40" />
-		<ctl name="IN3L Digital Volume" value="168" />
-		<ctl name="LHPF2 Input 1 Volume" value="40" />
 	</path>
 
     <!-- recognition input volume -->
