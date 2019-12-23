@@ -37,6 +37,7 @@ TARGET_NR_CPUS := 8
 
 # Audio
 AUDIOSERVER_MULTILIB := 32
+TARGET_AUDIOHAL_VARIANT := samsung
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
@@ -90,6 +91,10 @@ TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_zero
 TARGET_LD_SHIM_LIBS += \
 	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
 	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
+
+# Fingerprint
+TARGET_SEC_FP_CALL_NOTIFY_ON_CANCEL := true
+TARGET_SEC_FP_USES_PERCENTAGE_SAMPLES := true
 
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
@@ -214,10 +219,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3124019200
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos7420
 TARGET_SLSI_VARIANT := cm
-
-# Samsung HAL's
-TARGET_SEC_FP_HAL_VARIANT := bauth
-TARGET_AUDIOHAL_VARIANT := samsung
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
