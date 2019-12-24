@@ -136,12 +136,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ZeroDoze
 
-##################
-# F-Droid
-PRODUCT_PACKAGES += \
-    FDroid \
-    F-DroidPrivilegedExtension
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
