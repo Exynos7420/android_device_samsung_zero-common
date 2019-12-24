@@ -415,14 +415,8 @@ on fs
 # Permissions for System LSI NFC
 # NFC : Permissions for NFC
     chmod 0660 /dev/sec-nfc
-    chmod 0660 /dev/sec-nfc-fn
-    chmod 0660 /dev/felica_ant
-    chmod 0660 /dev/ttySAC0
 # NFC : change owner
     chown nfc nfc /dev/sec-nfc
-    chmod 0660 /dev/sec-nfc-fn
-    chmod 0660 /dev/felica_ant
-    chmod 0660 /dev/ttySAC0
 
 # Permissions for NXP NFC
 # NFC : Permissions for NFC
@@ -437,9 +431,6 @@ on fs
 # Permissions for S.LSI ESE
     chmod 0660 /dev/p3
     chown system system /dev/p3
-
-# NFC : create data/nfc for nv storage
-    mkdir /efs/sec_efs/nfc 0500 nfc nfc
 
 # terminal mode
     chmod 0660 /sys/class/android_usb/android0/terminal_version
