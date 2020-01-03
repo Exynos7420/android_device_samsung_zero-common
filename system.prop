@@ -82,6 +82,7 @@ persist.sys.wfd.virtual=0
 #
 
 ro.nfc.sec_hal=true 
+ro.nfc.fw_dl_on_boot=false
 
 #
 # HWC
