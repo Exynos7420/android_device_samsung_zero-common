@@ -80,6 +80,10 @@ TARGET_EXFAT_DRIVER := sdfat
 # FIMG2D
 BOARD_USES_SKIA_FIMGAPI := true
 
+# Root extra folders
+BOARD_ROOT_EXTRA_FOLDERS += efs
+TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
+
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
