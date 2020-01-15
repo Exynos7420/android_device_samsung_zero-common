@@ -115,10 +115,6 @@ BOARD_USE_ANB_OUTBUF_SHARE := true
 BOARD_USE_IMPROVED_BUFFER := true
 BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 
-# GPS-shims
-TARGET_LD_SHIM_LIBS += \
-	/system/bin/gpsd|/system/lib64/libsensor.so
-
 #
 # Hardware Classes
 #
