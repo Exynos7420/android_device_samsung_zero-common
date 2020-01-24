@@ -86,10 +86,10 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/vendor/etc/mixer_paths_0.xml \
-    $(LOCAL_PATH)/configs/mixer_paths_0-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
+    $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_0.xml:system/vendor/etc/mixer_paths_0.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_0-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
 
 PRODUCT_PACKAGES += \
     audio.primary.universal7420 \
@@ -115,7 +115,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/external_camera_config.xml:system/vendor/etc/external_camera_config.xml
+    $(LOCAL_PATH)/configs/camera/external_camera_config.xml:system/vendor/etc/external_camera_config.xml
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -141,8 +141,8 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
-    $(LOCAL_PATH)/configs/lhd.conf:system/etc/lhd.conf
+    $(LOCAL_PATH)/configs/sensors/gps.xml:system/etc/gps.xml \
+    $(LOCAL_PATH)/configs/sensors/lhd.conf:system/etc/lhd.conf
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -221,9 +221,9 @@ PRODUCT_PACKAGES += \
 
 # Media profile
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:system/vendor/etc/media_profiles_V1_0.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:system/vendor/etc/media_profiles_V1_0.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
@@ -239,10 +239,10 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-service
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml \
-    $(LOCAL_PATH)/configs/libnfc-sec-hal.conf:system/vendor/etc/libnfc-sec-hal.conf \
-    $(LOCAL_PATH)/configs/libnfc-sec.conf:system/vendor/etc/libnfc-sec.conf \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/vendor/etc/libnfc-nci.conf
+    $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:system/etc/nfcee_access.xml \
+    $(LOCAL_PATH)/configs/nfc/libnfc-sec-hal.conf:system/vendor/etc/libnfc-sec-hal.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-sec.conf:system/vendor/etc/libnfc-sec.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-nci.conf
 
 # Network
 PRODUCT_PACKAGES += \
@@ -263,7 +263,7 @@ PRODUCT_PACKAGES += \
     libExynosOMX_shim
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
+    $(LOCAL_PATH)/configs/media/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -329,14 +329,14 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/android.hardware.sensors@1.0-service.rc:system/vendor/etc/init/android.hardware.sensors@1.0-service.rc
+    $(LOCAL_PATH)/configs/sensors/android.hardware.sensors@1.0-service.rc:system/vendor/etc/init/android.hardware.sensors@1.0-service.rc
 
 # Stagefright-shims
 PRODUCT_PACKAGES += \
 	libstagefright_shim
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/mediaserver.rc:system/etc/init/mediaserver.rc
+    $(LOCAL_PATH)/configs/media/mediaserver.rc:system/etc/init/mediaserver.rc
 
 # TextClassifier
 PRODUCT_PACKAGES += \
