@@ -163,7 +163,7 @@
 			<enabled>true</enabled>
 			<pewq>true</pewq>
 		</kernel>
-                <iosched>
+            <iosched>
 			<enabled>true</enabled>
 			<scheduler>noop</scheduler>
 		</iosched>
@@ -195,7 +195,7 @@
 				<freq_max>1200000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
 				<governor>interactive</governor>
-                                <governor_data>
+                <governor_data>
 					<!-- Mode index -->
 					<param_index>0</param_index>
 
@@ -231,12 +231,10 @@
 				<freq_max>1704000</freq_max>
 				<freq_hispeed>600000</freq_hispeed>
 				<governor>interactive</governor>
-                                <cores>
+                <cores>
 					<core2>true</core2>
-					<core3>true</core3>
-					<core4>true</core4>
 				</cores>
-                                <governor_data>
+                <governor_data>
 					<!-- Mode index -->
 					<param_index>0</param_index>
 
@@ -290,15 +288,19 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-                            <freq_max>1500000</freq_max>
+                <freq_max>1500000</freq_max>
 			    <freq_hispeed>900000</freq_hispeed>
 			</apollo>
 			<atlas>
 				<freq_hispeed>800000</freq_hispeed>
+				<cores>
+					<core3>true</core3>
+					<core4>true</core4>
+				</cores>
 			</atlas>
 		</cpu>
-                <gpu>
-                        <dvfs>
+        <gpu>
+            <dvfs>
 				<freq_max>544</freq_max>
 			</dvfs>
 			<highspeed>
@@ -317,29 +319,29 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-                                <freq_hispeed>1000000</freq_hispeed>
-                                <freq_boost>1200000</freq_boost>
+                <freq_hispeed>9000000</freq_hispeed>
+                <freq_boost>900000</freq_boost>
 			</apollo>
 			<atlas>
-                                <freq_max>2100000</freq_max>
+                <freq_max>2100000</freq_max>
 				<freq_boost>900000</freq_boost>
 			</atlas>
 		</cpu>
-                <gpu>
-                        <dvfs>
+        <gpu>
+            <dvfs>
 	 			<freq_max>700</freq_max>
 			</dvfs>
-                        <highspeed>
+            <highspeed>
 				<freq>544</freq>
 			</highspeed>
 		</gpu>
-                <kernel>
+        <kernel>
 			<pewq>false</pewq>
 		</kernel>
-                <iosched>
+        <iosched>
 			<scheduler>maple</scheduler>
 		</iosched>
-                <ipa>
+        <ipa>
 			<control_temp>75</control_temp>
 		</ipa>
 	</balanced>
@@ -357,13 +359,13 @@
 		</cpu>
 		<hmp>
 			<power_migration>false</power_migration>
-                        <semiboost>true</semiboost>
+            <semiboost>true</semiboost>
 		</hmp>
 		<gpu>
 			<dvfs>
-                                <freq_max>772</freq_max>
+                <freq_max>772</freq_max>
 			</dvfs>
-                        <highspeed>
+            <highspeed>
 				<freq>700</freq>
 			</highspeed>
 		</gpu>
@@ -376,12 +378,12 @@
 		<enabled>true</enabled>
 		<cpu>
 			<apollo>
-			        <freq_hispeed>1296000</freq_hispeed>
+			    <freq_hispeed>1296000</freq_hispeed>
 			</apollo>
 		</cpu>
 		<hmp>
 		        <boost>true</boost>
-                        <semiboost>false</semiboost>
+                <semiboost>false</semiboost>
 		</hmp>
 		<gpu>
 			<highspeed>
