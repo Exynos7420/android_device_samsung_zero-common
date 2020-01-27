@@ -12,7 +12,7 @@ Samsung Galaxy S6/S6 Edge was released in April 2015.
 | Memory       | 3GB RAM                                         |
 | Shipped Android version | 5.0.2                           	 |
 | Storage      | 32/64/128GB UFS storage                         |
-| Battery      | Non-removable Li-Po 2550-2600 mAh             	 |
+| Battery      | Non-removable Li-Ion 2550-2600 mAh             	 |
 | Dimensions   | 143.4 x 70.5 x 6.8 mm	                         |
 | Display      | 1440x2560 pixels, 5.1    			 |
 Rear Camera    | 16 MP                                           |
