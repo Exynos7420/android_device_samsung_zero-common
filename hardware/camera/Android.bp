@@ -32,6 +32,7 @@ cc_library_shared {
         "CameraWrapper.cpp",
         "Camera2Wrapper.cpp",
         "Camera3Wrapper.cpp",
+        "CallbackWorkerThread.cpp",
     ],
 
     export_shared_lib_headers: [
