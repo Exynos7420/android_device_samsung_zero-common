@@ -241,9 +241,6 @@ private:
 	// updates the current state of managed input-devices.
 	void setInputState(bool enabled);
 
-	// updates the current state the fingerprint-sensor
-	void setFingerprintState(bool enabled);
-
 	// updates the current state the doubletap2wake-capability. uses the 
 	// global member [mIsDT2WEnabled] to determine the new state
 	void setDT2WState();
