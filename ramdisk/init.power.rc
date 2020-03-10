@@ -200,3 +200,6 @@ on boot
     # DT2W Permissions
     chown system system /sys/class/dt2w/enabled
     chmod 0644 /sys/class/dt2w/enabled
+
+    # Disable Adaptive Fast Charging
+    write /sys/class/sec/switch/afc_disable 1
