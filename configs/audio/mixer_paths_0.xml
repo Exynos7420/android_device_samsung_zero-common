@@ -425,6 +425,20 @@
 		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
 	</path>
 
+        <path name="camcorder-headphone-mic">
+               <path name="camcorder-mic-oe" />
+        </path>
+
+
+        <!-- camcorder input -->
+       <path name="camcorder-mic-oe">
+               <path name="capture_channel_left"/>
+               <path name="main-mic" />
+               <path name="2nd-mic" />
+                <path name="gain-media-mic"/>
+       </path>
+
+
     <!-- NB -->
 	<path name="incall_nb-handset-mic">
 		<ctl name="Headset Mic Switch" value="0" />
@@ -481,8 +495,8 @@
 		<ctl name="DSP3 Firmware" value="TX_NB" />
 		<ctl name="DSP2 Aux 6" value="ISRC1DEC2" />
 		<ctl name="DSP3 Virtual Input" value="Shared Memory" />
-		<ctl name="DSP3L Input 1" value="ISRC1DEC2" />
-		<ctl name="DSP3R Input 1" value="ISRC1DEC1" />
+		<ctl name="DSP3L Input 1" value="ISRC1DEC1" />
+		<ctl name="DSP3R Input 1" value="ISRC1DEC2" />
 		<ctl name="DSP3 Aux 1" value="ISRC1DEC4" />
 		<ctl name="ISRC3INT1 Input" value="DSP3.1" />
 		<ctl name="ASRC1IN1L Input" value="ISRC3INT1" />
@@ -577,8 +591,8 @@
 		<ctl name="DSP3 Firmware" value="TX_WB" />
 		<ctl name="DSP2 Aux 6" value="ISRC2DEC2" />
 		<ctl name="DSP3 Virtual Input" value="Shared Memory" />
-		<ctl name="DSP3L Input 1" value="ISRC2DEC2" />
-		<ctl name="DSP3R Input 1" value="ISRC2DEC1" />
+		<ctl name="DSP3L Input 1" value="ISRC2DEC1" />
+		<ctl name="DSP3R Input 1" value="ISRC2DEC2" />
 		<ctl name="DSP3 Aux 1" value="ISRC2DEC4" />
 		<ctl name="ASRC1IN1L Input" value="DSP3.1" />
 		<ctl name="ASRC1IN1R Input" value="DSP3.1" />
@@ -806,13 +820,35 @@
 		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
 	</path>
 
+    <path name="gain-camcorder-headset-mic">
+               <ctl name="IN2L Volume" value="30" />
+               <ctl name="IN2L Digital Volume" value="168" />
+               <ctl name="LHPF1 Input 1 Volume" value="40" />
+       </path>
+
+    <path name="gain-camcorder-headphone-mic">
+               <ctl name="IN1L Digital Volume" value="168" />
+               <ctl name="LHPF1 Input 1 Volume" value="40" />
+               <ctl name="IN3L Digital Volume" value="168" />
+               <ctl name="LHPF2 Input 1 Volume" value="40" />
+    </path>
+
+    <!-- camcorder input volume -->
+       <path name="gain-camcorder-mic-oe">
+               <ctl name="IN1L Digital Volume" value="168" />
+               <ctl name="LHPF1 Input 1 Volume" value="40" />
+               <ctl name="IN3L Digital Volume" value="168" />
+               <ctl name="LHPF2 Input 1 Volume" value="40" />
+       </path>
+
+
     <!-- recognition input volume -->
 	<path name="gain-recognition-mic">
 		<ctl name="IN1L Digital Volume" value="145" />
 		<ctl name="LHPF1 Input 1 Volume" value="32" />
 	</path>
 
-    <path name="gain-recognition-headset-mic">
+        <path name="gain-recognition-headset-mic">
 		<ctl name="IN2L Volume" value="30" />
 		<ctl name="IN2L Digital Volume" value="129" />
 		<ctl name="LHPF1 Input 1 Volume" value="32" />
@@ -989,6 +1025,12 @@
 		<path name="main-mic"/>
 		<path name="gain-recognition-mic"/>
 	</path>
+
+         <path name="camcorder-mic">
+                <path name="camcorder-mic-oe" />
+                <path name="gain-camcorder-mic-oe" />
+         </path>
+
 
 	<path name="voice-rec-headset-mic">
                 <ctl name="AIF1TX1 Input 1" value="LHPF1" />
