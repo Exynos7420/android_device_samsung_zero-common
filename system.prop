@@ -32,12 +32,6 @@ dalvik.vm.heapminfree=512k
 dalvik.vm.heapmaxfree=8m
 
 #
-# Power
-#
-
-sys.power.profiles=true
-
-#
 # Ril
 #
 
