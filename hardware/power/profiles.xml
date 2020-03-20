@@ -150,13 +150,13 @@
 			<enabled>true</enabled>
 			<dvfs>
 				<enabled>true</enabled>
-				<freq_min>100</freq_min>
-				<freq_max>100</freq_max>
+				<freq_min>266</freq_min>
+				<freq_max>266</freq_max>
 			</dvfs>
 			<highspeed>
 				<enabled>true</enabled>
-				<freq>100</freq>
-				<load>100</load>
+				<freq>266</freq>
+				<load>266</load>
 			</highspeed>
 		</gpu>
 		<kernel>
@@ -165,7 +165,7 @@
 		</kernel>
                 <iosched>
 			<enabled>true</enabled>
-			<scheduler>noop</scheduler>
+			<scheduler>maple</scheduler>
 		</iosched>
 		<ipa>
 			<enabled>true</enabled>
@@ -362,9 +362,6 @@
 				<freq>420</freq>
 			</highspeed>
 		</gpu>
-                <iosched>
-			<scheduler>maple</scheduler>
-		</iosched>
                 <ipa>
 			<control_temp>75</control_temp>
 		</ipa>
