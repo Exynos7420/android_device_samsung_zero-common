@@ -92,7 +92,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths_0-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
 
 PRODUCT_PACKAGES += \
-    audio.primary.universal7420 \
+    audio.primary.universal7420_32 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
