@@ -425,20 +425,6 @@
 		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
 	</path>
 
-        <path name="camcorder-headphone-mic">
-               <path name="camcorder-mic-oe" />
-        </path>
-
-
-        <!-- camcorder input -->
-       <path name="camcorder-mic-oe">
-               <path name="capture_channel_left"/>
-               <path name="main-mic" />
-               <path name="2nd-mic" />
-                <path name="gain-media-mic"/>
-       </path>
-
-
     <!-- NB -->
 	<path name="incall_nb-handset-mic">
 		<ctl name="Headset Mic Switch" value="0" />
@@ -820,28 +806,6 @@
 		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
 	</path>
 
-    <path name="gain-camcorder-headset-mic">
-               <ctl name="IN2L Volume" value="30" />
-               <ctl name="IN2L Digital Volume" value="103" />
-               <ctl name="LHPF1 Input 1 Volume" value="32" />
-       </path>
-
-    <path name="gain-camcorder-headphone-mic">
-               <ctl name="IN1L Digital Volume" value="128" />
-               <ctl name="LHPF1 Input 1 Volume" value="32" />
-               <ctl name="IN3L Digital Volume" value="128" />
-               <ctl name="LHPF2 Input 1 Volume" value="32" />
-    </path>
-
-    <!-- camcorder input volume -->
-       <path name="gain-camcorder-mic-oe">
-               <ctl name="IN1L Digital Volume" value="128" />
-               <ctl name="LHPF1 Input 1 Volume" value="32" />
-               <ctl name="IN3L Digital Volume" value="128" />
-               <ctl name="LHPF2 Input 1 Volume" value="32" />
-       </path>
-
-
     <!-- recognition input volume -->
 	<path name="gain-recognition-mic">
 		<ctl name="IN1L Digital Volume" value="145" />
@@ -1025,12 +989,6 @@
 		<path name="main-mic"/>
 		<path name="gain-recognition-mic"/>
 	</path>
-
-         <path name="camcorder-mic">
-                <path name="camcorder-mic-oe" />
-                <path name="gain-camcorder-mic-oe" />
-         </path>
-
 
 	<path name="voice-rec-headset-mic">
                 <ctl name="AIF1TX1 Input 1" value="LHPF1" />
