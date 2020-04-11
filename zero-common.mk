@@ -145,9 +145,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_HOST_PACKAGES += \
 	dtbhtoolExynos
 
-# Doze
+# SamsungDoze
 PRODUCT_PACKAGES += \
-    ZeroDoze
+    SamsungDoze
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
