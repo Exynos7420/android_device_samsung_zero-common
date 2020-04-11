@@ -225,6 +225,12 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
+# Mobicore
+PRODUCT_PACKAGES += \
+    mcDriverDaemon \
+    libMcClient \
+    libMcRegistry
+
 # NFC
 PRODUCT_PACKAGES += \
     libnfc-nci \
@@ -253,14 +259,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 device/samsung/zero-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
-	
-# OpenMAX-shims
-PRODUCT_PACKAGES += \
-    libui_shim \
-    libExynosOMX_shim
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -383,8 +381,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/wifi/filter_ie:system/vendor/etc/wifi/filter_ie
 
 # call Samsung LSI board support package
-$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos7420/exynos7420.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.mk)

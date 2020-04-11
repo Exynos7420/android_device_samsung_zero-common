@@ -78,6 +78,7 @@ TARGET_EXFAT_DRIVER := sdfat
 
 # FIMG2D
 BOARD_USES_SKIA_FIMGAPI := true
+BOARD_USES_FIMGAPI_V5X := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -86,6 +87,8 @@ EXTENDED_FONT_FOOTPRINT := true
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_zero
 
+# Samsung LSI
+BOARD_CAMERA_HAL3_FEATURE := true
 
 # Camera-shims
 TARGET_LD_SHIM_LIBS += \
@@ -104,14 +107,16 @@ TARGET_LD_SHIM_LIBS += \
 # Graphics
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-BOARD_USES_VIRTUAL_DISPLAY := true
 
 # Gralloc
+BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
 TARGET_USES_GRALLOC1_ADAPTER := true
 
 # (G)SCALER
 BOARD_USES_SCALER := true
-BOARD_USES_DT := true
+
+# Samsung LSI
+TARGET_USES_UNIVERSAL_LIBHWJPEG := true
 
 ## ION
 TARGET_USES_ION := true
@@ -132,8 +137,9 @@ JAVA_SOURCE_OVERLAYS := \
     org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java \
     org.lineageos.hardware|device/samsung/zero-common/lineagehw|**/*.java
 
-# H/W composer
-BOARD_USES_PREBUILT_HWCOMPOSER := true
+# HWComposer
+BOARD_USES_VPP := true
+BOARD_HDMI_INCAPABLE := true
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := false
@@ -166,6 +172,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
+BOARD_USES_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
 # Manifest
@@ -184,27 +191,42 @@ TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 # NFC
 BOARD_NFC_HAL_SUFFIX := universal7420
 
-# Samsung LSI OpenMAX
+# Samsung OpenMAX Video
+BOARD_USE_STOREMETADATA := true
+BOARD_USE_METADATABUFFERTYPE := true
+BOARD_USE_DMA_BUF := true
+BOARD_USE_ANB_OUTBUF_SHARE := true
+BOARD_USE_IMPROVED_BUFFER := true
+BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
+BOARD_USE_GSC_RGB_ENCODER := true
+BOARD_USE_CSC_HW := false
+BOARD_USE_QOS_CTRL := false
+BOARD_USE_S3D_SUPPORT := true
+BOARD_USE_TIMESTAMP_REORDER_SUPPORT := false
+BOARD_USE_DEINTERLACING_SUPPORT := false
 BOARD_USE_VP8ENC_SUPPORT := true
 BOARD_USE_HEVCDEC_SUPPORT := true
+BOARD_USE_HEVCENC_SUPPORT := true
 BOARD_USE_HEVC_HWIP := false
-COMMON_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED
+BOARD_USE_VP9DEC_SUPPORT := true
+BOARD_USE_VP9ENC_SUPPORT := false
+BOARD_USE_CUSTOM_COMPONENT_SUPPORT := true
+BOARD_USE_VIDEO_EXT_FOR_WFD_HDCP := false
+BOARD_USE_VIDEO_EXT_FOR_WFD_DRM := false
+BOARD_USE_SINGLE_PLANE_IN_DRM := false
+BOARD_USES_DEFAULT_CSC_HW_SCALER := true
 
 # Video scaling issue workaround
 TARGET_OMX_LEGACY_RESCALING := true
 
-# OpenMAX video
-BOARD_USE_DMA_BUF := true
-BOARD_USE_METADATABUFFERTYPE := true
-# BOARD_USE_STOREMETADATA := true  -- not working due to invalid buffer handles
-
 ### Others
-BOARD_USE_CSC_HW := false
-BOARD_USE_GSC_RGB_ENCODER := true
-BOARD_USE_QOS_CTRL := false
-BOARD_USE_S3D_SUPPORT := false
-BOARD_USES_GSC_VIDEO := true
-BOARD_USES_VIRTUAL_DISPLAY := true
+BOARD_USE_DEINTERLACING_SUPPORT := true
+BOARD_USES_SCALER_M2M1SHOT := true
+BOARD_USES_VDS_BGRA8888 := true
+# BOARD_USES_VIRTUAL_DISPLAY := true  -- depends on platform changes
+BOARD_USES_VIRTUAL_DISPLAY_DECON_EXT_WB := false
+BOARD_VIRTUAL_DISPLAY_DISABLE_IDMA_G0 := false
+
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -219,7 +241,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3124019200
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos7420
-TARGET_SLSI_VARIANT := cm
+TARGET_SLSI_VARIANT := bsp
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
@@ -234,37 +256,6 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7420.recovery
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_DOWNLOAD_MODE := true
-
-# OpenMAX-shims
-zero_shims_omx += \
-	/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.HEVC.Decoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.HEVC.Decoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.HEVC.Encoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.HEVC.Encoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.VP8.Encoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.VP8.Encoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.VP9.Decoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.VP9.Decoder.so|/vendor/lib64/SHIM_TARGET.so \
-	/system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib/SHIM_TARGET.so \
-	/system/lib64/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib64/SHIM_TARGET.so
-
-# Shims: libstagefright
-TARGET_LD_SHIM_LIBS +=\
-    $(subst SHIM_TARGET,libstagefright_shim,$(zero_shims_omx))
-
-# Shims: libui
-TARGET_LD_SHIM_LIBS +=\
-    $(subst SHIM_TARGET,libui_shim,$(zero_shims_omx))
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
