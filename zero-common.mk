@@ -265,14 +265,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.power@1.0-service.exynos
 	
-# OpenMAX-shims
-PRODUCT_PACKAGES += \
-    libui_shim \
-    libExynosOMX_shim
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
-
 # Radio
 PRODUCT_PACKAGES += \
 	libxml2 \
