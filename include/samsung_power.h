@@ -25,17 +25,14 @@
  * device tree.
  */
 
-static const std::vector<std::string> cpuSysfsPaths = {
+static const char* CPU_SYSFS_PATHS[2] = {
     "/sys/devices/system/cpu/cpu0",
     "/sys/devices/system/cpu/cpu4"
 };
 
-static const std::vector<std::string> cpuInteractivePaths = {
+static const char* CPU_INTERACTIVE_PATHS[2] = {
     "/sys/devices/system/cpu/cpu0/cpufreq/interactive",
     "/sys/devices/system/cpu/cpu4/cpufreq/interactive"
 };
-
-/* double tap to wake node */
-#define TAP_TO_WAKE_NODE "/sys/class/dt2w/enabled"
 
 #endif // SAMSUNG_POWER_H
