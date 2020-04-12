@@ -128,10 +128,6 @@ Return<void> Power::setInteractive(bool interactive) {
 		resetProfile(500);
 	}
 
-	// speed up the device a bit
-	/* Utils::write("/sys/kernel/hmp/boostpulse_duration", 2500000); // 2.5s
-	Utils::write("/sys/kernel/hmp/boostpulse", true); */
-
 	setInputState(interactive);
 
 exit:
@@ -203,6 +199,7 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data)  {
 		case_uint32_t (PowerHint::LAUNCH):
 		{
 			// ALOGV("%s: PowerHint::LAUNCH(%d)", __func__, data);
+                        boostpulse(data);
 			break;
 		}
 		case_uint32_t (PowerHint::VSYNC):
@@ -316,10 +313,10 @@ void Power::setProfile(SecPowerProfiles profile) {
 	mCurrentProfile = profile;
 
 	// check if user disabled power-profiles
-	//if (!isModuleEnabled("profiles")) {
-	//	ALOGI("power profiles disabled by user!");
-	//	return;
-	//}
+	if (!isModuleEnabled("profiles")) {
+		ALOGI("power profiles disabled by user!");
+		return;
+	}
 
 	// apply settings
 	const SecPowerProfile* data = Profiles::getProfileData(mCurrentProfile);
