@@ -1196,6 +1196,18 @@
 		<ctl name="AIF1TX2 Input 1" value="ISRC2INT2" />
 	</path>
 
+    <path name="camcorder-headphone-mic">
+        <path name="camcorder-mic-oe" />
+    </path>
+
+        <!-- camcorder input -->
+    <path name="camcorder-mic-oe">
+        <path name="capture_channel_left"/>
+        <path name="main-mic" />
+        <path name="2nd-mic" />
+        <path name="gain-media-mic"/>
+    </path>
+
 	<!-- voice input -->
 	<path name="recording-mic">
 		<path name="media-mic" />
@@ -2114,6 +2126,11 @@
 	<path name="volte_vt_cp_wb-bt-ble-headset-in">
 		<path name="incall_wb-bt-ble-headset-in" />
 	</path>
+
+    <path name="camcorder-mic">
+        <path name="camcorder-mic-oe" />
+        <path name="gain-camcorder-mic-oe" />
+    </path>
 
 	<!-- Loopback Input (no delay) -->
 	<path name="loopback-mic">
@@ -3468,6 +3485,27 @@
 		<ctl name="AIF1TX1 Input 1 Volume" value="32" />
 		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
 	</path>
+
+    <path name="gain-camcorder-headset-mic">
+        <ctl name="IN2L Volume" value="24" />
+        <ctl name="IN2L Digital Volume" value="118" />
+        <ctl name="LHPF1 Input 1 Volume" value="32" />
+    </path>
+
+    <path name="gain-camcorder-headphone-mic">
+         <ctl name="IN1L Digital Volume" value="128" />
+         <ctl name="LHPF1 Input 1 Volume" value="32" />
+         <ctl name="IN3L Digital Volume" value="128" />
+         <ctl name="LHPF2 Input 1 Volume" value="32" />
+    </path>
+
+    <!-- camcorder input volume -->
+    <path name="gain-camcorder-mic-oe">
+         <ctl name="IN1L Digital Volume" value="148" />
+         <ctl name="LHPF1 Input 1 Volume" value="36" />
+         <ctl name="IN3L Digital Volume" value="148" />
+         <ctl name="LHPF2 Input 1 Volume" value="36" />
+    </path>
 
 	<!-- voice recording input volume -->
 	<path name="gain-recording-mic">
