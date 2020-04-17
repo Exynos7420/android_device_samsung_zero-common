@@ -112,8 +112,7 @@ PRODUCT_PACKAGES += \
     camera.exynos5 \
     libexynoscamera_shim \
     android.hardware.camera.provider@2.4-impl.zero \
-    android.hardware.camera.provider@2.4-service \
-    Snap
+    android.hardware.camera.provider@2.4-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/external_camera_config.xml:system/vendor/etc/external_camera_config.xml
@@ -273,7 +272,7 @@ PRODUCT_PACKAGES += \
 	libril \
 	libsecril-client \
 	libsecril-client-sap \
-        libsecnativefeature \
+    libsecnativefeature \
 	android.hardware.radio@1.0 \
 	android.hardware.radio.deprecated@1.0 \
 	modemloader
@@ -337,11 +336,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+ifneq (,$(wildcard lineage-sdk/ ))
 #
 # Touch
 #
 PRODUCT_PACKAGES += \
 	vendor.lineage.touch@1.0-service.samsung
+endif
 
 # Tools
 PRODUCT_PACKAGES += \

@@ -163,7 +163,11 @@ BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
 # Manifest
+ifneq (,$(wildcard lineage-sdk/ ))
 DEVICE_MANIFEST_FILE += device/samsung/zero-common/manifest.xml
+else
+DEVICE_MANIFEST_FILE += device/samsung/zero-common/manifest-aosp.xml
+endif
 
 #
 # Networking
