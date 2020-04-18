@@ -16,7 +16,7 @@
 
 LOCAL_PATH := device/samsung/zerofltexx
 
-ifneq ($(filter zerofltexx zeroflteskt,$(TARGET_DEVICE)),)
+ifneq ($(filter zeroflte zerofltexx zeroflteskt,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
