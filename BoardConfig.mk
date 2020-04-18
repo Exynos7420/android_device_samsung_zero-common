@@ -31,5 +31,8 @@ TARGET_OTA_ASSERT_DEVICE := zeroflte,zerofltexx,zeroflteskt
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/zerofltexx/include
+
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
