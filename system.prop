@@ -89,7 +89,6 @@ ro.nfc.fw_dl_on_boot=false
 #
 
 debug.hwc.force_gpu=0
-debug.hwc.max_hw_overlays=6
 debug.sf.latch_unsignaled=1
 
 #
