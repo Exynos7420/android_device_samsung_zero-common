@@ -226,6 +226,7 @@ BOARD_USES_VDS_BGRA8888 := true
 # BOARD_USES_VIRTUAL_DISPLAY := true  -- depends on platform changes
 BOARD_USES_VIRTUAL_DISPLAY_DECON_EXT_WB := false
 BOARD_VIRTUAL_DISPLAY_DISABLE_IDMA_G0 := false
+BOARD_USES_CEC := true
 
 
 # Partitions

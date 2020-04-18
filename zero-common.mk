@@ -160,6 +160,8 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
+    gralloc.exynos5 \
+    hwcomposer.exynos5 \
     libhwc2on1adapter \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
@@ -214,6 +216,7 @@ PRODUCT_PACKAGES += \
 
 # Memory
 PRODUCT_PACKAGES += \
+    memtrack.exynos5 \
     android.hardware.memtrack@1.0-impl
 
 # Media profile
@@ -224,12 +227,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
-# Mobicore
-PRODUCT_PACKAGES += \
-    mcDriverDaemon \
-    libMcClient \
-    libMcRegistry
 
 # NFC
 PRODUCT_PACKAGES += \
