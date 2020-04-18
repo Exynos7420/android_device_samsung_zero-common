@@ -27,3 +27,6 @@ LOCAL_PATH := device/samsung/zerofltexx
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+
+# Kernel
+TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
