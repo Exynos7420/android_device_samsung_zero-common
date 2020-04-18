@@ -24,3 +24,6 @@
 include device/samsung/universal7420-common/BoardConfigCommon.mk
 
 LOCAL_PATH := device/samsung/zerofltexx
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
