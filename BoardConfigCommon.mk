@@ -40,7 +40,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_NR_CPUS := 8
 
 # Audio
-TARGET_AUDIOHAL_VARIANT := samsung
 USE_XML_AUDIO_POLICY_CONF := 1
 AUDIOSERVER_MULTILIB := 32
 
@@ -106,10 +105,6 @@ TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := //$(LOCAL_PATH):libcamera_parameters
 TARGET_LD_SHIM_LIBS += \
 	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
 	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
-
-# Fingerprint
-TARGET_SEC_FP_CALL_NOTIFY_ON_CANCEL := true
-TARGET_SEC_FP_USES_PERCENTAGE_SAMPLES := true
 
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
@@ -226,6 +221,10 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3124019200
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos7420
 TARGET_SLSI_VARIANT := cm
+
+# Samsung HAL's
+TARGET_SEC_FP_HAL_VARIANT := bauth
+TARGET_AUDIOHAL_VARIANT := samsung
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
