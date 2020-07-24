@@ -16,7 +16,7 @@ ro.arch=exynos7420
 # Camera
 #
 
-vendor.camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
+# vendor.camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
 
 #
 # Dalvik
