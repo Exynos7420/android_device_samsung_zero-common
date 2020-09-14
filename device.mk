@@ -46,10 +46,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libbauthtzcommon_shim
 
-# HIDL Manifest
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from universal7420-common
