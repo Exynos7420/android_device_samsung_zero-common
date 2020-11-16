@@ -38,6 +38,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libexynoscamera_shim
 
+# Fingerprint-Shim
+PRODUCT_PACKAGES += \
+	libbauthtzcommon_shim
+
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
