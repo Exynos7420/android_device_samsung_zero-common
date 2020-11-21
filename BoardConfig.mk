@@ -28,6 +28,10 @@ LOCAL_PATH := device/samsung/zerofltexx
 # Assert
 TARGET_OTA_ASSERT_DEVICE := zeroflte,zerofltexx,zeroflteskt
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
