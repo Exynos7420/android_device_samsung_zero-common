@@ -38,6 +38,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libexynoscamera_shim
 
+# Cpboot-daemon
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/prebuilt/cbd:$(TARGET_COPY_OUT_SYSTEM)/bin/cbd
+
 # Fingerprint-Shim
 PRODUCT_PACKAGES += \
 	libbauthtzcommon_shim
