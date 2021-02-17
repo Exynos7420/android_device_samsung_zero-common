@@ -1,0 +1,284 @@
+/dev/mali0                0666   system     system
+/dev/ion                  0666   system     system
+/dev/ump                  0666   system     graphics
+/dev/exynos-mem           0660   system     graphics
+/dev/video0               0660   system     camera
+/dev/video1               0660   system     camera
+/dev/video2               0660   system     camera
+/dev/video3               0660   system     camera
+/dev/video20              0660   system     system
+/dev/fimg2d               0666   system     graphics
+/dev/i2c-2                0660   system     system
+/dev/HPD                  0660   system     system
+
+# gscalers
+/dev/video23              0660   media      graphics
+/dev/video26              0660   media      graphics
+
+/dev/video24              0660   media      graphics
+/dev/video27              0660   media      graphics
+
+# scalers
+/dev/video50              0666   media      graphics
+/dev/video51              0666   media      graphics
+/dev/m2m1shot_scaler0     0660   cameraserver     graphics
+/dev/m2m1shot_scaler1     0660   cameraserver       graphics
+
+/dev/v4l-subdev*          0660   system     camera
+/dev/media0               0660   system     camera
+/dev/media1               0660   system     camera
+
+# seiren Audio
+/dev/seiren               0660   mediacodec mediadrm
+
+#mixer
+/dev/video16              0660   system     audio
+/dev/video17              0660   system     system
+/dev/video18              0660   system     system
+/dev/video19              0660   system     system
+
+#CEC
+/dev/CEC                  0660   system     system
+
+# JPEG
+/dev/m2m1shot_jpeg	  0660   cameraserver      media
+/dev/video13              0660   media      media
+/dev/video14              0660   media      media
+
+# mfc
+/dev/video6               0660   mediacodec     mediadrm
+/dev/video7               0660   media      mediadrm
+/dev/video8               0660   media      mediadrm
+/dev/video9               0660   media      mediadrm
+
+# camera
+/dev/video101             0660   cameraserver      cameraserver
+/dev/video102             0660   cameraserver      cameraserver
+/dev/video103             0660   cameraserver      cameraserver
+/dev/video104             0660   cameraserver      cameraserver
+/dev/video109             0660   cameraserver      cameraserver
+/dev/video110             0660   cameraserver      cameraserver
+/dev/video111             0660   cameraserver      cameraserver
+/dev/video112             0660   cameraserver      cameraserver
+/dev/video120             0660   cameraserver      cameraserver
+/dev/video121             0660   cameraserver      cameraserver
+/dev/video122             0660   cameraserver      cameraserver
+/dev/video130             0660   cameraserver      cameraserver
+/dev/video131             0660   cameraserver      cameraserver
+/dev/video132             0660   cameraserver      cameraserver
+/dev/video140             0660   cameraserver      cameraserver
+/dev/video141             0660   cameraserver      cameraserver
+/dev/video142             0660   cameraserver      cameraserver
+/dev/video150             0660   cameraserver      cameraserver
+/dev/video151             0660   cameraserver      cameraserver
+/dev/video152             0660   cameraserver      cameraserver
+/dev/video160             0660   cameraserver      cameraserver
+/dev/media2               0660   media      media
+
+# MobiCore
+/dev/mobicore             0700   system     system
+/dev/mobicore-user        0666   radio        system
+
+# Fingerprint
+/dev/vfsspi               0660   system     system
+/dev/esfp0                0660   system     system
+
+# Secure MEM driver
+/dev/s5p-smem             0660   system        system
+
+# cpufreq parameters
+/sys/devices/system/cpu/cpu*   cpufreq/scaling_governor         0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/scaling_max_freq         0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/scaling_min_freq         0664    system  system
+
+#
+# blu_active cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/above_hispeed_delay        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/align_windows              0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/fastlane                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/fastlane_threshold         0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/freq_max                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/freq_min                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/go_hispeed_load            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/hispeed_freq               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/io_is_busy                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/min_sample_time            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/target_loads               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/timer_rate                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/blu_active/timer_slack                0664    system  system
+
+#
+# cafactive cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/above_hispeed_delay        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/align_windows              0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/boost                      0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/boostpulse                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/boostpulse_duration        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/freq_max                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/freq_min                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/go_hispeed_load            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/hispeed_freq               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/io_is_busy                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/max_freq_hysteresis        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/min_sample_time            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/target_loads               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/timer_rate                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/cafactive/timer_slack                0664    system  system
+
+#
+# conservative cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/down_threshold               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/freq_max                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/freq_min                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/freq_step                    0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/ignore_nice_load             0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/sampling_down_factor         0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/sampling_rate                0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/sampling_rate_min            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/conservative/up_threshold                 0664    system  system
+
+#
+# impulse cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/above_hispeed_delay        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/align_windows              0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/freq_max                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/freq_min                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/go_hispeed_load            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/hispeed_freq               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/io_is_busy                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/max_freq_hysteresis        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/min_sample_time            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/powersave_bias             0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/target_loads               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/timer_rate                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/impulse/timer_slack         
+
+#
+# interactive cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/above_hispeed_delay         0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/boost                       0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/boostpulse                  0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/boostpulse_duration         0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/freq_max                    0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/freq_min                    0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/io_is_busy                  0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/min_sample_time             0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/target_loads                0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/timer_rate                  0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/interactive/timer_slack                 0664    system  system
+
+#
+# nexus cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/boost                          0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/boost_freq                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/boostpulse                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/boostpulse_duration            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/down_delay                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/down_load                      0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/down_step                      0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/freq_max                       0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/freq_min                       0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/frequency_step                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/hispeed_delay                  0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/hispeed_freq                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/hispeed_load                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/hispeed_power_efficient        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/io_is_busy                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/lpr_down_elevation             0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/lpr_down_ratio                 0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/lpr_up_elevation               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/lpr_up_ratio                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/power_efficient                0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/reset_stuck_timespan           0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/timer_rate                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/up_delay                       0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/up_load                        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/nexus/up_step                        0664    system  system
+
+#
+# ondemand cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/freq_max                    0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/freq_min                    0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/ignore_nice_load            0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/io_is_busy                  0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/powersave_bias              0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/sampling_down_factor        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/sampling_rate               0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/sampling_rate_min           0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/ondemand/up_threshold                0664    system  system
+
+#
+# relaxed cpugovernor parameters
+#
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/boost_ceiling                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/boost_count                     0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/boost_enabled                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/down_threshold                  0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/down_threshold_suspended        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/freq_max                        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/freq_min                        0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/freq_step                       0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/ignore_nice_load                0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/sampling_rate                   0664    system  system
+/sys/devices/system/cpu/cpu*   cpufreq/relaxed/up_threshold   
+
+# MIF
+/dev/block/platform/15570000.ufs/by-name/RADIO     0660   system     radio
+/dev/block/platform/15570000.ufs/by-name/DNT     0660   system     system
+/dev/block/mmcblk0p13     0660   system     radio
+/dev/block/mmcblk0p15     0660   system     system
+/dev/umts*                0660   system     radio
+/dev/umts_csd             0660   system     loop_radio
+/dev/smd4		  0660	 system	    radio
+
+# QCOM MIF
+/dev/subsys_esoc*         0660   system     radio
+/dev/mhi_pipe_*             0660   radio      radio
+/dev/esoc-*             0660   system    radio
+
+# sensor sysfs properties
+/sys/devices/virtual/input/input*	poll_delay	0660	system	radio
+/sys/devices/virtual/input/input*	enable		0660	system	radio
+
+# Sensorhub IIO
+/dev/ssp_sensorhub        0660   system		system
+/dev/iio:device*          0660   system		system
+/sys/devices/14d30000.spi/spi_master/spi1/spi1.0/iio:device*    buffer/enable       0660    system    system
+/sys/devices/14d30000.spi/spi_master/spi1/spi1.0/iio:device*    buffer/length       0660    system    system
+/sys/bus/iio/devices/iio:device*    0664   system     radio
+
+# Broadcom Sensorhub Bridge Driver
+/dev/bbd_sensor           0660   system     system
+/dev/bbd_control          0660   system     system
+/dev/bbd_packet           0660   system     system
+/dev/bbd_reliable         0660   system     system
+/dev/bbd_sio              0660   system     system
+/dev/bbd_patch            0660   system     system
+/dev/ttyBCM*              0660   system     system
+/sys/devices/platform/bbd.0/BBD          0220   gps   system
+/sys/devices/platform/bbd.0/DEV          0220   gps   system
+/sys/devices/platform/bbd.0/ESW          0220   gps   system
+/sys/devices/platform/bbd.0/baud         0660   gps   system
+/sys/devices/platform/bbd.0/debug        0660   gps   system
+/sys/devices/platform/bbd.0/buf          0440   gps   system
+/sys/devices/platform/bbd.0/pl           0440   gps   system
+/sys/devices/platform/bbd.0/passthru     0440   gps   system
+/sys/devices/platform/bbd.0/ssi_xfer     0440   gps   system
+/sys/devices/platform/bbd.0/ssi_count    0440   gps   system
+/sys/devices/platform/bbd.0/ssi_trace    0440   gps   system
+
+# Reactivation lock
+/dev/block/platform/15570000.ufs/by-name/STEADY    0660    system    system
+
+# Google FRP solution
+/dev/block/platform/15570000.ufs/by-name/PERSISTENT    0660    system    system
+
+# FM Radio
+/dev/radio0               0660   system     audio

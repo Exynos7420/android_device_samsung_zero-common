@@ -48,6 +48,14 @@ PRODUCT_PACKAGES += \
 	android.hardware.ir@1.0-impl \
 	android.hardware.ir@1.0-service
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+	fstab.samsungexynos7420 \
+	init.baseband.rc \
+	init.gps.rc \
+	init.zerofltexx.rc \
+	ueventd.samsungexynos7420.rc
+
 # Sensors
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/sensors/gps.xml:system/etc/gps.xml \
