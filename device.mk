@@ -48,5 +48,10 @@ PRODUCT_PACKAGES += \
 	android.hardware.ir@1.0-impl \
 	android.hardware.ir@1.0-service
 
+# Sensors
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/sensors/gps.xml:system/etc/gps.xml \
+	$(LOCAL_PATH)/configs/sensors/lhd.conf:system/etc/lhd.conf
+
 # Call the proprietary
 $(call inherit-product, vendor/samsung/zerofltexx/zerofltexx-vendor.mk)
