@@ -119,6 +119,8 @@ bin/lhd
 lib64/hw/gps.default.so
 lib/hw/sensors.universal7420.so
 lib64/hw/sensors.universal7420.so
+lib/libfloatingfeature.so
+lib64/libfloatingfeature.so
 lib/libsensorlistener.so
 lib64/libsensorlistener.so
 lib/libwrappergps.so
