@@ -52,12 +52,12 @@ etc/firmware/florida-dsp4-rx-anc-nb.wmfw
 etc/firmware/florida-dsp4-rx-anc-wb.bin
 etc/firmware/florida-dsp4-rx-anc-wb.wmfw
 
-# Bluetooth
-vendor/firmware/bcm4358A3_V0096.0162.hcd
-vendor/firmware/bcm4358A3_V0096.0162.hcd:vendor/firmware/bcm4358A3_V0096.0162_murata.hcd
-vendor/firmware/bcm4358A3_V0096.0162.hcd:vendor/firmware/bcm4358A3_V0096.0162_semco.hcd
-vendor/firmware/bcm4358A3_V0096.0162.hcd:vendor/firmware/bcm4358A3_V0096.0162_semco3rd.hcd
-vendor/firmware/bcm4358A3_V0096.0162_wisol.hcd
+# Bluetooth - G920FXXS6ETK1 (N)
+vendor/firmware/bcm4358A3_V0083.0138.hcd|e3f2205f0afa2d269f1bad80e27806919c3f39f4
+vendor/firmware/bcm4358A3_V0083.0138.hcd:vendor/firmware/bcm4358A3_V0083.0138_murata.hcd|e3f2205f0afa2d269f1bad80e27806919c3f39f4
+vendor/firmware/bcm4358A3_V0083.0138.hcd:vendor/firmware/bcm4358A3_V0083.0138_semco.hcd|e3f2205f0afa2d269f1bad80e27806919c3f39f4
+vendor/firmware/bcm4358A3_V0083.0138.hcd:vendor/firmware/bcm4358A3_V0083.0138_semco3rd.hcd|e3f2205f0afa2d269f1bad80e27806919c3f39f4
+vendor/firmware/bcm4358A3_V0083.0138_wisol.hcd|e3f2205f0afa2d269f1bad80e27806919c3f39f4
 
 # Camera
 lib/hw/camera.exynos5.so
