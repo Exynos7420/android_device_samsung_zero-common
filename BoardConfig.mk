@@ -51,7 +51,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/samsung/zerofltexx/include
 TARGET_KERNEL_CONFIG := lineageos_zerofltexx_defconfig
 
 # Manifest
-DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/configs/manifest.xml
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
