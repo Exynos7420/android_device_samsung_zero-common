@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zerofltexx
+LOCAL_PATH := device/samsung/zero-common
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -32,7 +32,8 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Audio
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml
+	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml \
+	$(LOCAL_PATH)/configs/audio/mixer_paths-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
 
 # Camera-Shim
 PRODUCT_PACKAGES += \
@@ -86,7 +87,7 @@ PRODUCT_PACKAGES += \
 	fstab.samsungexynos7420 \
 	init.baseband.rc \
 	init.gps.rc \
-	init.zerofltexx.rc \
+	init.zero_common.rc \
 	ueventd.samsungexynos7420.rc
 
 # Sensors
@@ -98,4 +99,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Call the proprietary
-$(call inherit-product, vendor/samsung/zerofltexx/zerofltexx-vendor.mk)
+$(call inherit-product, vendor/samsung/zero-common/zero-common-vendor.mk)

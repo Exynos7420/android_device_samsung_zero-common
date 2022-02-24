@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zerofltexx
+LOCAL_PATH := device/samsung/zero-common
 
-ifneq ($(filter zeroflte zerofltexx zeroflteskt,$(TARGET_DEVICE)),)
+ifneq ($(filter zeroflte zerofltexx zeroflteskt zerolte zeroltexx zerolteskt zeroltecan zeroltetmo zerofltecan zerofltetmo,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

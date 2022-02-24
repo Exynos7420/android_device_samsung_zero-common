@@ -22,9 +22,9 @@ LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE            := init.zerofltexx.rc
+LOCAL_MODULE            := init.zero_common.rc
 LOCAL_MODULE_CLASS      := ETC
-LOCAL_SRC_FILES         := init.zerofltexx.rc
+LOCAL_SRC_FILES         := init.zero_common.rc
 LOCAL_MODULE_PATH       := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
