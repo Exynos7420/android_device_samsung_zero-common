@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/zero_common
 
 ifneq ($(filter zeroflte zerofltexx zeroflteskt zerolte zeroltexx zerolteskt zeroltecan zeroltetmo zerofltecan zerofltetmo,$(TARGET_DEVICE)),)
 

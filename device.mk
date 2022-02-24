@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/zero_common
 
 # Permissions
 PRODUCT_COPY_FILES += \

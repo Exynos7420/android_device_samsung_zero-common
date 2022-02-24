@@ -23,7 +23,7 @@
 # inherit from universal7420-common
 include device/samsung/universal7420-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/zero_common
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := zeroflte,zerofltexx,zeroflteskt,zerolte,zeroltexx,zerolteskt,zeroltecan,zeroltetmo,zerofltecan,zerofltetmo

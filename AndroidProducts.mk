@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/zero_common
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_PATH)/lineage_zero-common.mk
+    $(LOCAL_PATH)/lineage_zero_common.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_zero-common-userdebug
+    lineage_zero_common-userdebug
