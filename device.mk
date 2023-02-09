@@ -99,4 +99,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Call the proprietary
-$(call inherit-product, vendor/samsung/zero-common/zero-common-vendor.mk)
+$(call inherit-product, vendor/samsung/zero_common/zero_common-vendor.mk)

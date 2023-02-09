@@ -9,7 +9,7 @@
 set -e
 
 VENDOR=samsung
-DEVICE=zero-common
+DEVICE=zero_common
 
 export INITIAL_COPYRIGHT_YEAR=2015
 
